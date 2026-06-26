@@ -1,119 +1,82 @@
-# Opensquad
+# Amparo
 
-Crie squads de agentes de IA que trabalham juntos — direto do seu IDE.
+> "Você não está sozinha."
 
-## Como Usar
+Amparo é um aplicativo mobile de denúncia e proteção contra a violência doméstica, desenvolvido como Trabalho de Conclusão de Curso (TCC). Este repositório reúne toda a documentação acadêmica, pesquisa, identidade visual, design de UX/UI e ferramentas de apoio usadas na construção do projeto.
 
-Abra esta pasta no seu IDE e digite:
+## O problema
 
+Mulheres em situação de violência doméstica enfrentam barreiras reais para pedir ajuda: medo do agressor, dependência emocional e financeira, falta de informação sobre seus direitos, vergonha e ausência de ferramentas discretas e seguras adaptadas ao contexto brasileiro.
+
+- Estima-se que **61% das vítimas não denunciam** (subnotificação) — DataSenado.
+- Em 2025, o Brasil registrou **1.568 feminicídios**, novo recorde histórico — FBSP.
+- **64–66% dos feminicídios** ocorrem dentro da própria residência da vítima.
+- Apenas **24%** das brasileiras dizem conhecer bem a Lei Maria da Penha.
+
+A subnotificação não reflete ausência de violência — reflete ausência de um canal acessível, seguro e discreto para denunciar.
+
+## A solução
+
+O Amparo é uma plataforma mobile que combina:
+
+- **Emergência** — acionamento rápido em situação de risco.
+- **Documentação segura de evidências** — registro de provas protegido contra acesso do agressor.
+- **Rede de apoio pessoal** — contatos de confiança acionáveis em poucos toques.
+- **Acesso a profissionais e órgãos competentes** — polícia, ONGs e assistência social.
+- **Modo discreto** — design e fluxos pensados para não expor a usuária: saída rápida em 1 toque, notificações neutras e atenção ao rastro deixado no histórico do aparelho.
+
+O design segue uma abordagem trauma-informada (paleta calma, sem imagética de alarme ou de violência) e princípios de acessibilidade (WCAG 2.2 AA).
+
+## Público-alvo
+
+- Mulheres em situação de risco
+- Órgãos e autoridades (polícia, ONGs, assistência social)
+- Banca e avaliadores acadêmicos do TCC
+
+## Estrutura do repositório
+
+```text
+squads/
+  tcc-documentacao/        # Pesquisa acadêmica, dados, legislação, benchmarking e redação do TCC
+  design-ux-ui-amparo/     # Identidade visual, design system, UX e UI de alta fidelidade no Figma
+_opensquad/
+  _memory/company.md       # Perfil e contexto central do projeto Amparo
+dashboard/                 # Escritório Virtual — visualização em tempo real da execução dos squads
+skills/                    # Skills reutilizáveis (geração de imagens, publicação, templates, etc.)
 ```
+
+## Como o projeto é construído
+
+O desenvolvimento do Amparo — pesquisa, documentação acadêmica e design — é orquestrado com **Opensquad**, um framework de squads de agentes de IA. Cada squad reúne agentes especialistas que colaboram em um pipeline com checkpoints de aprovação:
+
+- **Documentação TCC** (`tcc-documentacao`) — pesquisa dados sobre violência doméstica no Brasil, legislação aplicável (Lei Maria da Penha e correlatas), benchmarking de apps similares (PenhaS, Circle of 6, bSafe), constrói a argumentação de defesa e consolida tudo em monografia (DOCX/PDF) seguindo as normas ABNT vigentes.
+- **Design UX/UI** (`design-ux-ui-amparo`) — define identidade visual de marca, design system, arquitetura de informação, fluxos de UX (com foco em segurança e discrição) e telas de alta fidelidade com protótipo navegável no Figma.
+
+### Comandos principais
+
+Abra esta pasta no seu IDE com o Claude Code e digite:
+
+```text
 /opensquad
 ```
 
-Isso abre o menu principal. De lá você pode criar squads, executá-los e mais.
+Para executar um squad diretamente:
 
-Você também pode ser direto — descreva o que quer em linguagem natural:
-
-```
-/opensquad crie um squad para escrever posts no LinkedIn sobre IA
-/opensquad execute o squad meu-squad
+```text
+/opensquad execute o squad tcc-documentacao
+/opensquad execute o squad design-ux-ui-amparo
 ```
 
-## Criar um Squad
+### Escritório Virtual
 
-Digite `/opensquad` e escolha "Criar squad" no menu, ou seja direto:
-
-```
-/opensquad crie um squad para [o que você precisa]
-```
-
-O Arquiteto fará algumas perguntas, projetará o squad e configurará tudo automaticamente.
-
-## Executar um Squad
-
-Digite `/opensquad` e escolha "Executar squad" no menu, ou seja direto:
-
-```
-/opensquad execute o squad <nome-do-squad>
-```
-
-O squad executa automaticamente, pausando apenas nos checkpoints de decisão.
-
-## Escritório Virtual
-
-O Escritório Virtual é uma interface visual 2D que mostra seus agentes trabalhando em tempo real.
-
-**Passo 1 — Gere o dashboard** (no seu IDE):
-
-```
-/opensquad dashboard
-```
-
-**Passo 2 — Sirva localmente** (no terminal):
+Interface visual 2D que mostra os agentes trabalhando em tempo real:
 
 ```bash
 npx serve squads/<nome-do-squad>/dashboard
 ```
 
-**Passo 3 —** Abra `http://localhost:3000` no seu navegador.
+Depois abra `http://localhost:3000` no navegador.
 
 ---
 
-# Opensquad (English)
-
-Create AI squads that work together — right from your IDE.
-
-## How to Use
-
-Open this folder in your IDE and type:
-
-```
-/opensquad
-```
-
-This opens the main menu. From there you can create squads, run them, and more.
-
-You can also be direct — describe what you want in plain language:
-
-```
-/opensquad create a squad for writing LinkedIn posts about AI
-/opensquad run my-squad
-```
-
-## Create a Squad
-
-Type `/opensquad` and choose "Create squad" from the menu, or be direct:
-
-```
-/opensquad create a squad for [what you need]
-```
-
-The Architect will ask a few questions, design the squad, and set everything up automatically.
-
-## Run a Squad
-
-Type `/opensquad` and choose "Run squad" from the menu, or be direct:
-
-```
-/opensquad run the <squad-name> squad
-```
-
-The squad runs automatically, pausing only at decision checkpoints.
-
-## Virtual Office
-
-The Virtual Office is a 2D visual interface that shows your agents working in real time.
-
-**Step 1 — Generate the dashboard** (in your IDE):
-
-```
-/opensquad dashboard
-```
-
-**Step 2 — Serve it locally** (in terminal):
-
-```bash
-npx serve squads/<squad-name>/dashboard
-```
-
-**Step 3 —** Open `http://localhost:3000` in your browser.
+*Projeto acadêmico (TCC). Dados e fontes de pesquisa em `squads/tcc-documentacao/pipeline/data/research-brief.md`.*
