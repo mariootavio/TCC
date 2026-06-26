@@ -1,0 +1,5 @@
+id,name,title,icon,execution,path
+beatriz-bibliografia,Beatriz Bibliografia,Pesquisadora Acadêmica e de Dados Públicos,📚,subagent,./agents/beatriz-bibliografia.agent.md
+diana-defesa,Diana Defesa,Estrategista de Argumentação e Defesa Acadêmica,⚖️,inline,./agents/diana-defesa.agent.md
+helena-hipotese,Helena Hipótese,Redatora de Monografia e Relatórios Acadêmicos,📝,inline,./agents/helena-hipotese.agent.md
+renata-referencia,Renata Referência,Revisora de Qualidade Acadêmica e Normas ABNT,🔍,inline,./agents/renata-referencia.agent.md

@@ -1,0 +1,17 @@
+code: "tcc-documentacao"
+name: "Documentação TCC — Amparo"
+description: "Squad de pesquisa profunda e redação acadêmica para o TCC do Amparo: dados sobre violência doméstica no Brasil, legislação, benchmarking de apps similares, construção de argumentação sólida para a defesa perante banca, e consolidação de tudo em um documento final exportado em DOCX e PDF."
+language: "Português (Brasil)"
+
+pipeline: "pipeline/pipeline.yaml"
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md

@@ -1,0 +1,50 @@
+code: "design-ux-ui-amparo"
+name: "Design UX/UI — Amparo"
+description: >
+  Squad de design para o app Amparo: identidade visual de marca (logo), design
+  system completo (cores, tipografia, componentes, tokens), arquitetura de UX
+  (fluxos, usabilidade, padrões de segurança/discrição) e design de UI de alta
+  fidelidade com protótipo navegável, tudo produzido no Figma.
+language: "Português (Brasil)"
+
+# NOTA IMPORTANTE sobre ferramentas de Figma (não confundir com `skills:` abaixo):
+# As ferramentas Figma MCP (use_figma, create_new_file, get_design_context,
+# get_screenshot, get_metadata, search_design_system, get_variable_defs,
+# generate_diagram) são NATIVAS deste ambiente Claude Code — equivalentes a
+# "web browsing" ou "file read/write" — e NÃO são skills do catálogo Opensquad.
+# Não há instalação de skill Opensquad para Figma nesta squad, por isso a lista
+# `skills:` abaixo NÃO inclui nenhuma entrada de design/Figma.
+#
+# Em vez disso, os agentes desta squad dependem de skills nativas do Claude Code
+# (carregadas pelo próprio agente em tempo de execução, fora do catálogo
+# Opensquad) como pré-requisito obrigatório antes de chamar ferramentas Figma:
+#   - figma:figma-use            — obrigatória antes de toda chamada a use_figma
+#                                   (Flávia Fonte, steps 2 e 4; Telma Tela, step 8)
+#   - figma:figma-create-new-file — obrigatória antes de toda chamada a
+#                                   create_new_file (Flávia Fonte, step 2 —
+#                                   criação do arquivo Figma do projeto)
+#   - figma:figma-generate-library — carregada junto com figma-use por Flávia
+#                                   Fonte no step 4 (design system: variáveis,
+#                                   fundações, componentes, variantes)
+#   - figma:figma-generate-design — carregada junto com figma-use por Telma
+#                                   Tela no step 8 (tradução dos fluxos/telas
+#                                   aprovados em Figma)
+#   - figma:figma-use-figjam     — mencionada como opcional para Joana Jornada
+#                                   (step 6) caso ela opte por diagramar fluxos
+#                                   complexos no FigJam
+# Ver detalhamento completo em `_build/design.yaml`, campo `native_environment_tools_note`.
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+
+pipeline: "pipeline/pipeline.yaml"
+
+agents_manifest: "squad-party.csv"

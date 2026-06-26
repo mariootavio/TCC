@@ -1,0 +1,5 @@
+id,name,title,icon,path
+flavia-fonte,Flávia Fonte,Designer de Marca e Design System,🎨,./agents/flavia-fonte.agent.md
+joana-jornada,Joana Jornada,Estrategista de UX,🧭,./agents/joana-jornada.agent.md
+telma-tela,Telma Tela,Designer de UI,🖼️,./agents/telma-tela.agent.md
+wagner-wcag,Wagner WCAG,Revisor de Design,✅,./agents/wagner-wcag.agent.md
