@@ -1,0 +1,19 @@
+{
+  "squad": "brainstorm-amparo",
+  "status": "completed",
+  "step": { "current": 6, "total": 6, "label": "checkpoint-aprovacao-final" },
+  "agents": [
+    { "id": "sofia-sabedoria", "name": "Sofia Sabedoria", "icon": "🦉", "status": "done", "desk": { "col": 1, "row": 1 } },
+    { "id": "bruno-brainstorm", "name": "Bruno Brainstorm", "icon": "💡", "status": "done", "desk": { "col": 2, "row": 1 } },
+    { "id": "carla-criterio", "name": "Carla Critério", "icon": "✅", "status": "done", "desk": { "col": 3, "row": 1 } }
+  ],
+  "handoff": {
+    "from": "carla-criterio",
+    "to": null,
+    "message": "Veredito: APROVAR — 17 de 17 ideias aprovadas e priorizadas por RICE (Revisão 2).",
+    "completedAt": "2026-06-27T18:24:01Z"
+  },
+  "startedAt": "2026-06-27T17:52:30Z",
+  "updatedAt": "2026-06-27T18:24:01Z",
+  "completedAt": "2026-06-27T18:24:01Z"
+}

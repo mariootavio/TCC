@@ -27,15 +27,17 @@ Load these files before executing:
 2. Executar a task `consolidar-e-exportar-documento-final.md`: consolidar
    relatorio-tcc.md (corpo) + argumentacao-defesa.md (apêndice) em
    `squads/tcc-documentacao/output/tcc-amparo-final.md`.
-3. Verificar disponibilidade de `pandoc` e `typst` via Bash (`which pandoc`,
-   `which typst`); se ausentes em ambiente Mac, instalar com
-   `brew install pandoc typst` antes de prosseguir.
-4. Gerar o DOCX:
-   `pandoc squads/tcc-documentacao/output/tcc-amparo-final.md -o squads/tcc-documentacao/output/tcc-amparo-final.docx`
-5. Gerar o PDF:
-   `pandoc squads/tcc-documentacao/output/tcc-amparo-final.md -o squads/tcc-documentacao/output/tcc-amparo-final.pdf --pdf-engine=typst`
-6. Validar ambos os arquivos com `test -s {arquivo}` (tamanho > 0). Se a
-   geração do PDF falhar mesmo após a instalação das dependências, entregar
+3. Invocar o skill `docx` (Skill tool) e gerar o DOCX final via `docx-js`,
+   com formatação ABNT explícita: capa, margens 3cm sup/esq e 2cm inf/dir
+   (NBR 14724:2024), numeração de página a partir da introdução, e sumário
+   automático.
+4. Converter esse MESMO arquivo DOCX para PDF via LibreOffice (script do
+   próprio skill `docx`):
+   `python scripts/office/soffice.py --headless --convert-to pdf squads/tcc-documentacao/output/tcc-amparo-final.docx`
+   Se o LibreOffice não estiver disponível, instalar com
+   `brew install --cask libreoffice` antes de repetir.
+5. Validar ambos os arquivos com `test -s {arquivo}` (tamanho > 0). Se a
+   conversão para PDF falhar mesmo após a instalação do LibreOffice, entregar
    ao menos o DOCX validado e informar ao usuário o comando manual exato
    para gerar o PDF posteriormente — nunca declarar falha total se o DOCX
    foi gerado com sucesso.
@@ -50,10 +52,11 @@ CONSOLIDAÇÃO E EXPORTAÇÃO DO DOCUMENTO FINAL — TCC AMPARO
 2. Markdown consolidado: squads/tcc-documentacao/output/tcc-amparo-final.md
    Estrutura: Capítulos do relatório + "APÊNDICE A — Pacote de Argumentação
    de Defesa"
-3. Dependências (pandoc/typst): {instaladas | já presentes}
-4. DOCX gerado: squads/tcc-documentacao/output/tcc-amparo-final.docx
+3. DOCX gerado via skill `docx` (formatação ABNT — capa, margens, numeração,
+   sumário): squads/tcc-documentacao/output/tcc-amparo-final.docx
    Validação test -s: {OK | FALHOU}
-5. PDF gerado: squads/tcc-documentacao/output/tcc-amparo-final.pdf
+4. PDF gerado (conversão do mesmo DOCX via LibreOffice):
+   squads/tcc-documentacao/output/tcc-amparo-final.pdf
    Validação test -s: {OK | FALHOU — comando manual informado}
 
 RESULTADO: {resumo final do que foi entregue}
@@ -68,27 +71,26 @@ CONSOLIDAÇÃO E EXPORTAÇÃO DO DOCUMENTO FINAL — TCC AMPARO
 2. Markdown consolidado: squads/tcc-documentacao/output/tcc-amparo-final.md
    Estrutura: Capítulos 1-5 do relatório + "APÊNDICE A — Pacote de
    Argumentação de Defesa" (teses, perguntas de banca, roteiro de slides).
-3. Dependências: pandoc e typst não encontrados — instalados via
-   `brew install pandoc typst`.
-4. DOCX gerado:
-   $ pandoc squads/tcc-documentacao/output/tcc-amparo-final.md -o squads/tcc-documentacao/output/tcc-amparo-final.docx
+3. DOCX gerado via skill `docx` (docx-js), com formatação ABNT: capa
+   (instituição/curso/título/autor/ano), margens 3cm sup/esq e 2cm inf/dir,
+   numeração de página a partir da introdução, sumário automático.
    $ test -s squads/tcc-documentacao/output/tcc-amparo-final.docx && echo OK
    OK
-5. PDF gerado:
-   $ pandoc squads/tcc-documentacao/output/tcc-amparo-final.md -o squads/tcc-documentacao/output/tcc-amparo-final.pdf --pdf-engine=typst
+4. PDF gerado a partir do mesmo DOCX via LibreOffice:
+   $ python scripts/office/soffice.py --headless --convert-to pdf squads/tcc-documentacao/output/tcc-amparo-final.docx
    $ test -s squads/tcc-documentacao/output/tcc-amparo-final.pdf && echo OK
    OK
 
 RESULTADO: Documento final exportado com sucesso em DOCX e PDF, ambos com
-tamanho > 0, contendo o relatório completo e o pacote de argumentação como
-apêndice.
+tamanho > 0, formatação ABNT aplicada no DOCX e o PDF gerado a partir do
+mesmo arquivo (sem risco de divergência entre os dois formatos).
 
-[Cenário de fallback, se o PDF falhar:]
-RESULTADO: DOCX gerado e validado com sucesso. A geração do PDF falhou
-mesmo após instalação das dependências (erro de engine typst neste
-ambiente). Entregando apenas o DOCX nesta rodada. Para gerar o PDF
-manualmente depois, rode:
-  pandoc squads/tcc-documentacao/output/tcc-amparo-final.md -o squads/tcc-documentacao/output/tcc-amparo-final.pdf --pdf-engine=typst
+[Cenário de fallback, se a conversão para PDF falhar:]
+RESULTADO: DOCX gerado e validado com sucesso, com formatação ABNT completa.
+A conversão para PDF falhou (LibreOffice indisponível neste ambiente).
+Entregando apenas o DOCX nesta rodada. Para gerar o PDF manualmente depois,
+instale o LibreOffice (`brew install --cask libreoffice`) e rode:
+  python scripts/office/soffice.py --headless --convert-to pdf squads/tcc-documentacao/output/tcc-amparo-final.docx
 ```
 
 ## Veto Conditions

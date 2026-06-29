@@ -3,6 +3,14 @@ name: "Documentação TCC — Amparo"
 description: "Squad de pesquisa profunda e redação acadêmica para o TCC do Amparo: dados sobre violência doméstica no Brasil, legislação, benchmarking de apps similares, construção de argumentação sólida para a defesa perante banca, e consolidação de tudo em um documento final exportado em DOCX e PDF."
 language: "Português (Brasil)"
 
+# NOTA IMPORTANTE sobre o skill `docx` (não confundir com `skills:` abaixo):
+# O skill `docx` (criação/edição de Word via docx-js, incluindo conversão para PDF via
+# LibreOffice) é NATIVO deste ambiente Claude Code (instalado via skills.sh) — não é um
+# skill do catálogo Opensquad. Por isso a lista `skills:` abaixo NÃO inclui essa entrada.
+# Usado por Helena Hipótese (Step 8) para gerar o DOCX final com formatação ABNT precisa
+# (capa, margens 3-3-2-2cm, numeração de página, sumário automático) e, a partir do mesmo
+# arquivo DOCX, converter para PDF — garantindo que DOCX e PDF nunca divirjam entre si.
+
 pipeline: "pipeline/pipeline.yaml"
 
 skills:

@@ -1,0 +1,32 @@
+squad: "marca-design-amparo"
+name: "Pipeline — Marca & Design System Amparo"
+
+steps:
+  - step: 1
+    file: "steps/step-01-checkpoint-brief-design.md"
+  - step: 2
+    file: "steps/step-02-pesquisa-cor-publico.md"
+  - step: 3
+    file: "steps/step-03-checkpoint-referencias-visuais.md"
+  - step: 4
+    file: "steps/step-04-criar-identidade-visual.md"
+  - step: 5
+    file: "steps/step-05-checkpoint-aprovar-identidade-visual.md"
+  - step: 6
+    file: "steps/step-06-criar-design-system.md"
+  - step: 7
+    file: "steps/step-07-checkpoint-aprovar-design-system.md"
+  - step: 8
+    file: "steps/step-08-revisar-marca.md"
+  - step: 9
+    file: "steps/step-09-checkpoint-aprovacao-final.md"
+
+checkpoints:
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+
+on_reject:
+  8: 6

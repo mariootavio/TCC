@@ -1,0 +1,32 @@
+squad: "fluxos-uxui-amparo"
+name: "Pipeline — Fluxos & UI/Protótipo Amparo"
+
+steps:
+  - step: 1
+    file: "steps/step-01-checkpoint-selecionar-inputs.md"
+  - step: 2
+    file: "steps/step-02-implementar-design-system-figma.md"
+  - step: 3
+    file: "steps/step-03-mapear-arquitetura-informacao.md"
+  - step: 4
+    file: "steps/step-04-definir-padroes-seguranca-discrecao.md"
+  - step: 5
+    file: "steps/step-05-desenhar-fluxos-ux.md"
+  - step: 6
+    file: "steps/step-06-checkpoint-aprovar-fluxos-ux.md"
+  - step: 7
+    file: "steps/step-07-criar-telas-alta-fidelidade.md"
+  - step: 8
+    file: "steps/step-08-montar-prototipo-navegavel.md"
+  - step: 9
+    file: "steps/step-09-revisar-design.md"
+  - step: 10
+    file: "steps/step-10-checkpoint-aprovacao-final.md"
+
+checkpoints:
+  - 1
+  - 6
+  - 10
+
+on_reject:
+  9: 7

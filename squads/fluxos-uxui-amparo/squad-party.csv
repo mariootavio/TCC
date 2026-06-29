@@ -1,0 +1,8 @@
+id,name,title,icon,execution,path
+caio-componentes,Caio Componentes,Implementador do Design System no Figma,🏗️,inline,./agents/caio-componentes.agent.md
+iara-informacao,Iara Informação,Especialista em Arquitetura de Informação,🗺️,inline,./agents/iara-informacao.agent.md
+daniela-discricao,Daniela Discrição,Especialista em Segurança e Discrição UX,🔒,inline,./agents/daniela-discricao.agent.md
+joana-jornada,Joana Jornada,Estrategista de UX (Fluxos),🧭,inline,./agents/joana-jornada.agent.md
+telma-tela,Telma Tela,Designer de UI (Telas),🖼️,inline,./agents/telma-tela.agent.md
+pietro-prototipagem,Pietro Prototipagem,Especialista em Protótipo Navegável,🔗,inline,./agents/pietro-prototipagem.agent.md
+wagner-wcag,Wagner WCAG,Revisor de Design,✅,inline,./agents/wagner-wcag.agent.md

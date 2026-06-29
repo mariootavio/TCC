@@ -29,10 +29,10 @@ Acolhedor, empático, seguro e claro — linguagem sensível ao tema, sem jargã
 
 - Documentação do TCC (monografia, relatórios)
 - Pesquisa e análise (referências, benchmarking)
-- Desenvolvimento front-end e back-end
+- Desenvolvimento back-end
+- Desenvolvimento front-end
 - Geração de dashboards no Notion
 - UX/UI (Figma) para o app mobile
 - Brainstorm com visão geral do projeto (ideias de funcionalidades e fluxos)
 - Criação de design system e identidade visual de marca
-- Melhores práticas de design
 - Criação de sites e landing pages

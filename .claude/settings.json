@@ -10,7 +10,21 @@
       "Bash(git commit -m ' *)",
       "Bash(gh repo *)",
       "Bash(md5 /Users/mariootavio/Desktop/TCC/README.md)",
-      "Bash(npx --yes markdownlint-cli2 \"README.md\")"
+      "Bash(npx --yes markdownlint-cli2 \"README.md\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\('mcpServers',{}\\).keys\\(\\)\\)\\)\")",
+      "Bash(mkdir -p /Users/mariootavio/Desktop/TCC/squads/tcc-documentacao/output/2026-06-26-211457)",
+      "WebFetch(domain:forumseguranca.org.br)",
+      "WebFetch(domain:agenciabrasil.ebc.com.br)",
+      "WebFetch(domain:www.planalto.gov.br)",
+      "WebFetch(domain:www.gov.br)",
+      "WebFetch(domain:divinews.com)",
+      "WebFetch(domain:www.migalhas.com.br)",
+      "WebFetch(domain:www.mdpi.com)",
+      "WebFetch(domain:pmc.ncbi.nlm.nih.gov)",
+      "Bash(grep -E '^v[0-9]+$')"
+    ],
+    "additionalDirectories": [
+      "/Users/mariootavio/Desktop/TCC/squads/tcc-documentacao/output"
     ]
   }
 }

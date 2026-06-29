@@ -1,0 +1,44 @@
+{
+  "squad": "tcc-documentacao",
+  "status": "completed",
+  "step": { "current": 8, "total": 8, "label": "consolidar-e-exportar-documento-final" },
+  "agents": [
+    {
+      "id": "beatriz-bibliografia",
+      "name": "Beatriz Bibliografia",
+      "icon": "📚",
+      "status": "done",
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "diana-defesa",
+      "name": "Diana Defesa",
+      "icon": "⚖️",
+      "status": "done",
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "helena-hipotese",
+      "name": "Helena Hipótese",
+      "icon": "📝",
+      "status": "done",
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "renata-referencia",
+      "name": "Renata Referência",
+      "icon": "🔍",
+      "status": "done",
+      "desk": { "col": 1, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "helena-hipotese",
+    "to": "user",
+    "message": "Documento final consolidado e exportado em DOCX e PDF com sucesso.",
+    "completedAt": "2026-06-26T21:51:00-03:00"
+  },
+  "startedAt": "2026-06-26T21:14:57-03:00",
+  "updatedAt": "2026-06-26T21:51:00-03:00",
+  "completedAt": "2026-06-26T21:51:00-03:00"
+}

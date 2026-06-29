@@ -1,0 +1,5 @@
+id,name,title,icon,execution,path
+renata-referencia,Renata Referência,Pesquisadora de Cor e Público,🌈,subagent,./agents/renata-referencia.agent.md
+flavia-fonte,Flávia Fonte,Designer de Identidade Visual,🎨,inline,./agents/flavia-fonte.agent.md
+tomas-tokens,Tomás Tokens,Especialista em Design System,🧱,inline,./agents/tomas-tokens.agent.md
+marina-marca,Marina Marca,Revisora de Marca e Acessibilidade,🛡️,inline,./agents/marina-marca.agent.md

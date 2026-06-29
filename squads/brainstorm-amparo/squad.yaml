@@ -1,0 +1,22 @@
+code: "brainstorm-amparo"
+name: "Brainstorm — Amparo"
+description: "Squad de brainstorm que atua como especialista no tema de violência doméstica contra mulheres e com sabedoria total sobre o projeto Amparo, para gerar e priorizar ideias de novas funcionalidades e fluxos."
+language: "Português (Brasil)"
+
+# NOTA IMPORTANTE sobre o skill `prioritization-advisor` (não confundir com `skills:` abaixo):
+# É NATIVO deste ambiente Claude Code (instalado via skills.sh) — não é um skill do catálogo
+# Opensquad. Usado por Carla Critério apenas como referência complementar; NUNCA substitui o
+# método fixo desta squad (checklist DFV antes de RICE, definido em domain-framework.md).
+
+pipeline: "pipeline/pipeline.yaml"
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md

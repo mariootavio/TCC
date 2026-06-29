@@ -69,6 +69,12 @@ a seção exata que foi ajustada.
    introduzir conteúdo novo nessa seção.
 8. A exportação do documento final (DOCX/PDF) só ocorre após confirmação do
    checkpoint de aprovação final — nunca reflete rascunho não aprovado.
+9. O DOCX final é gerado via skill `docx` (docx-js), com formatação ABNT
+   explícita (capa, margens 3-3-2-2cm, numeração de página a partir da
+   introdução, sumário automático) — nunca uma conversão genérica sem esses
+   elementos. O PDF é sempre derivado do mesmo arquivo DOCX (via LibreOffice),
+   nunca de uma segunda conversão independente a partir do Markdown — isso
+   evita qualquer divergência de conteúdo entre os dois formatos entregues.
 
 ## Voice Guidance
 

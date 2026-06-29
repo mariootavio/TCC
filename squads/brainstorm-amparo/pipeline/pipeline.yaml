@@ -1,0 +1,24 @@
+squad: "brainstorm-amparo"
+name: "Pipeline — Brainstorm Amparo"
+
+steps:
+  - step: 1
+    file: "steps/step-01-checkpoint-foco-do-brainstorm.md"
+  - step: 2
+    file: "steps/step-02-pesquisa-e-conhecimento.md"
+  - step: 3
+    file: "steps/step-03-checkpoint-aprovar-brief.md"
+  - step: 4
+    file: "steps/step-04-gerar-ideias.md"
+  - step: 5
+    file: "steps/step-05-revisar-e-priorizar.md"
+  - step: 6
+    file: "steps/step-06-checkpoint-aprovacao-final.md"
+
+checkpoints:
+  - 1
+  - 3
+  - 6
+
+on_reject:
+  5: 4

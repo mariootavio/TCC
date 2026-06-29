@@ -1,0 +1,31 @@
+code: "marca-design-amparo"
+name: "Marca & Design System — Amparo"
+description: "Squad especializada em criar a identidade visual de marca (logo) e o design system completo do Amparo — pesquisa de cor e público dedicada, criação de identidade, criação de design system e revisão de marca — tudo documentado e publicado no Claude Design (claude.ai/design), sem uso de Figma. A squad fluxos-uxui-amparo lê e reconstrói este trabalho dentro do Figma."
+language: "Português (Brasil)"
+
+# NOTA IMPORTANTE sobre ferramentas Claude Design e o skill `brandkit` (não confundir com `skills:` abaixo):
+# A ferramenta `DesignSync` (sincroniza uma biblioteca de componentes HTML com um projeto
+# claude.ai/design) e o skill `brandkit` (geração de brand-kit/identidade visual) são NATIVOS
+# deste ambiente Claude Code — equivalentes a "file read/write" ou a uma skill instalada via
+# skills.sh — e NÃO são skills do catálogo Opensquad. Por isso a lista `skills:` abaixo NÃO
+# inclui nenhuma entrada de design/Claude Design/brandkit.
+#
+# Em vez disso, os agentes desta squad dependem dessas ferramentas/skills nativas (carregadas
+# pelo próprio agente em tempo de execução, fora do catálogo Opensquad):
+#   - DesignSync — usada por Flávia Fonte (step 4) e Tomás Tokens (step 6) para publicar a
+#     identidade visual e o design system como projeto no claude.ai/design.
+#   - brandkit (Skill tool) — usada por Flávia Fonte (step 4) como framework estratégico de
+#     concepção de logo/identidade.
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+
+pipeline: "pipeline/pipeline.yaml"

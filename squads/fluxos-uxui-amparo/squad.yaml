@@ -1,0 +1,35 @@
+code: "fluxos-uxui-amparo"
+name: "Fluxos & UI/Protótipo — Amparo"
+description: "Squad especializada em transformar o backlog priorizado do brainstorm e o design system aprovado pela squad marca-design-amparo (publicado no Claude Design) em arquitetura de informação, padrões de segurança/discrição, fluxos de UX, telas de alta fidelidade e protótipo navegável — tudo construído e revisado no Figma."
+language: "Português (Brasil)"
+
+# NOTA IMPORTANTE sobre ferramentas Figma e Claude Design (não confundir com `skills:` abaixo):
+# As ferramentas Figma MCP (use_figma, create_new_file, get_design_context, get_screenshot etc.)
+# e a ferramenta DesignSync (leitura do projeto Claude Design da squad marca-design-amparo) são
+# NATIVAS deste ambiente Claude Code — equivalentes a "file read/write" — e NÃO são skills do
+# catálogo Opensquad. Por isso a lista `skills:` abaixo NÃO inclui nenhuma entrada de design/Figma.
+#
+# Os agentes desta squad dependem das seguintes skills/ferramentas nativas (carregadas em tempo
+# de execução, fora do catálogo Opensquad):
+#   - DesignSync (métodos de leitura) — usada por Caio Componentes (step 2) para ler o projeto
+#     Claude Design publicado pela squad marca-design-amparo.
+#   - figma:figma-use — obrigatória antes de toda chamada a use_figma (Caio step 2; Telma step 7).
+#   - figma:figma-create-new-file — obrigatória antes de create_new_file (Caio, step 2).
+#   - figma:figma-generate-library — carregada junto com figma-use por Caio (step 2).
+#   - figma:figma-create-design-system-rules — carregada junto com figma-use por Caio (step 2).
+#   - figma:figma-generate-design — carregada junto com figma-use por Telma (step 7).
+#   - figma:figma-use-figjam — opcional para Joana (step 5) caso diagrame fluxos complexos.
+#   - wcag-audit-patterns (Skill tool) — usada por Wagner WCAG (step 9) na revisão.
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+
+pipeline: "pipeline/pipeline.yaml"

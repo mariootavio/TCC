@@ -1,0 +1,4 @@
+id,name,title,icon,execution,path
+sofia-sabedoria,Sofia Sabedoria,Pesquisadora e Especialista de Domínio,🦉,subagent,./agents/sofia-sabedoria.agent.md
+bruno-brainstorm,Bruno Brainstorm,Idealizador de Funcionalidades e Fluxos,💡,inline,./agents/bruno-brainstorm.agent.md
+carla-criterio,Carla Critério,Revisora de Ideias,✅,inline,./agents/carla-criterio.agent.md
