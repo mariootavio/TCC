@@ -1,0 +1,6 @@
+id,name,title,icon,execution,path
+camila-conteudo,Camila Conteúdo,Estrategista de UX/Conteúdo,🧭,inline,./agents/camila-conteudo.agent.md
+vitoria-visual,Vitória Visual,Designer de UI/Visual,🎨,inline,./agents/vitoria-visual.agent.md
+fabio-frontend,Fábio Front-end,Desenvolvedor Front-end,💻,inline,./agents/fabio-frontend.agent.md
+mariana-movimento,Mariana Movimento,Especialista em Animação,✨,inline,./agents/mariana-movimento.agent.md
+rafael-rigor,Rafael Rigor,Revisor de Qualidade,🔍,inline,./agents/rafael-rigor.agent.md

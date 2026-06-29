@@ -1,0 +1,34 @@
+squad: "landing-page-amparo"
+name: "Pipeline — Landing Page Amparo"
+
+steps:
+  - step: 1
+    file: "steps/step-01-checkpoint-coletar-referencias-inputs.md"
+  - step: 2
+    file: "steps/step-02-estruturar-conteudo.md"
+  - step: 3
+    file: "steps/step-03-checkpoint-aprovar-estrutura.md"
+  - step: 4
+    file: "steps/step-04-especificar-visual.md"
+  - step: 5
+    file: "steps/step-05-checkpoint-aprovar-especificacao-visual.md"
+  - step: 6
+    file: "steps/step-06-implementar-frontend.md"
+  - step: 7
+    file: "steps/step-07-implementar-animacoes.md"
+  - step: 8
+    file: "steps/step-08-checkpoint-aprovar-implementacao.md"
+  - step: 9
+    file: "steps/step-09-revisar-qualidade.md"
+  - step: 10
+    file: "steps/step-10-checkpoint-aprovacao-final.md"
+
+checkpoints:
+  - 1
+  - 3
+  - 5
+  - 8
+  - 10
+
+on_reject:
+  9: 6

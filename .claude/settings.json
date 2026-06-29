@@ -21,7 +21,23 @@
       "WebFetch(domain:www.migalhas.com.br)",
       "WebFetch(domain:www.mdpi.com)",
       "WebFetch(domain:pmc.ncbi.nlm.nih.gov)",
-      "Bash(grep -E '^v[0-9]+$')"
+      "Bash(grep -E '^v[0-9]+$')",
+      "Bash(npx -y skills add anthropics/skills -l)",
+      "Bash(npx -y skills add vercel-labs/agent-skills -l)",
+      "Bash(npx -y skills add leonxlnx/taste-skill -l)",
+      "Bash(npx -y skills add shadcn-ui/ui -l)",
+      "Bash(npx -y skills add anthropics/skills --skill frontend-design -y)",
+      "Bash(npx -y skills add vercel-labs/agent-skills --skill vercel-react-best-practices,vercel-composition-patterns,vercel-react-view-transitions,web-design-guidelines -y)",
+      "Bash(npx -y skills add leonxlnx/taste-skill --skill design-taste-frontend,high-end-visual-design,gpt-taste,full-output-enforcement -y)",
+      "Bash(npx -y skills add shadcn-ui/ui --skill shadcn -y)",
+      "Bash(npx -y skills add vercel-labs/agent-skills --skill vercel-react-best-practices -y)",
+      "Bash(npx -y skills add vercel-labs/agent-skills --skill vercel-composition-patterns -y)",
+      "Bash(npx -y skills add vercel-labs/agent-skills --skill vercel-react-view-transitions -y)",
+      "Bash(npx -y skills add vercel-labs/agent-skills --skill web-design-guidelines -y)",
+      "Bash(npx -y skills add leonxlnx/taste-skill --skill design-taste-frontend -y)",
+      "Bash(npx -y skills add leonxlnx/taste-skill --skill high-end-visual-design -y)",
+      "Bash(npx -y skills add leonxlnx/taste-skill --skill gpt-taste -y)",
+      "Bash(npx -y skills add leonxlnx/taste-skill --skill full-output-enforcement -y)"
     ],
     "additionalDirectories": [
       "/Users/mariootavio/Desktop/TCC/squads/tcc-documentacao/output"
