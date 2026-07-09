@@ -1,0 +1,17 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]: Aplicação 6.1 — Ícone do App
+  - heading "Ícone do App (iOS/Android) + Tela Inicial" [level=1] [ref=f8e3]
+  - generic [ref=f8e4]: "Objetivo: discrição visual como requisito de segurança — o ícone precisa ser bonito e reconhecível para a usuária, sem expor o propósito do app a quem vê a tela de relance. Variações claro/escuro seguem a regra de foto de perfil (60-70% do diâmetro útil ocupado pelo símbolo)."
+  - generic [ref=f8e5]:
+    - generic [ref=f8e6]:
+      - img "Símbolo Amparo" [ref=f8e8]
+      - generic [ref=f8e9]: Variação clara — símbolo final (recorte, sem wordmark) sobre paper-50
+    - generic [ref=f8e10]:
+      - img "Símbolo Amparo" [ref=f8e12]
+      - generic [ref=f8e13]: Variação escura — aproximação em branco sobre ink-900 (exportar versão dedicada para produção)
+  - generic [ref=f8e14]:
+    - text: "Anatomia: símbolo final (logo fornecida pelo usuário), recortado sem o wordmark \"Amparo\" — o ícone do app usa apenas o símbolo, ocupando ~65% do diâmetro útil."
+    - text: "Especificações técnicas: 1024×1024px, arquivo-fonte em `identity/assets/logo.png` e `.svg`; recomenda-se exportar um recorte dedicado só do símbolo (sem wordmark) em alta resolução para a loja de app, em vez de depender do recorte CSS usado nesta prévia. Cantos com máscara de superellipse (22.5%) aplicada pelo próprio sistema operacional."
+    - text: "Regras de uso: nunca usar a cor de acento lilas-500 como fundo do ícone (baixo contraste com o símbolo); nunca incluir o wordmark \"Amparo\" no ícone (só o símbolo); a variação escolhida (clara/escura) deve seguir o tema do sistema operacional do dispositivo."
+    - text: "Erros a evitar: ❌ símbolo ocupando menos de 60% do diâmetro (perde presença); ❌ adicionar sombra ou brilho ao símbolo; ❌ qualquer elemento textual \"SOS\"/\"ajuda\"/\"emergência\" visível no ícone."
+    - text: "Nota: a versão escura acima é uma aproximação via filtro CSS para fins de prévia — a versão de produção deve ser exportada diretamente do arquivo-fonte do logo em branco/paper-50 sobre ink-900."

@@ -27,7 +27,7 @@ Tomás Tokens      → Design System (tokens primitivos/semânticos,
 Marina Marca      → Revisão estruturada (conformidade trauma-informada,
                      WCAG AA recalculado, consistência de tokens, coerência
                      com o brief)
-        ↓ (on_reject volta para Tomás Tokens, Step 6)
+        ↓ (on_reject volta para Tomás Tokens, Step 7)
 Checkpoint de Aprovação Final do Usuário
         ↓
 Insumo da squad fluxos-uxui-amparo (reconstrução fiel no Figma)

@@ -33,7 +33,7 @@ trabalho de design do projeto Amparo.
      do app NÃO pode de forma alguma sugerir o tema do app)?
 3. Compilar a resposta do usuário em um documento estruturado e salvar em
    `squads/marca-design-amparo/output/brief-design.md` antes de prosseguir
-   para o Step 2.
+   para o Step 3.
 
 ## Output Format
 
@@ -94,5 +94,5 @@ Reject and redo if ANY of these are true:
 - [ ] O brief contém pelo menos 3 adjetivos de personalidade de marca.
 - [ ] Restrições de cor e nível de discrição exigido estão explicitamente
       registrados, mesmo que a resposta seja "nenhuma restrição".
-- [ ] O arquivo é salvo em `output/brief-design.md` antes de o Step 2
+- [ ] O arquivo é salvo em `output/brief-design.md` antes de o Step 3
       iniciar.

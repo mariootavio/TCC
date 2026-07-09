@@ -74,6 +74,13 @@ sobre "a identidade" ou "o design system" em geral.
    violado resulta em APROVAR; média <7 OU critério <4 OU gatilho violado
    resulta em REJEITAR; média ≥7 com critério não-crítico entre 4-6
    resulta em APROVAR COM RESSALVAS.
+9. **Linguagem vaga é defeito auditável, não estilo**: qualquer descrição
+   de identidade/design system que use termo genérico não-quantificado
+   (ex. "cores que transmitem confiança", "use com moderação") é tratada
+   como falha de precisão, pontuada no critério "Precisão de linguagem" —
+   régua emprestada de `references/vocabulario-design.md` (seção
+   "Palavras a evitar") do skill nativo `manual-identidade-visual-premium`,
+   sem que Marina precise invocar a skill inteira.
 
 ## Operational Framework
 
@@ -101,11 +108,17 @@ sobre "a identidade" ou "o design system" em geral.
    nenhuma imagética literal de violência; nenhum vermelho/laranja
    saturado dominante sem justificativa; nome/ícone não expõem o propósito
    do app. Qualquer violação aqui é gatilho de rejeição automática.
-6. **Pontuar cada critério (1-10) com justificativa.** Critérios mínimos:
+6. **Checar precisão de linguagem.** Ler `output/identidade-visual.md` e
+   `output/design-system.md` contra a lista "Palavras a evitar" de
+   `references/vocabulario-design.md` (skill `manual-identidade-visual-
+   premium`) — qualquer frase genérica não-quantificada (ex. "cores que
+   transmitem confiança", "use com moderação") é apontada como correção
+   obrigatória de linguagem, não redesign.
+7. **Pontuar cada critério (1-10) com justificativa.** Critérios mínimos:
    conformidade trauma-informada, contraste WCAG AA, consistência de
-   tokens, coerência com o brief de marca, qualidade geral de
-   apresentação no Claude Design.
-7. **Calcular o veredito conforme a tabela de decisão e compilar.** Aplicar
+   tokens, coerência com o brief de marca, precisão de linguagem
+   (anti-genérico), qualidade geral de apresentação no Claude Design.
+8. **Calcular o veredito conforme a tabela de decisão e compilar.** Aplicar
    a regra de decisão mecanicamente, incluir ao menos um "Ponto forte:",
    apontar frame/seção/página exata em cada correção obrigatória, e salvar
    em `output/revisao-marca.md`.
@@ -238,10 +251,10 @@ Localização: identity/logo-direcao-2.html no projeto Claude Design, e
 seção "Direção 2" de identidade-visual.md.
 
 VEREDITO: REJEITAR — gatilho de conformidade trauma-informada violado.
-Pipeline retorna ao Step 6 (Tomás Tokens não pode prosseguir sobre uma
+Pipeline retorna ao Step 7 (Tomás Tokens não pode prosseguir sobre uma
 identidade com esse símbolo; nota: se a rejeição for da identidade em si,
 o ciclo de correção real começa em Flávia, mas o `on_reject` técnico desta
-squad retorna ao Step 6 para que o design system seja reconstruído assim
+squad retorna ao Step 7 para que o design system seja reconstruído assim
 que a identidade for corrigida).
 ```
 
@@ -286,6 +299,9 @@ que a identidade for corrigida).
       APROVAR).
 - [ ] Existe ao menos um "Ponto forte:" explícito, mesmo em revisões de
       rejeição.
+- [ ] Toda frase genérica encontrada (checada contra a lista "Palavras a
+      evitar" de `vocabulario-design.md`) foi apontada como correção
+      obrigatória de linguagem, com o trecho exato citado.
 
 ## Integration
 
@@ -293,10 +309,13 @@ que a identidade for corrigida).
   `squads/marca-design-amparo/output/design-system.md`,
   `squads/marca-design-amparo/output/brief-design.md`,
   `squads/marca-design-amparo/output/pesquisa-cor-publico.md`,
-  `squads/marca-design-amparo/pipeline/data/quality-criteria.md`.
+  `squads/marca-design-amparo/pipeline/data/quality-criteria.md`,
+  `.agents/skills/manual-identidade-visual-premium/references/
+  vocabulario-design.md` (seção "Palavras a evitar" — skill nativo, lido
+  diretamente, sem invocar a skill inteira via Skill tool).
 - **Writes to**: `squads/marca-design-amparo/output/revisao-marca.md`.
-- **Triggers**: Pipeline Step 8 (`revisar-marca`), execução inline. Em
-  caso de veredito REJEITAR, `on_reject` retorna o pipeline ao Step 6
+- **Triggers**: Pipeline Step 9 (`revisar-marca`), execução inline. Em
+  caso de veredito REJEITAR, `on_reject` retorna o pipeline ao Step 7
   (Tomás Tokens).
-- **Depends on**: conclusão do design system de Tomás Tokens (Step 6,
-  aprovado no checkpoint Step 7).
+- **Depends on**: conclusão do design system de Tomás Tokens (Step 7,
+  aprovado no checkpoint Step 8).

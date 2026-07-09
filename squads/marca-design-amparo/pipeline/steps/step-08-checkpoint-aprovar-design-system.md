@@ -3,14 +3,14 @@ type: checkpoint
 inputFile: squads/marca-design-amparo/output/design-system.md
 ---
 
-# Step 7: Checkpoint — Aprovar Design System
+# Step 8: Checkpoint — Aprovar Design System
 
 ## Contexto
 
 Tomás Tokens construiu o design system completo (tokens primitivos e
-semânticos, componentes na hierarquia atômica) no Step 6, publicando tudo
+semânticos, componentes na hierarquia atômica) no Step 7, publicando tudo
 no mesmo projeto Claude Design já usado por Flávia. Este checkpoint
-bloqueia o Step 8 (revisão de Marina Marca) até que o usuário confirme que
+bloqueia o Step 9 (revisão de Marina Marca) até que o usuário confirme que
 o design system está alinhado ao que esperava — evitando que Marina revise
 algo que o próprio usuário já identificaria como incompleto ou incorreto.
 
@@ -27,8 +27,8 @@ algo que o próprio usuário já identificaria como incompleto ou incorreto.
    - Há algum ajuste pontual necessário antes de seguir para a revisão
      formal de Marina Marca?
 3. Se o usuário aprovar (com ou sem ajustes menores): registrar a decisão
-   e liberar o pipeline para o Step 8.
-4. Se o usuário rejeitar ou pedir ajustes substanciais: retornar ao Step 6
+   e liberar o pipeline para o Step 9.
+4. Se o usuário rejeitar ou pedir ajustes substanciais: retornar ao Step 7
    para Tomás incorporar o feedback antes de seguir.
 
 ## Output Format
@@ -53,7 +53,7 @@ Decisão do usuário: Aprovado, com uma observação — pedir que Tomás
 adicione também um componente de Avatar (átomo) para a futura tela de
 perfil, que a squad fluxos-uxui-amparo vai precisar.
 
-Pipeline segue para Step 8: Marina Marca revisa a identidade visual e o
+Pipeline segue para Step 9: Marina Marca revisa a identidade visual e o
 design system juntos, já considerando o componente Avatar adicionado.
 ```
 
@@ -62,7 +62,7 @@ design system juntos, já considerando o componente Avatar adicionado.
 Reject and redo if ANY of these are true:
 1. O conteúdo de `design-system.md` não foi mostrado ao usuário antes de
    solicitar a aprovação.
-2. O pipeline avança para o Step 8 sem uma decisão explícita de aprovação
+2. O pipeline avança para o Step 9 sem uma decisão explícita de aprovação
    registrada.
 
 ## Quality Criteria

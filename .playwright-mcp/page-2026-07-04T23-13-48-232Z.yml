@@ -1,0 +1,25 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]: Amparo — Design System
+  - heading "Moléculas" [level=1] [ref=f6e3]
+  - generic [ref=f6e4]:
+    - generic [ref=f6e5]: Molecules/Form-Field
+    - generic [ref=f6e6]:
+      - generic [ref=f6e7]: E-mail
+      - textbox "voce@exemplo.com" [ref=f6e8]
+      - generic [ref=f6e9]: Formato de e-mail inválido — usa color-action-emergency, nunca vermelho puro.
+  - generic [ref=f6e10]:
+    - generic [ref=f6e11]: Molecules/List-Item
+    - generic [ref=f6e12]:
+      - generic [ref=f6e13]:
+        - img [ref=f6e14]
+        - generic [ref=f6e16]: Registro de ocorrência — 12/03
+        - generic [ref=f6e17]: Seguro
+      - generic [ref=f6e18]:
+        - img [ref=f6e19]
+        - generic [ref=f6e21]: Contato de apoio — Ana
+        - generic [ref=f6e22]: Ativo
+  - generic [ref=f6e23]:
+    - generic [ref=f6e24]: Molecules/Alert-Banner
+    - generic [ref=f6e25]: Sua rede de apoio foi notificada silenciosamente.
+    - generic [ref=f6e26]: Toque para acionar ajuda imediata.
+  - paragraph [ref=f6e27]: "Nenhuma molécula introduz cor nova: erro e alerta de emergência usam color-action-emergency (rosa-700), nunca vermelho — mantém a régua trauma-informada mesmo em estados de erro/urgência."

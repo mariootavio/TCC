@@ -49,7 +49,7 @@ e reportagens de Agência Brasil/MPRS sobre o mesmo Anuário). Fonte: FBSP,
 2026 (Retrato dos Feminicídios no Brasil).
 
 Este perfil é o ponto de partida demográfico OBRIGATÓRIO para a pesquisa de
-cor e público de Renata Referência (Step 2) — nunca tratar o público do
+cor e público de Renata Referência (Step 3) — nunca tratar o público do
 Amparo como "mulheres" de forma genérica e demograficamente neutra. A squad
 tcc-documentacao já identificou que boa parte da literatura internacional
 sobre safety apps usa amostras predominantemente brancas, sub-representando

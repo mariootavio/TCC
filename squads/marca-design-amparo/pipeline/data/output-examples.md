@@ -56,8 +56,8 @@ percepção).
   de cor com amostra de mulheres negras brasileiras em contexto de trauma.
 
 ## Próximo Passo
-Aguardando checkpoint de referências visuais do usuário (Step 3) antes de
-Flávia iniciar a criação da identidade visual (Step 4).
+Aguardando checkpoint de referências visuais do usuário (Step 4) antes de
+Flávia iniciar a criação da identidade visual (Step 5).
 ```
 
 ### Exemplo 2: Achado com confiança baixa e necessidade de ressalva explícita
@@ -170,7 +170,7 @@ Aguardando aprovação no checkpoint antes do design system completo.
 ```markdown
 # Design System — Amparo
 
-Base: Identidade Visual "Porto Seguro" (aprovada em checkpoint Step 5)
+Base: Identidade Visual "Porto Seguro" (aprovada em checkpoint Step 6)
 Projeto Claude Design: "Amparo — Marca & Design System" (localizado via
 `list_projects`, já existente — criado por Flávia)
 Metodologia: Atomic Design (Brad Frost) + tokens primitivos/semânticos
@@ -203,7 +203,7 @@ Metodologia: Atomic Design (Brad Frost) + tokens primitivos/semânticos
 | Branco sobre color-action-emergency | 3.9:1 | 4.5:1 (texto normal) | REPROVADO para texto normal — usar apenas com texto grande/ícone (3:1) ou escurecer o token para terracotta-600 |
 
 ## Próximo Passo
-Aguardando aprovação no checkpoint Step 7 antes da revisão de Marina Marca.
+Aguardando aprovação no checkpoint Step 8 antes da revisão de Marina Marca.
 ```
 
 ### Exemplo 2: Hierarquia atômica de componentes publicada no Claude Design

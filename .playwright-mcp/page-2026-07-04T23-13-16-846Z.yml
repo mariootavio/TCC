@@ -1,0 +1,36 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]: Amparo — Identidade Visual
+  - heading "Comparação das 3 Direções" [level=1] [ref=f2e3]
+  - paragraph [ref=f2e4]: Direção 2 aprovada no checkpoint (Step 6), com ajuste de paleta
+  - table [ref=f2e5]:
+    - rowgroup [ref=f2e6]:
+      - row "Direção Paleta Contraste (melhor par) Distintividade" [ref=f2e7]:
+        - columnheader "Direção" [ref=f2e8]
+        - columnheader "Paleta" [ref=f2e9]
+        - columnheader "Contraste (melhor par)" [ref=f2e10]
+        - columnheader "Distintividade" [ref=f2e11]
+      - row "1 · Porto Seguro 12.3:1 texto/fundo neutro Alta — monograma abstrato próprio, sem precedente direto no repertório de concorrentes." [ref=f2e12]:
+        - cell "1 · Porto Seguro" [ref=f2e13]:
+          - generic [ref=f2e14]: 1 · Porto Seguro
+        - cell [ref=f2e15]
+        - cell "12.3:1 texto/fundo neutro" [ref=f2e22]
+        - cell "Alta — monograma abstrato próprio, sem precedente direto no repertório de concorrentes." [ref=f2e23]
+      - row "2 · Acolhimento Aprovada (Step 6, paleta ajustada) 11.2:1 texto/fundo neutro 6.2:1 texto escuro/primária pastel 3.4:1 texto/acento lilás (só texto grande) Alta — paleta rosa pastel + tons frios, puxada para o pedido do usuário (feminino, wellness); monograma \"A\" com arco de abrigo (ajustado no checkpoint Step 10), não copiado das referências." [ref=f2e24]:
+        - cell "2 · Acolhimento Aprovada (Step 6, paleta ajustada)" [ref=f2e25]:
+          - generic [ref=f2e26]: 2 · Acolhimento
+          - generic [ref=f2e27]: Aprovada (Step 6, paleta ajustada)
+        - cell [ref=f2e28]
+        - cell "11.2:1 texto/fundo neutro 6.2:1 texto escuro/primária pastel 3.4:1 texto/acento lilás (só texto grande)" [ref=f2e35]:
+          - text: 11.2:1 texto/fundo neutro
+          - text: 6.2:1 texto escuro/primária pastel
+          - text: 3.4:1 texto/acento lilás (só texto grande)
+        - cell "Alta — paleta rosa pastel + tons frios, puxada para o pedido do usuário (feminino, wellness); monograma \"A\" com arco de abrigo (ajustado no checkpoint Step 10), não copiado das referências." [ref=f2e36]
+      - row "3 · Constância 12.6:1 texto/fundo neutro 7.5:1 branco/primária Média — geometria sólida, mas mais próxima de identidades corporativas de bem-estar/fintech." [ref=f2e37]:
+        - cell "3 · Constância" [ref=f2e38]:
+          - generic [ref=f2e39]: 3 · Constância
+        - cell [ref=f2e40]
+        - cell "12.6:1 texto/fundo neutro 7.5:1 branco/primária" [ref=f2e47]:
+          - text: 12.6:1 texto/fundo neutro
+          - text: 7.5:1 branco/primária
+        - cell "Média — geometria sólida, mas mais próxima de identidades corporativas de bem-estar/fintech." [ref=f2e48]
+  - paragraph [ref=f2e49]: "Tipografia única para as três direções: Quicksand (geométrica, arredondada, sem serifa — ajuste solicitado no checkpoint Step 10, combinando com o traço arredondado do wordmark da logo final) — escolha estável independente da direção de cor/símbolo aprovada, para não recriar trabalho de hierarquia tipográfica no design system (Tomás Tokens, Step 7)."

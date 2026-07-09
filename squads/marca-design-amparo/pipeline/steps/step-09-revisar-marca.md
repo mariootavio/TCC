@@ -5,7 +5,7 @@ inputFile: squads/marca-design-amparo/output/design-system.md
 outputFile: squads/marca-design-amparo/output/revisao-marca.md
 ---
 
-# Step 8: Revisar Marca
+# Step 9: Revisar Marca
 
 ## Context Loading
 
@@ -13,13 +13,18 @@ Load these files before executing:
 - `squads/marca-design-amparo/output/identidade-visual.md` — identidade
   visual aprovada (Flávia)
 - `squads/marca-design-amparo/output/design-system.md` — design system
-  aprovado no checkpoint Step 7 (Tomás)
+  aprovado no checkpoint Step 8 (Tomás)
 - `squads/marca-design-amparo/output/brief-design.md` — brief de marca
   original
 - `squads/marca-design-amparo/output/pesquisa-cor-publico.md` — pesquisa
   calibrada de Renata, usada para verificar coerência das escolhas
 - `squads/marca-design-amparo/pipeline/data/quality-criteria.md` —
   rubrica completa de revisão
+- `.agents/skills/manual-identidade-visual-premium/references/
+  vocabulario-design.md` — seção "Palavras a evitar", usada como régua
+  extra de precisão de linguagem (lida diretamente, sem invocar a skill
+  inteira via Skill tool — essa skill é usada de fato só no Step 11 por
+  Helena Manual)
 
 Nota: este step apenas LÊ o projeto Claude Design e os documentos de saída
 — não publica nada novo via `DesignSync`. Por isso não há uma mutação
@@ -46,11 +51,18 @@ checkpoints anteriores (Steps 1, 3, 5, 7). Este é um step de avaliação.
    saturado dominante sem justificativa; nome/ícone não expõem o
    propósito do app) — qualquer violação aqui é gatilho de rejeição
    automática.
-5. Pontuar cada critério (1-10) com justificativa, calcular o veredito
-   conforme a tabela de decisão (média ≥7 sem critério <4 e sem gatilho de
-   discrição/trauma-informado violado = APROVAR), incluir ao menos um
-   "Ponto forte:", apontar frame/seção/página exata em cada correção
-   obrigatória, e salvar em `output/revisao-marca.md`.
+5. Checar precisão de linguagem: ler `identidade-visual.md` e
+   `design-system.md` contra a seção "Palavras a evitar" de
+   `vocabulario-design.md` (skill `manual-identidade-visual-premium`) —
+   qualquer frase genérica não-quantificada (ex. "cores que transmitem
+   confiança", "use com moderação") é correção obrigatória de linguagem,
+   citando o trecho exato.
+6. Pontuar cada critério (1-10) com justificativa — incluindo o critério
+   "Precisão de linguagem" —, calcular o veredito conforme a tabela de
+   decisão (média ≥7 sem critério <4 e sem gatilho de discrição/
+   trauma-informado violado = APROVAR), incluir ao menos um "Ponto
+   forte:", apontar frame/seção/página exata em cada correção obrigatória,
+   e salvar em `output/revisao-marca.md`.
 
 ## Output Format
 
@@ -93,8 +105,9 @@ Design System".
 | Contraste WCAG AA (recalculado) | 5/10 | Branco sobre color-action-emergency = 3.9:1, abaixo de 4.5:1 |
 | Consistência de tokens | 8/10 | 1 componente usa opacidade direta em vez de token nomeado |
 | Coerência com o brief de marca | 9/10 | Os 3 adjetivos do brief estão claramente refletidos |
+| Precisão de linguagem (anti-genérico) | 7/10 | 1 ocorrência de "cores que transmitem confiança" em identidade-visual.md, sem quantificação |
 | Qualidade de apresentação no Claude Design | 8/10 | Falta 1 preview HTML de componente |
-MÉDIA GERAL: 7.8/10
+MÉDIA GERAL: 7.7/10
 
 Nenhum gatilho de rejeição automática violado.
 
@@ -107,6 +120,12 @@ Correção obrigatória: ajustar color-action-emergency para terracotta-600
 — no estado atual reprova WCAG AA para texto normal (3.9:1 contra mínimo
 de 4.5:1). Localização: design-system.md, seção "Tokens Semânticos", e
 design-system/tokens-cor.html no Claude Design.
+
+Correção obrigatória: reescrever "cores que transmitem confiança" em
+identidade-visual.md, seção "Justificativa" da Direção 1, substituindo
+por uma frase que nomeie a função específica das cores (ex.: "tons frios
+cuja função é reduzir alarme visual, calibrados pela pesquisa de Renata")
+— frase genérica listada em `vocabulario-design.md` "Palavras a evitar".
 
 Sugestão (não-bloqueante): publicar o preview HTML do componente
 Molecules/Alert-Banner.
@@ -132,3 +151,6 @@ Reject and redo if ANY of these are true:
       ou página do projeto Claude Design) e a correção específica.
 - [ ] O veredito é consistente com as regras de decisão documentadas.
 - [ ] Há ao menos um "Ponto forte:" registrado, mesmo em rejeição.
+- [ ] Toda frase genérica encontrada foi checada contra
+      `vocabulario-design.md` "Palavras a evitar" e apontada como
+      correção obrigatória, com o trecho exato citado.

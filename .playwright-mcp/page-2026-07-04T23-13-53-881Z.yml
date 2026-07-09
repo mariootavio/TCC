@@ -1,0 +1,27 @@
+- generic [active] [ref=f7e1]:
+  - generic [ref=f7e2]: Amparo — Design System
+  - heading "Organismos" [level=1] [ref=f7e3]
+  - generic [ref=f7e4]:
+    - generic [ref=f7e5]: Organisms/App-Header + Organisms/Bottom-Nav (mobile)
+    - generic [ref=f7e6]:
+      - generic [ref=f7e7]:
+        - generic [ref=f7e8]: Amparo
+        - img [ref=f7e9]
+      - generic [ref=f7e12]:
+        - generic [ref=f7e13]: Rede de apoio
+        - generic [ref=f7e14]: 3 contatos ativos monitorando silenciosamente.
+        - button "Ver detalhes" [ref=f7e15]
+      - generic [ref=f7e16]:
+        - generic [ref=f7e17]:
+          - img [ref=f7e18]
+          - text: Início
+        - generic [ref=f7e20]:
+          - img [ref=f7e21]
+          - text: Apoio
+        - generic [ref=f7e23]:
+          - img [ref=f7e24]
+          - text: Registros
+        - generic [ref=f7e26]:
+          - img [ref=f7e27]
+          - text: Perfil
+  - paragraph [ref=f7e29]: App-Header usa color-bg-default + borda color-surface-cool. Bottom-Nav usa color-action-emergency (rosa-700) só no item ativo — nunca a cor primária pastel sozinha, que perde contraste em ícones finos. Card combina Tag + texto + Button, sempre sobre color-bg-default.

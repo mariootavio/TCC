@@ -1,105 +1,168 @@
 BRIEF DE CONHECIMENTO — AMPARO
-Foco desta rodada: Interface disfarçada/camuflada ("modo app fantasma") — a usuária escolhe entre disfarces de interface (ex.: bloco de notas, calculadora, outro app comum) para esconder a identidade real do Amparo; uma sequência de palavras-chave, dígitos ou gesto destrava a interface real. Recorte de benchmarking: Ambos (apps brasileiros e internacionais), incluindo apps de segurança/denúncia de referência e o padrão "stealth/disguise/vault apps".
+Foco desta rodada: Tipos de disfarce do aplicativo — expansão para além das ideias já validadas
 Preparado em: 2026-06-29
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 REAFIRMAÇÃO DO RECORTE RECEBIDO NO CHECKPOINT
 
-O foco desta rodada NÃO é decidir "se" o Amparo deve ter um modo disfarçado — essa decisão já está tomada como conhecimento interno consolidado (RF-CORE-02, ver seção abaixo). O foco é fornecer a Bruno Brainstorm uma base de conhecimento para gerar ideias de IMPLEMENTAÇÃO e EXTENSÃO desse requisito já existente: quais disfarces oferecer, qual mecanismo de gatilho/destrave usar (PIN, sequência numérica, palavra-chave, gesto), quais riscos de segurança a própria camuflagem introduz, e como fazer hardening contra detecção forense/forense doméstica (revisão manual do telefone pelo agressor) e contra vestígios técnicos (notificações, multitarefa, loja de apps). O recorte de benchmarking aprovado é "Ambos" — apps brasileiros e internacionais, tanto de segurança/denúncia quanto do padrão geral de vault/disguise apps.
+O FOCO desta rodada é a expansão da biblioteca de tipos de disfarce do RF-CORE-02 para além do conjunto já gerado e validado nas rodadas anteriores. O recorte de benchmarking aprovado no checkpoint é INTERNO: pular pesquisa externa nova e reutilizar apenas o que a squad tcc-documentacao e as rodadas anteriores desta squad já levantaram.
+
+O que ESTÁ dentro do escopo de ideação:
+- Novos tipos de disfarce (aliases visuais) ainda não gerados por Bruno nas rodadas anteriores (ver lista de ideias já validadas abaixo — Bruno deve evitá-las)
+- Estratégias de implementação de UX/fluxo para hardening de notificações push (Gap 9) — não apenas diagnóstico do problema, mas ideias concretas de como resolver
+- Mecanismos extras de "camuflagem de segundo nível" contra reconhecimento do padrão pelo agressor (Gap 10) — além do que já foi gerado
+- Variantes de gatilho/destrave ainda não exploradas nas rodadas anteriores (Gap 11)
+
+O que NÃO ESTÁ dentro do escopo desta rodada:
+- Propor "criar" um modo disfarçado (RF-CORE-02 já está decidido como requisito central)
+- Repetir qualquer um dos 11 tipos de disfarce já validados na rodada informal de 29/06 (listados abaixo em IDEIAS JÁ VALIDADAS)
+- Repetir os tipos originais do RF-CORE-02 (calculadora, diário/bloco de notas, app de previsão do tempo)
+- Repetir os 12 mecanismos de implementação/hardening aprovados na Rodada 2 (28/06) — esses já estão no backlog validado
+- Trabalhar os Gaps 1-8 herdados de rodadas anteriores (fora do recorte de disfarce/stealth)
+- Realizar pesquisa web ou benchmarking externo novo
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 CONHECIMENTO INTERNO DO PROJETO
 
-Funcionalidades já existentes/planejadas — guarda-chuva de alto nível (origem: company.md — Perfil do Projeto Amparo):
-1. Proteção imediata (emergência) — núcleo da proposta de valor.
-2. Documentação segura — registro de evidências.
-3. Rede de apoio pessoal — contatos de confiança.
-4. Acesso a profissionais — encaminhamento a polícia/ONGs/assistência social.
-Estas quatro frentes são citadas no company.md como pilares de solução de alto nível ("plataforma mobile completa que combina..."). O detalhamento de fluxo, telas, gatilhos e regras de negócio dessas frentes existe na forma dos requisitos centrais (RF-CORE) abaixo.
+Funcionalidades já existentes/planejadas — pilares de alto nível (origem: company.md):
+1. Proteção imediata (emergência)
+2. Documentação segura
+3. Rede de apoio pessoal
+4. Acesso a profissionais
 
-Requisitos centrais já definidos pelo product owner (origem: product owner — requisitos centrais (RF-CORE); estes NÃO são ideias de brainstorm — são decisões de produto já tomadas, e devem ser tratadas como conhecimento interno consolidado, não propostas como novidade):
+Requisitos centrais já definidos — NÃO são ideias de brainstorm, são decisões de produto tomadas:
 
-| ID | Nome | Descrição | Frente do company.md em que se encaixa |
+| ID | Nome | Descrição resumida | Frente |
 |---|---|---|---|
-| RF-CORE-01 | Botão do pânico / SOS | Acionamento rápido de emergência com envio de localização em tempo real para guardiões e/ou autoridades. Deve funcionar com tela bloqueada. | Proteção imediata (emergência) + Rede de apoio pessoal (acionamento alcança guardiões) |
-| RF-CORE-02 | Modo disfarçado | O app se camufla com ícone e tela inicial falsos escolhidos pela usuária (aliases sugeridos: calculadora, diário, app de tempo). Troca de aparência sem desinstalar. | Camada transversal de segurança/discrição — atravessa todas as 4 frentes |
-| RF-CORE-03 | Chat com profissional de apoio | Canal sigiloso com psicólogos, assistentes sociais ou voluntários capacitados. Opção de apagar histórico rapidamente com um toque. | Acesso a profissionais |
-| RF-CORE-04 | Registro de ocorrências com evidências | Documentação de episódios de violência com texto, foto, áudio e vídeo. Arquivos criptografados, com metadados (data, hora, localização opcional) para uso como prova legal. | Documentação segura |
-| RF-CORE-05 | Rede de guardiões | Cadastro de pessoas de confiança que recebem alertas em situações de risco, confirmam recebimento e podem acionar ajuda. Comunicação bidirecional segura. | Rede de apoio pessoal (+ reforça Proteção imediata) |
+| RF-CORE-01 | Botão do pânico / SOS | Acionamento rápido de emergência com localização em tempo real; funciona com tela bloqueada | Proteção imediata + Rede de apoio |
+| RF-CORE-02 | Modo disfarçado | App se camufla com ícone e tela inicial falsos escolhidos pela usuária; troca de aparência sem desinstalar | Camada transversal de segurança/discrição |
+| RF-CORE-03 | Chat com profissional de apoio | Canal sigiloso com psicólogos, assistentes sociais ou voluntários; apagar histórico com um toque | Acesso a profissionais |
+| RF-CORE-04 | Registro de ocorrências com evidências | Documentação com texto, foto, áudio e vídeo; arquivos criptografados com metadados para uso como prova legal | Documentação segura |
+| RF-CORE-05 | Rede de guardiões | Cadastro de pessoas de confiança com comunicação bidirecional segura e alertas em situações de risco | Rede de apoio pessoal |
 
-ATENÇÃO ESPECIAL — RF-CORE-02 é a base desta rodada, não uma proposta nova: "O app se camufla com ícone e tela inicial falsos escolhidos pela usuária (aliases sugeridos: calculadora, diário, app de tempo). Troca de aparência sem desinstalar." Esta é uma decisão de produto já tomada. Bruno NÃO deve propor "criar um modo disfarçado" como ideia — o espaço de ideação exclusivo desta rodada é:
-(a) Quais disfarces concretos oferecer (tipos de alias, biblioteca de ícones/telas falsas);
-(b) Qual mecanismo de gatilho/destrave usar (PIN numérico, sequência de toques, palavra-chave digitada em campo falso, gesto, combinação biométrica oculta);
-(c) Quais riscos de segurança a própria camuflagem introduz e como mitigá-los (hardening);
-(d) Hardening contra detecção forense/forense doméstica (revisão manual do telefone pelo agressor) e contra vestígios técnicos (notificações, multitarefa/lista de apps recentes, nome real na loja de apps).
+ATENÇÃO ESPECIAL — RF-CORE-02: "O app se camufla com ícone e tela inicial falsos escolhidos pela usuária (aliases sugeridos: calculadora, diário, app de tempo). Troca de aparência sem desinstalar." Esta é uma decisão de produto já tomada. O espaço de ideação desta rodada é exclusivamente sobre (a) quais novos tipos de disfarce concretos oferecer além dos já validados, (b) estratégias de UX de hardening de notificações, (c) mecanismos extras de camuflagem de segundo nível e (d) variantes de gatilho/destrave ainda não exploradas.
 
-Cruzamento RF-CORE × gaps de mercado (ver seção "GAPS DE MERCADO" para o detalhe de cada gap) — este cruzamento delimita o espaço de ideação de Bruno: ele NÃO deve propor estas funcionalidades como novidade, apenas complementos a elas.
-- RF-CORE-01 (botão do pânico) endereça PARCIALMENTE o Gap 1 (dependência de acionamento manual): cobre o acionamento manual com boa usabilidade (tela bloqueada), mas o Gap 1 permanece ABERTO na forma mais crítica — ausência de alerta automático/proativo.
-- RF-CORE-02 (modo disfarçado) não corresponde a nenhum gap de mercado dos 8 listados originalmente (nenhum dos apps de violência doméstica revisados pela tcc-documentacao — PenhaS, SP Mulher, Juntas, Circle of 6, bSafe, myPlan — foi descrito com camuflagem de ícone/tela), mas é diferencial forte frente ao benchmarking de apps de violência doméstica. NOVO NESTA RODADA: a pesquisa externa desta rodada (ver seção CONHECIMENTO EXTERNO) mostra que o disfarce, embora seja diferencial frente aos apps de violência doméstica, é uma técnica já amplamente conhecida em outra categoria de produto — vault/stealth apps — e essa categoria tem um corpo robusto de riscos e limitações documentados que o Amparo herda ao adotar a mesma estratégia. Esses riscos (e não a existência do disfarce em si) são o "gap" que esta rodada de brainstorm deve mitigar via implementação cuidadosa.
-- RF-CORE-03 (chat com profissional) endereça parcialmente a ausência de canal sigiloso contínuo de apoio humano. Não cobre nenhum dos 8 gaps diretamente.
-- RF-CORE-04 (registro de ocorrências com evidências, criptografado) endereça DIRETAMENTE o Gap 2 (vulnerabilidade de armazenamento de provas), desde que a criptografia + metadados venham acompanhados de backup remoto — caso contrário o Gap 2 permanece parcialmente aberto.
-- RF-CORE-05 (rede de guardiões) endereça PARCIALMENTE o Gap 7 (fragmentação de rede de apoio pessoal/institucional): cobre o lado pessoal, mas não o institucional nem a extensão a dependentes (Lei 15.384/2026).
+Tom de voz (origem: company.md): Acolhedor, empático, seguro e claro — sem jargão técnico. Relevante para esta rodada: nomes de disfarces e fluxos de destrave devem ser triviais/cotidianos para a usuária sob estresse. Evitar PINs longos ou gestos complexos que ela possa esquecer em situação de pânico. Telas de disfarce devem ser absolutamente banais, nunca alarmistas.
 
-Gaps que nenhuma RF-CORE cobre, mesmo parcialmente (fora do recorte desta rodada, mas mantidos para rastreabilidade entre rodadas): Gap 3 (offline/IA), Gap 4 (evidência de eficácia), Gap 5 (sub-representação racial), Gap 6 (baixa adoção/divulgação), Gap 8 (decision aid validado no Brasil). Nenhum desses gaps é o foco desta rodada — o foco é exclusivamente a implementação/extensão de RF-CORE-02 e os novos gaps específicos de disfarce/stealth levantados abaixo (Gaps 9-11).
+Público-alvo (origem: company.md): mulheres em situação de risco (público crítico desta rodada); órgãos e autoridades; banca acadêmica (avaliará o rigor técnico do hardening proposto — relevante para o TCC).
 
-Fluxos de UX e identidade visual: verificação direta confirma que `squads/fluxos-uxui-amparo/output/` e `squads/marca-design-amparo/output/` contêm apenas arquivo `.gitkeep` cada — nenhuma das duas squads foi executada ainda. Não há wireframes, telas, jornadas de usuária ou sistema de design já desenhados que restrinjam ou orientem o brainstorm desta rodada. Qualquer ideia sobre biblioteca de ícones/telas falsas (disfarces) desta rodada será a primeira referência visual concreta do projeto nessa frente — Bruno tem liberdade total de proposta, sem conflito com design pré-existente.
+IDEIAS JÁ VALIDADAS NAS RODADAS ANTERIORES — Bruno NÃO deve repetir nenhum destes itens:
 
-Tom de voz (origem: company.md): Acolhedor, empático, seguro e claro — linguagem sensível ao tema, sem jargão técnico para o público final. Relevante para esta rodada: nomes de disfarces e fluxos de destrave devem ser triviais/cotidianos para a usuária sob estresse (ex.: evitar PINs longos ou gestos complexos que ela possa esquecer em situação de pânico), sem nunca usar linguagem alarmista nas telas de disfarce (que por definição devem parecer absolutamente banais).
+Tipos de disfarce originais do RF-CORE-02 (já citados antes de qualquer rodada de brainstorm):
+- Calculadora (com destrave por código numérico disfarçado de operação matemática — ideia 2 da Rodada 2)
+- Diário / Bloco de notas (com destrave por palavra-chave — ideia 3 da Rodada 2)
+- App de previsão do tempo / Clima (com destrave por cidade-código — ideia 6 da Rodada Informal)
 
-Público-alvo (origem: company.md): mulheres em situação de risco; órgãos e autoridades (polícia, ONGs, assistência social); banca e avaliadores acadêmicos. Para esta rodada, o público mais crítico é a usuária final, mas a banca acadêmica também avaliará o rigor técnico do hardening de segurança proposto — relevante para justificar escolhas no TCC.
+11 tipos de disfarce gerados e validados na Rodada Informal (29/06, extensão direta da Rodada 2):
+1. Conversor de moedas/unidades — destrave: converter valor numérico específico (ex.: "1207")
+2. Lista de tarefas (to-do) — destrave: criar tarefa com título-chave específico
+3. Lista de compras/mercado — destrave: adicionar item com nome-chave específico
+4. Despertador/alarme — destrave: configurar alarme para horário específico (ex.: 03:33) [condicional: tentativa incorreta nunca agenda alarme real]
+5. Rádio/sintonizador de estações — destrave: digitar "frequência" específica (ex.: 98.7)
+6. Calendário/Agenda — destrave: criar evento com título-chave em data específica
+7. Contatos (agenda telefônica) — destrave: criar contato com nome-chave (ex.: "Manutenção Ar Condicionado")
+8. Tradutor — destrave: traduzir frase/palavra-chave específica [condicional: frase-código não persiste no histórico]
+9. Mapas/Navegação — destrave: buscar endereço com nome de local específico [condicional: histórico de busca deve ser limpo]
+10. Cronômetro/Timer — destrave: configurar duração específica (ex.: 7 min 43 s) [condicional: tentativa incorreta nunca agenda timer real]
+11. (Clima/Previsão do tempo detalhado) — já listado acima como original do RF-CORE-02
 
-Dados-chave já levantados pela squad tcc-documentacao (conhecimento interno reaproveitado — mesma fonte/confiança, sem repesquisa):
-1. Em 2024, o Brasil registrou 1.492 feminicídios (maior número da série histórica desde 2015). Confiança: ALTA. Fonte: FBSP/19º Anuário Brasileiro de Segurança Pública.
-2. Perfil das vítimas (2024): 63,6%-64% mulheres negras; 70,5%-71% entre 18-44 anos; 8 em cada 10 mortas por companheiro/ex; 64,3% dos crimes dentro da própria residência. Confiança: ALTA. Fonte: FBSP. Relevante para esta rodada: 64,3% dos crimes ocorrem dentro da própria residência — ambiente onde o agressor tem acesso físico irrestrito e prolongado ao celular da vítima, o que torna o vetor de "revisão manual/forense doméstica do telefone" (ver Gap 9 abaixo) especialmente crítico para o caso de uso real do Amparo, não apenas um risco teórico de literatura internacional.
-3. Subnotificação é fenômeno confirmado (Atlas da Violência), mas sem percentual nacional oficial — GAP DE PESQUISA. Confiança ALTA quanto à existência do fenômeno, BAIXA quanto a qualquer número.
-4. Ligue 180 (2024): 750.687 atendimentos, 132.084 denúncias (+15,2%). Violência psicológica é o tipo mais notificado (101.007 casos); 46,4% relataram agressão diária; agressor mais comum é companheiro atual/ex. Confiança: ALTA. Fonte: Ligue 180/dados oficiais.
-5. Medidas Protetivas de Urgência (MPUs): 555.001 concedidas em 2024 (+7%); 101.656 descumpridas pelos agressores (+11%). Confiança: MÉDIA.
-6. Lei 15.125/2025 permite cumular MPU com monitoração eletrônica do agressor + "botão do pânico" em app que alerta vítima e polícia em caso de aproximação indevida — BASE LEGAL DIRETA para funcionalidade de botão de emergência/alerta de proximidade no Amparo. Confiança: ALTA (lei vigente).
-7. Lei 15.384/2026 tipifica "violência vicária" (contra filhos/familiares da vítima) e amplia o conceito de rede de apoio para incluir dependentes — relevante para o desenho de rede de apoio do Amparo. Confiança: ALTA (lei vigente).
-8. Lei 14.022/2020 cria precedente legal para canais digitais/remotos de solicitação de MPU — sustenta a viabilidade jurídica de fluxos 100% via app. Confiança: ALTA (lei vigente).
-9. PL 1242/2024 propõe app único estadual para denúncias com acessibilidade (texto/voz/Libras) e encaminhamento automático às autoridades — referência direta de funcionalidade a considerar no brainstorm. Confiança: MÉDIA (projeto de lei, não vigente).
+Mecanismos de implementação/hardening validados na Rodada 2 (28/06) — também fora do escopo de ideação desta rodada (já estão no backlog):
+- Biblioteca de disfarces totalmente funcionais (não apenas fachada visual)
+- Destrave por código numérico disfarçado de operação matemática
+- Destrave por palavra-chave em nota ou campo de busca
+- Gesto de destrave como alternativa sem digitação
+- Falha silenciosa no destrave (sem mensagem de erro visível)
+- Notificações sempre disfarçadas, nunca com conteúdo real
+- Limpeza do snapshot na lista de apps recentes/multitarefa
+- Criptografia real dos dados, independente do disfarce visual
+- Nome e ficha da loja de apps desvinculados da marca "Amparo" [condicional: política Apple]
+- Orientação no onboarding para reduzir risco de reconhecimento do padrão
+- Sugestão de disfarces alternativos por escolha manual, sem leitura de apps instalados (reformulada)
+- Saída de emergência generalizada para qualquer disfarce escolhido
+
+Descartados explicitamente (Won't Have — Bruno não deve retomar):
+- Navegador/browser com URL falsa como gatilho (histórico difícil de limpar)
+- App de álbum/galeria protegida por senha (padrão reconhecível por agressor familiarizado com vault apps)
+- Gravador de áudio/notas de voz (vestígio de arquivos de áudio reais)
+- Upload livre de ícone personalizado pela usuária (iOS não suporta ícone arbitrário em tempo real)
+- Leitura automática da lista de apps instalados para personalização (vestígio técnico que denuncia o disfarce)
+
+Dados-chave tcc-documentacao reutilizados (mesma fonte/confiança — sem repesquisa):
+1. Brasil (2024): 1.492 feminicídios — maior número da série histórica desde 2015. Confiança: ALTA. Fonte: FBSP/19º Anuário Brasileiro de Segurança Pública.
+2. Perfil das vítimas (2024): 63,6%-64% mulheres negras; 70,5%-71% entre 18-44 anos; 8 em 10 mortas por companheiro/ex; 64,3% dos crimes dentro da própria residência. Confiança: ALTA. Fonte: FBSP. Nota de relevância direta para RF-CORE-02: 64,3% dos crimes ocorrem dentro do domicílio — o agressor tem acesso físico prolongado ao celular da vítima, tornando a "revisão manual/forense doméstica" o vetor de risco mais crítico, não apenas um cenário teórico.
+3. Subnotificação: fenômeno confirmado (Atlas da Violência), sem percentual nacional oficial. Confiança: ALTA para existência, BAIXA para qualquer número.
+4. Ligue 180 (2024): 750.687 atendimentos, 132.084 denúncias (+15,2%). Confiança: ALTA. Fonte: dados oficiais Ligue 180.
+5. Lei 15.125/2025: permite cumular MPU com monitoração eletrônica do agressor e botão do pânico em app. Confiança: ALTA.
+6. Lei 15.384/2026: tipifica violência vicária e amplia rede de apoio para incluir dependentes. Confiança: ALTA.
+7. Lei 14.022/2020: precedente legal para canais digitais/remotos de MPU — sustenta viabilidade jurídica de fluxos 100% via app. Confiança: ALTA.
 
 CONHECIMENTO EXTERNO — BENCHMARKING
 
-Bloco A — Apps de segurança/denúncia de violência doméstica de referência (confirmação de disfarce documentado; dados gerais já levantados pela tcc-documentacao não são repetidos aqui, apenas o achado novo sobre camuflagem):
+NOTA: benchmarking externo PULADO nesta rodada por recorte aprovado no checkpoint Step 1 (decisão do usuário em 2026-06-29). Nenhuma pesquisa web nova foi realizada.
 
-| App | Origem | Disfarce documentado? | Funcionalidade-chave (resumo, já coberto pela tcc-documentacao) | Gap/limitação documentada | Viabilidade técnica |
-|---|---|---|---|---|---|
-| Aspire News App | EUA (When Georgia Smiled / Robin McGraw) | SIM — único app de violência doméstica encontrado nesta pesquisa com disfarce documentado de forma robusta: ícone e interface de app de notícias; 3 toques na barra superior aciona alerta a contatos com mensagem pré-escrita, nota de voz pré-gravada e localização; botão "X" no canto superior direito leva a usuária instantaneamente a uma parte aleatória do app de "notícias" se o agressor entrar no cômodo. Confiança: ALTA (Snopes, TechCrunch, When Georgia Smiled, Buffalo HAPPE). | Alerta silencioso a contatos de confiança disfarçado de app de notícias | Falha de segurança documentada: em 2020, gravações de voz das usuárias ficaram expostas publicamente em servidor de nuvem desprotegido (achado de pesquisa da TechCrunch/Bitdefender) — ou seja, o disfarce de interface funcionou, mas a segurança de backend falhou, expondo dados sensíveis das próprias usuárias que confiaram no disfarce. Confiança: ALTA (TechCrunch, Bitdefender, 2020). | Alta para o disfarce de UI em si; o caso expõe que disfarce de interface não substitui segurança de dados em backend |
-| PenhaS, SP Mulher, Juntas (PLP 2.0), Circle of 6, bSafe, myPlan | Brasil/EUA/Noruega (já cobertos pela tcc-documentacao) | NÃO — nenhuma evidência de ícone/tela falsa documentada nesta pesquisa nem na pesquisa anterior da tcc-documentacao para nenhum destes seis apps. | (ver research-brief da tcc-documentacao para detalhe completo de cada um) | Ausência de disfarce de interface é, em si, uma lacuna comum a todo o benchmarking nacional/internacional de apps de violência doméstica revisado até esta rodada — reforça RF-CORE-02 como diferencial real do Amparo frente a esse conjunto específico de concorrentes. Confiança: MÉDIA (ausência de evidência não é prova definitiva de inexistência, mas nenhuma fonte consultada em duas rodadas de pesquisa menciona essa funcionalidade nesses apps). | N/A — apenas reafirma posicionamento competitivo já registrado na rodada anterior |
-
-Bloco B — O padrão "vault apps" / "disguised apps" / "stealth apps" e a literatura de tech-facilitated abuse / coercive control / stalkerware (foco principal desta rodada — termos usados: stalkerware, tech-facilitated abuse, coercive control, covert safety apps, app disguise/cloaking):
-
-| Padrão/App de referência | Origem | Funcionalidade-chave | Gap/limitação documentada | Viabilidade técnica para o Amparo |
-|---|---|---|---|---|
-| Calculator vault apps (categoria geral — ex.: Calculator+, Calculator Lock - Secure Vault) | Global (categoria de apps comerciais, múltiplos publishers) | Disfarçam um cofre de arquivos (fotos, vídeos, notas) sob uma interface de calculadora funcional; PIN ou sequência destrava o conteúdo real. | Estudo acadêmico "Casing the Vault: Security Analysis of Vault Applications" (Ruffin, Lopez-Toledo, Levchenko, Wang — WPES 2022, ACM) analisou 20 vault apps populares e encontrou que a maioria não implementa/configura adequadamente seu disfarce: apenas 10 de 20 apresentam um app-isca (decoy) como disguise; apenas 7 desses 10 implementam a funcionalidade de decoy de fato; apenas 5 ativam o disfarce automaticamente na instalação. Adversários com conhecimento técnico rudimentar do Android já conseguem identificar a presença da maioria dos vault apps SEM análise forense sofisticada — e em muitos casos os dados ficam sem criptografia, acessíveis mesmo sem o PIN. Confiança: ALTA (paper acadêmico peer-reviewed, ACM WPES 2022; URL: https://dl.acm.org/doi/10.1145/3559613.3563204 e PDF em gangw.cs.illinois.edu/vault.pdf — Acessado em: 29/06/2026). | Média — replicar a categoria "calculadora-cofre" é tecnicamente simples, mas o estudo mostra que a maioria das implementações de mercado é falha; o Amparo precisaria superar esse padrão de falha (decoy automático, criptografia real, não apenas ocultação de UI) para não repetir o mesmo erro documentado |
-| Vault apps — vestígios forenses (achado complementar de fontes técnicas de segurança digital) | Global | Apps-cofre tipicamente escondem conteúdo via UI, não necessariamente via criptografia. | Vestígios documentados: muitos calculator vault apps deixam rastros na lista de apps recentes/multitarefa, em thumbnails do sistema, em backups do dispositivo ou em sincronização em nuvem. Ferramentas forenses comerciais de uso corrente por autoridades (Cellebrite UFED, GrayKey) conseguem extrair dados de sandbox de app em iOS/Android e acessar fotos "escondidas" sem precisar do PIN, porque os dados costumam estar descriptografados no armazenamento do app. Existe inclusive um sistema acadêmico dedicado — VIDE (Vault app IDentification and Extraction system, ScienceDirect) — automatizado especificamente para identificar e extrair dados de vault apps em iOS. Confiança: ALTA (múltiplas fontes técnicas convergentes: Newsoftwares.net, Paraben Corporation — empresa de forense digital —, ScienceDirect/VIDE). | Baixa-Média — reforça que "esconder" não é "proteger": qualquer implementação do RF-CORE-02 no Amparo precisa tratar criptografia de dados como requisito independente do disfarce visual, não decorrente dele |
-| Stalkerware (categoria ampla — apps de monitoramento dual-use camuflados como apps legítimos) | Global | Apps de stalkerware se disfarçam como jogos, calendários, ou outros apps inofensivos para monitorar vítimas sem consentimento; em um caso documentado, o stalkerware foi enviado disfarçado de mensagem com foto. | Pesquisa acadêmica de referência — "A Stalker's Paradise: How Intimate Partner Abusers Exploit Technology" (Freed et al., CHI 2018) e "The Spyware Used in Intimate Partner Violence" (Chatterjee, Doerfler et al.) — primeira investigação profunda do ecossistema de apps de Intimate Partner Surveillance (IPS): a maioria das ferramentas usadas por agressores não é spyware "puro", mas apps "dual-use" com propósito legítimo (ex.: controle parental, antifurto) repurposados para espionagem — Almansoori et al. identificaram 3.988 de 51.868 apps na Google Play Store como dual-use, muitos categorizados como controle parental. ONG britânica Refuge reportou que 72% das mulheres atendidas em 2019 relataram abuso tecnológico (tech-facilitated abuse). Confiança: ALTA (papers acadêmicos peer-reviewed CHI/USENIX; estatística da Refuge é de ONG de referência no Reino Unido, citada por MIT Technology Review e dv.support). Fontes: nixdell.com/papers/spyware.pdf; technologyreview.com (10/07/2019); dv.support — Acessado em: 29/06/2026. | Relevante como ALERTA INVERSO para o Amparo: a mesma técnica de "app camuflado" usada para proteger a vítima (RF-CORE-02) é estruturalmente idêntica à técnica usada por agressores para espionar — o que significa que agressores familiarizados com stalkerware (um padrão de uso já disseminado, segundo a literatura) têm MAIOR probabilidade de reconhecer um app disfarçado como suspeito, justamente por já conhecerem o padrão pelo lado ofensivo |
-| Restrições de App Store/Google Play a apps disfarçados | Global (política de plataforma) | — | A Safety Net Project (NNEDV — National Network to End Domestic Violence, EUA), organização de referência em segurança tecnológica para sobreviventes, documenta em "So You Wanna Build an App? Safety First" (baseado em revisão de dezenas de apps de violência doméstica) que: (1) a Apple App Store não permite esse tipo de app disfarçado, ou exige que a descrição explique a função real do app — o que anula o propósito do disfarce; (2) o nome real do app pode aparecer na busca da loja mesmo que o ícone seja outro; (3) se a usuária não usa o app com frequência, pode esquecer o nome/ícone falso e não conseguir encontrá-lo numa crise; (4) atualizações podem alterar o ícone sem aviso, levando a exclusões acidentais pela própria usuária ou por terceiros tentando "limpar" o celular; (5) qualquer pessoa que abra o app vai perceber imediatamente que ele não é o que finge ser, caso o destrave não seja convincente. Confiança: ALTA (fonte primária especializada — NNEDV/Safety Net Project, referência do setor; URL: techsafety.org/blog/2017/8/30/so-you-wanna-build-an-app-safety-first — Acessado em: 29/06/2026). | Esta é a fonte mais diretamente aplicável ao RF-CORE-02 do Amparo — confirma que o disfarce de ícone/tela é uma prática reconhecida no setor de tech safety para violência doméstica, mas com limitações conhecidas que o Amparo precisa mitigar deliberadamente, não apenas copiar a prática |
-| Push notifications e tela de bloqueio | Global (achado técnico geral, aplicado ao contexto) | — | Eletronic Frontier Foundation (EFF, abril/2026) documenta que notificações push podem expor conteúdo sensível na tela de bloqueio sem necessidade de desbloquear o aparelho; mitigação padrão é configurar preview de notificação para "Nunca" ou "Somente quando desbloqueado" por app. Para apps de violência doméstica, esse é um vetor de vazamento que rompe completamente a eficácia de um disfarce de ícone/tela: mesmo que o ícone pareça uma calculadora, uma notificação com o texto real ("Sua guardiã confirmou recebimento do alerta") visível na tela de bloqueio denuncia o app instantaneamente. Confiança: ALTA (EFF, fonte técnica de referência em privacidade digital — eff.org/deeplinks/2026/04 — Acessado em: 29/06/2026). | Vetor crítico de vazamento do disfarce que nenhuma RF-CORE atual do Amparo menciona explicitamente — exige tratamento de notificações como parte integrante do RF-CORE-02, não como funcionalidade separada |
+Referências externas levantadas nas rodadas anteriores (preservadas para rastreabilidade — não expandidas nesta rodada):
+- Aspire News App (When Georgia Smiled / Robin McGraw, EUA): único app de violência doméstica com disfarce documentado robusto; ícone e interface de app de notícias; 3 toques na barra superior aciona alerta; botão "X" leva instantaneamente a trecho aleatório do app de notícias. Falha documentada: em 2020, gravações de voz das usuárias ficaram expostas em servidor desprotegido (TechCrunch/Bitdefender). Confiança: ALTA.
+- PenhaS, SP Mulher, Juntas (PLP 2.0), Circle of 6, bSafe, myPlan: nenhuma evidência de disfarce de ícone/tela documentada nesta nem na pesquisa anterior. Confiança: MÉDIA (ausência de evidência, não prova definitiva).
+- Vault apps / Calculator vault apps (Ruffin, Lopez-Toledo, Levchenko, Wang — WPES 2022, ACM): 20 apps analisados; apenas 5 ativam disfarce automaticamente na instalação; a maioria não criptografa os dados por trás da UI. Confiança: ALTA.
+- Stalkerware e Intimate Partner Surveillance: Freed et al. (CHI 2018), Chatterjee et al. (USENIX): agressores já familiarizados com lógica de apps disfarçados pelo lado ofensivo. Refuge (UK, 2019): 72% das mulheres atendidas relataram abuso tecnológico. Confiança: ALTA.
+- NNEDV/Safety Net Project ("So You Wanna Build an App? Safety First"): Apple App Store pode exigir descrição que revele função real do app; nome real pode aparecer na busca da loja; atualizações podem alterar ícone sem aviso. Confiança: ALTA.
+- EFF (abril/2026): notificações push expõem conteúdo sensível na tela de bloqueio; mitigação padrão é configurar preview para "Nunca" ou "Somente quando desbloqueado". Confiança: ALTA.
+- VIDE (Vault app IDentification and Extraction system, ScienceDirect): sistema automatizado para identificar e extrair dados de vault apps em iOS. Confiança: ALTA.
 
 GAPS DE MERCADO (ESPAÇO EM BRANCO)
 
-Gaps herdados de rodadas anteriores (mantidos para rastreabilidade — não são o foco de ideação desta rodada, mas permanecem documentados): Gap 1 (dependência de acionamento manual), Gap 2 (vulnerabilidade de armazenamento de provas), Gap 3 (ausência de IA/modo offline), Gap 4 (falta de evidência de eficácia), Gap 5 (sub-representação de grupos vulneráveis), Gap 6 (baixa adoção/divulgação no Brasil), Gap 7 (fragmentação de rede de apoio), Gap 8 (ausência de decision aid validado no Brasil). Ver brief da rodada anterior (preservado no Git) para detalhe completo de cada um.
+Gaps 1-8 — preservados para rastreabilidade histórica, fora do foco de ideação desta rodada:
+- Gap 1: dependência de acionamento manual (alerta proativo ausente)
+- Gap 2: vulnerabilidade de armazenamento de provas
+- Gap 3: ausência de IA/modo offline
+- Gap 4: falta de evidência de eficácia
+- Gap 5: sub-representação racial/demográfica
+- Gap 6: baixa adoção/divulgação no Brasil
+- Gap 7: fragmentação de rede de apoio pessoal/institucional
+- Gap 8: ausência de decision aid validado no Brasil
+Esses gaps foram trabalhados na Rodada 1 (2026-06-27) e permanecem no backlog para rodadas futuras.
 
-Gaps NOVOS desta rodada — espaço em branco específico de disfarce/stealth, prioritário para a ideação de Bruno:
+Gaps 9-11 — FOCO DESTA RODADA — disfarce/stealth:
 
-9. [NOVO] Ausência de hardening contra vestígios técnicos no padrão de disfarce de apps de violência doméstica: nenhum dos apps de violência doméstica revisados nesta rodada (incluindo Aspire News App, o único com disfarce documentado) trata explicitamente, em fonte pública, dos vetores de vazamento identificados na literatura de vault/stalkerware apps — notificações push na tela de bloqueio (EFF, 2026), vestígios em lista de apps recentes/multitarefa (Ruffin et al., WPES 2022), nome real persistente na busca da loja de apps (NNEDV/Safety Net Project), e dados armazenados sem criptografia real por trás do disfarce visual (Ruffin et al.; VIDE/ScienceDirect; Paraben Corporation). Este é o espaço em branco mais diretamente relevante para a implementação do RF-CORE-02 do Amparo. Confiança: ALTA quanto à existência de cada vetor individual (fontes acadêmicas/técnicas independentes e convergentes); MÉDIA quanto à afirmação de que nenhum app de violência doméstica trata disso publicamente (ausência de evidência encontrada em busca, não prova definitiva de inexistência).
+Gap 9 — Ausência de hardening contra vestígios técnicos no padrão de disfarce de apps de violência doméstica
+Descrição: nenhum app de violência doméstica revisado (incluindo Aspire News App) trata publicamente dos vetores de vazamento identificados na literatura de vault/stalkerware apps. Confiança: ALTA quanto a cada vetor; MÉDIA quanto à ausência total de tratamento público por qualquer app do benchmarking.
+Vetores documentados: (1) notificações push na tela de bloqueio (EFF, 2026); (2) vestígios em lista de apps recentes/multitarefa (Ruffin et al., WPES 2022); (3) nome real persistente na busca da loja de apps (NNEDV/Safety Net Project); (4) dados sem criptografia real por trás do disfarce visual (Ruffin et al.; VIDE/ScienceDirect; Paraben Corporation).
 
-10. [NOVO] Risco de "reconhecimento do padrão" pelo agressor familiarizado com stalkerware: a literatura de Intimate Partner Surveillance (Freed et al., CHI 2018; Chatterjee et al.) mostra que agressores frequentemente já usam ou já pesquisaram apps dual-use disfarçados para espionar a própria vítima — ou seja, uma fração relevante do público "agressor" já está familiarizada com a lógica de "app que não é o que parece" pelo lado ofensivo, o que pode aumentar (não eliminar) a chance de suspeita ao notar um ícone "estranho" ou "fora do padrão de uso" da vítima no celular dela. Nenhuma fonte consultada nesta pesquisa propõe mitigação específica para esse risco de reconhecimento cruzado — é um espaço em branco genuíno, não apenas uma lacuna de implementação. Confiança: MÉDIA (inferência lógica a partir de duas literaturas acadêmicas que tratam de públicos sobrepostos — abusadores que usam apps de vigilância — mas nenhuma fonte testa diretamente "taxa de reconhecimento de app disfarçado de proteção por agressor que já usou stalkerware").
+Sub-espaços do Gap 9 com aspectos AINDA NÃO ideados por Bruno (foco de novas ideias desta rodada):
+- Notificações push: a ideia 6 da Rodada 2 ("Notificações sempre disfarçadas, nunca com conteúdo real") está aprovada, mas trata o problema pela perspectiva do conteúdo da notificação. NÃO foram ainda geradas ideias sobre: (a) como o app deve se comportar quando o usuário bloqueia completamente as notificações (descoberta torna o app inútil para alertas de guardião); (b) qual o fluxo de UX de configuração de privacidade de notificações guiado pelo próprio app durante o onboarding; (c) se notificações silenciosas/invisíveis (silent push) são uma alternativa viável no iOS/Android e como o fluxo de UX se adapta a isso.
+- Multitarefa/snapshot: a ideia 7 da Rodada 2 ("Limpeza do snapshot na lista de apps recentes") está aprovada. NÃO foram geradas ideias sobre: (a) o que mostrar como thumbnail substituto na lista de recentes — tela em branco, última tela do disfarce, algo diferente?; (b) comportamento do app quando é acessado por assistentes de voz (Siri, Google Assistant) que podem exibir o nome real do app nas sugestões de recentes.
+- Loja de apps: a ideia 9 da Rodada 2 ("Nome e ficha da loja desvinculados de 'Amparo'") está em aprovação condicional por dependência de validação de política da Apple. NÃO foram geradas ideias sobre: (a) como orientar a usuária, dentro do próprio app, a renomear o ícone manualmente na tela inicial para um nome neutro (funcionalidade disponível no iOS 14+ e Android); (b) se o app deve sugerir um nome de atalho neutro para o ícone na tela inicial durante o onboarding.
 
-11. [NOVO] Ausência de gatilho/destrave padronizado e testado para apps de proteção disfarçados: as fontes consultadas (NNEDV/Safety Net Project; Aspire News App) mencionam mecanismos pontuais (3 toques na barra superior no caso do Aspire; X no canto que leva a uma tela aleatória), mas nenhuma fonte acadêmica ou de tech safety consultada nesta pesquisa apresenta uma comparação estruturada entre tipos de gatilho (PIN numérico vs. sequência de toques vs. palavra-chave digitada em campo de busca/calculadora vs. gesto) quanto a usabilidade sob estresse, resistência a destrave acidental, e resistência a observação/"shoulder surfing" pelo agressor. É um espaço em branco de design de interação ainda não resolvido na literatura disponível. Confiança: MÉDIA (ausência de estudo comparativo direto encontrado; inferência a partir da limitação de cada mecanismo isolado mencionado nas fontes).
+Gap 10 — Risco de reconhecimento do padrão pelo agressor familiarizado com stalkerware
+Descrição: agressores já familiarizados com a lógica de apps disfarçados (pelo lado ofensivo, via stalkerware) têm maior probabilidade de reconhecer um ícone "estranho" ou "fora do padrão de uso" da vítima. Nenhuma fonte consultada propõe mitigação específica para esse risco de reconhecimento cruzado. Confiança: MÉDIA (inferência de literaturas sobrepostas; sem teste direto documentado).
+Ideias já geradas para este gap (Rodada 2): ideia 10 (orientação no onboarding para escolha de disfarce coerente com padrão real de uso), ideia 11 reformulada (sugestão de disfarces alternativos por escolha manual, sem leitura de apps instalados).
+
+Aspectos de camuflagem de segundo nível AINDA NÃO ideados:
+- Estratégias de "aging" do disfarce: como fazer o disfarce parecer um app antigo e familiar no aparelho (ex.: data de instalação, padrão de uso, dados de "histórico" plantados no disfarce funcional) versus um app recém-instalado e suspeito
+- Estratégias de coerência de comportamento do disfarce na perspectiva do agressor: se o agressor abrir o app de disfarce sem destrave, o que ele vê — apenas a UI funcional, ou algo mais convincente como dados "reais" de uso (uma nota salva de verdade, uma tarefa real, um contato genuíno)?
+- Estratégias de reação ao "teste de funcionalidade" pelo agressor: o que acontece se o agressor tentar usar ativamente o disfarce (calcular algo na calculadora, adicionar uma tarefa na lista)? O app registra esse uso? A usuária deve ser alertada discretamente?
+
+Gap 11 — Ausência de gatilho/destrave padronizado e testado para apps de proteção disfarçados
+Descrição: nenhuma fonte acadêmica ou de tech safety apresenta comparação estruturada entre tipos de gatilho quanto a usabilidade sob estresse, resistência a destrave acidental e resistência a shoulder surfing. Confiança: MÉDIA (ausência de estudo comparativo direto).
+Ideias já geradas para este gap (Rodadas 2 e Informal): código numérico em calculadora, palavra-chave em nota/campo de busca, gesto de destrave, e as variantes de gatilho intrínsecas a cada um dos 11 tipos de disfarce validados (horário-código em despertador, frequência em rádio, título de evento em agenda, etc.).
+
+Variantes de gatilho/destrave AINDA NÃO exploradas:
+- Gatilho por sequência de interação física com o hardware: pressionar botão de volume em sequência específica (ex.: volume+ 3x + power) ainda dentro do disfarce ativo — sem digitar nada na tela, imperceptível a shoulder surfing
+- Gatilho por biometria oculta: tocar o sensor de digital enquanto o disfarce está aberto, sem que a usuária precise navegar para nenhum campo de PIN — o gesto parece apenas "usar o celular normalmente"
+- Gatilho por orientação do dispositivo: rotacionar o celular em sequência específica (ex.: landscape, portrait, landscape) dentro de um app onde isso seria gestual neutro (ex.: jogo simples, leitor de notícias)
+- Gatilho por NFC/QR discreto: aproximar o celular de um objeto físico (ex.: etiqueta NFC discreta em um objeto pessoal da usuária — pulseira, carteira) destrava o app sem qualquer interação visível na tela
+- Destrave de emergência "reverso": o disfarce exibe uma tela específica de emergência diretamente (sem mostrar a interface real do Amparo) ao receber uma sequência de destrave de emergência diferente da sequência normal — útil quando a usuária não precisa da interface completa, apenas de acionar SOS de dentro do disfarce sem expor o app real
 
 RECOMENDAÇÃO PARA O BRAINSTORM
 
-O RF-CORE-02 (Modo disfarçado) já está decidido como conhecimento interno consolidado — Bruno NÃO deve gerar ideias sobre "se" o Amparo deve ter modo disfarçado. O espaço de ideação desta rodada é exclusivamente sobre:
+Bruno deve focar exclusivamente no ESPAÇO NOVO desta rodada — o que ainda não existe no backlog aprovado das Rodadas 2 e Informal. O espaço de ideação tem três frentes ordenadas por lacuna atual:
 
-1. Tipos de disfarce a oferecer — ideias concretas de aliases visuais (categoria de app a imitar, ex.: calculadora, bloco de notas, app de previsão do tempo, outros) avaliando trade-offs entre "banalidade" (quanto mais comum o disfarce, menor a chance de chamar atenção) e usabilidade de destrave.
+1. Novos tipos de disfarce além dos 14 já validados (3 originais do RF-CORE-02 + 11 da Rodada Informal): qualquer categoria de app comum que ainda não conste na lista — ex.: app de meditação/bem-estar, jogo simples/casual, leitor de notícias funcional, app de receitas, fitness/saúde — avaliando trade-off entre "banalidade no perfil de uma mulher adulta" e viabilidade de gatilho de destrave coerente com o uso normal daquele tipo de app.
 
-2. Mecanismos de gatilho/destrave — ideias sobre como a usuária sai do disfarce e entra na interface real do Amparo (PIN numérico, sequência de dígitos digitada como se fosse uma operação de calculadora, palavra-chave digitada em campo de busca/nota, gesto específico), priorizando o Gap 11 (ausência de padrão testado/comparado na literatura) como combustível de ideação — Bruno tem liberdade real aqui, pois não há "melhor prática" estabelecida a respeitar, apenas trade-offs documentados.
+2. Variantes de gatilho/destrave de Gap 11 ainda não geradas: especialmente os gatilhos de hardware (volume buttons), biometria oculta, NFC/objeto físico e destrave reverso de emergência — esses mecanismos foram identificados como lacuna no Gap 11 e nenhum consta no backlog atual.
 
-3. Mitigação de riscos de segurança específicos da camuflagem (hardening) — ideias que tratem diretamente o Gap 9 (vestígios técnicos: notificações push, lista de apps recentes, nome na loja de apps, criptografia real por trás do disfarce) e, na medida do possível, o Gap 10 (risco de reconhecimento do padrão por agressor já familiarizado com lógica de stalkerware/apps dual-use).
+3. Sub-espaços de UX do Gap 9 ainda sem ideia concreta: fluxo de configuração de privacidade de notificações guiado no onboarding, comportamento do app com assistentes de voz, conteúdo do thumbnail substituto na lista de recentes, e orientação in-app para renomear o ícone na tela inicial.
 
-Não é papel de Bruno nesta rodada propor novos disfarces ou gatilhos para outras RF-CORE (ex.: criptografia do RF-CORE-04) fora do que diz respeito à proteção do próprio modo disfarçado — o recorte é estrito ao RF-CORE-02 e seus três sub-espaços acima. Os Gaps 1 a 8 (herdados de rodadas anteriores) permanecem fora do escopo desta rodada específica, preservados apenas para rastreabilidade histórica do projeto.
+Fora do escopo por já estar validado: os 14 tipos de disfarce listados acima; os 12 mecanismos de hardening aprovados na Rodada 2; os 5 itens Won't Have já descartados explicitamente.

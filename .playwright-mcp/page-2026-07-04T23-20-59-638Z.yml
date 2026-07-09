@@ -1,0 +1,21 @@
+- generic [active] [ref=f12e1]:
+  - generic [ref=f12e2]: Aplicação 1.3 — Post de Feed (citação)
+  - heading "Sistema de Posts — Template \"Citação\"" [level=1] [ref=f12e3]
+  - generic [ref=f12e4]: "Objetivo: reforçar a promessa emocional do Amparo (\"você não está sozinha\") em prosa curta, sem dado bruto de pesquisa. Contexto de uso: 1-2x por semana, alternando as 2 variações de cor para manter o mosaico do feed coerente sem monotonia."
+  - generic [ref=f12e5]:
+    - generic [ref=f12e6]:
+      - generic [ref=f12e7]:
+        - text: Você não
+        - text: está sozinha.
+      - generic [ref=f12e8]: — Amparo
+    - generic [ref=f12e10]:
+      - generic [ref=f12e11]:
+        - text: Um passo de
+        - text: cada vez.
+      - generic [ref=f12e12]: — Amparo
+  - generic [ref=f12e14]:
+    - text: "Anatomia: fundo em uma das 2 cores oficiais do template (ink-900 ou rosa-300); frase centralizada, Quicksand peso 700, 34pt, máximo 2 linhas; atribuição \"— Amparo\" 12pt abaixo; símbolo final (sem wordmark) ~26×26px no canto inferior direito, cor invertida em relação ao fundo."
+    - text: "Elementos obrigatórios: fundo de uma das 2 cores oficiais; frase em Quicksand peso 700; símbolo no canto inferior direito."
+    - text: "Regras de uso: máximo 8 palavras na frase principal; nunca mais de 2 linhas; nunca alinhar a frase à esquerda/direita — sempre centralizada; as 2 variações não podem se repetir 2x seguidas no feed."
+    - text: "Especificações técnicas: 1080×1350px (4:5), margem segura 80px, RGB, PNG. Símbolo usa `identity/assets/logo-symbol-white.png` (fundo escuro) ou `logo-symbol-dark.png` (fundo rosa) — recortes dedicados do logo final, sem wordmark."
+    - text: "Erros a evitar: ❌ usar dado de pesquisa/estatística na frase; ❌ aplicar gradiente no fundo; ❌ aumentar o símbolo além de ~26×26px (vira logo gritante); ❌ usar a cor de acento lilas-500 como fundo (fora da paleta aprovada para este template)."

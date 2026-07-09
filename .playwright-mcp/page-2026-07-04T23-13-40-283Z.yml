@@ -1,0 +1,20 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]: Amparo — Design System
+  - heading "Átomos" [level=1] [ref=f5e3]
+  - generic [ref=f5e4]:
+    - generic [ref=f5e5]:
+      - generic [ref=f5e6]: Atoms/Button/Primary
+      - button "Ver rede de apoio" [ref=f5e7]
+    - generic [ref=f5e8]:
+      - generic [ref=f5e9]: Atoms/Button/Emergency
+      - button "Preciso de ajuda agora" [ref=f5e10]
+    - generic [ref=f5e11]:
+      - generic [ref=f5e12]: Atoms/Input/Text
+      - textbox "Digite aqui..." [ref=f5e13]
+    - generic [ref=f5e14]:
+      - generic [ref=f5e15]: Atoms/Icon (24×24)
+      - img [ref=f5e16]
+    - generic [ref=f5e19]:
+      - generic [ref=f5e20]: Atoms/Tag
+      - generic [ref=f5e21]: Documentação
+  - paragraph [ref=f5e22]: "Todos os átomos usam exclusivamente tokens semânticos: color-action-primary (texto sempre color-text-primary, nunca branco — contraste 6.2:1), color-action-emergency (texto sempre branco — contraste 4.96:1), color-surface-cool para bordas de input, color-bg-surface para tags, radius-md para botões e inputs, radius-lg (pill) para tags."

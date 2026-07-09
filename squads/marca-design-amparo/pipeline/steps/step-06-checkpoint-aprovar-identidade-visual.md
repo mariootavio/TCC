@@ -3,15 +3,15 @@ type: checkpoint
 inputFile: squads/marca-design-amparo/output/identidade-visual.md
 ---
 
-# Step 5: Checkpoint — Aprovar Identidade Visual
+# Step 6: Checkpoint — Aprovar Identidade Visual
 
 ## Contexto
 
-Flávia Fonte gerou 2-3 direções de identidade visual de marca no Step 4 e
+Flávia Fonte gerou 2-3 direções de identidade visual de marca no Step 5 e
 publicou-as no projeto Claude Design via `DesignSync`. Este checkpoint
 existe porque nenhum design system pode ser construído sobre uma
 identidade não aprovada — é o primeiro gate de aprovação obrigatório do
-pipeline depois da criação visual (bloqueia o Step 6, que constrói tokens
+pipeline depois da criação visual (bloqueia o Step 7, que constrói tokens
 e componentes sobre a identidade escolhida).
 
 ## Instruções
@@ -29,10 +29,10 @@ e componentes sobre a identidade escolhida).
    - Há algum ajuste pontual necessário (ex.: trocar uma cor específica,
      ajustar a tipografia) antes de seguir para o design system completo?
 3. Se o usuário aprovar (com ou sem ajustes menores): registrar a decisão
-   e liberar o pipeline para o Step 6 (criação do design system, que usa a
+   e liberar o pipeline para o Step 7 (criação do design system, que usa a
    identidade aprovada como base).
 4. Se o usuário rejeitar ou pedir uma nova rodada de direções: retornar ao
-   Step 4 para Flávia gerar novas direções, incorporando o feedback
+   Step 5 para Flávia gerar novas direções, incorporando o feedback
    recebido.
 
 ## Output Format
@@ -57,7 +57,7 @@ Decisão do usuário: Aprovada a Direção 1 ("Porto Seguro"), com um ajuste
 pontual — usar #4F5E80 em vez de #5B6B8C como azul primário (tom levemente
 mais escuro, preferência do usuário).
 
-Pipeline segue para Step 6: Tomás Tokens constrói o design system completo
+Pipeline segue para Step 7: Tomás Tokens constrói o design system completo
 sobre a identidade "Porto Seguro" aprovada, já incorporando o ajuste de cor
 solicitado.
 ```
@@ -67,7 +67,7 @@ solicitado.
 Reject and redo if ANY of these are true:
 1. O conteúdo de `identidade-visual.md` não foi mostrado ao usuário antes
    de solicitar a aprovação.
-2. O pipeline avança para o Step 6 sem uma decisão explícita de aprovação
+2. O pipeline avança para o Step 7 sem uma decisão explícita de aprovação
    registrada.
 
 ## Quality Criteria

@@ -1,0 +1,21 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e2]: Aplicação 4.1 — Cartão de Visita
+  - heading "Cartão de Visita — Parcerias Institucionais" [level=1] [ref=f13e3]
+  - generic [ref=f13e4]: "Objetivo: apresentação profissional em parcerias com ONGs, órgãos públicos e profissionais de rede de apoio — contexto institucional, não voltado à usuária final do app."
+  - generic [ref=f13e5]:
+    - generic [ref=f13e6]:
+      - img "Amparo" [ref=f13e7]
+      - generic [ref=f13e8]: Você não está sozinha.
+    - generic [ref=f13e9]:
+      - generic [ref=f13e10]: Parcerias Institucionais
+      - generic [ref=f13e11]:
+        - text: contato@amparo.app.br
+        - text: amparo.app.br
+        - text: "@amparo.app"
+  - generic [ref=f13e12]:
+    - text: "Anatomia — Frente: fundo paper-50, logo final centralizado (símbolo + wordmark \"Amparo\" já incluídos na arte, `identity/assets/logo.png`), slogan em itálico 11pt na cor rosa-700 (único uso do tom escuro fora do estado de emergência, aqui apenas decorativo em texto pequeno sobre fundo claro)."
+    - text: "Anatomia — Verso: fundo ink-900, categoria em rosa-300 caixa alta 11pt, contatos em paper-50 12.5pt, alinhados à esquerda."
+    - text: "Elementos obrigatórios: logo completo (símbolo + wordmark) na frente; categoria + no mínimo 2 contatos no verso."
+    - text: "Regras de uso: nunca inverter as cores (frente clara/verso escuro é parte da identidade); não adicionar elementos decorativos extras."
+    - text: "Especificações técnicas: 85×55mm, sangria 3mm, 300dpi, CMYK; papel Couché 300g fosco."
+    - text: "Erros a evitar: ❌ usar a cor de acento lilas-500 como fundo (não faz parte da paleta deste template); ❌ reduzir o logo abaixo de 25mm de largura (perde legibilidade do wordmark); ❌ usar tinta metálica em vez de acabamento fosco."

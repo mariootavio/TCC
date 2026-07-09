@@ -1,0 +1,12 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: Amparo — Marca & Design System
+  - heading "Você não está sozinha." [level=1] [ref=e3]:
+    - text: Você não
+    - text: está sozinha.
+  - paragraph [ref=e4]: Proteção que cabe na palma da mão.
+  - paragraph [ref=e6]: "O Amparo nasce de uma barreira real: pedir ajuda, quando se está em situação de violência doméstica, é muitas vezes mais arriscado do que ficar em silêncio. Medo, dependência, vergonha e falta de informação se somam — e o agressor pode estar a um olhar de distância da tela do celular."
+  - paragraph [ref=e7]: "Por isso o Amparo é discreto por princípio: uma plataforma que reúne emergência, documentação segura e rede de apoio num único lugar, sem nunca expor, no ícone ou no nome, o motivo pelo qual está ali."
+  - paragraph [ref=e8]: "Para mulheres em situação de risco — majoritariamente negras, entre 18 e 44 anos — o Amparo promete o que o nome já diz: companhia segura, mesmo quando ninguém mais está por perto."
+  - generic [ref=e9]:
+    - generic [ref=e10]: "Card de Abertura — Projeto 1: Marca & Design System"
+    - generic [ref=e11]: Amparo · TCC

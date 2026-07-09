@@ -5,28 +5,35 @@ steps:
   - step: 1
     file: "steps/step-01-checkpoint-brief-design.md"
   - step: 2
-    file: "steps/step-02-pesquisa-cor-publico.md"
+    file: "steps/step-02-pesquisa-marcas-concorrentes.md"
   - step: 3
-    file: "steps/step-03-checkpoint-referencias-visuais.md"
+    file: "steps/step-03-pesquisa-cor-publico.md"
   - step: 4
-    file: "steps/step-04-criar-identidade-visual.md"
+    file: "steps/step-04-checkpoint-referencias-visuais.md"
   - step: 5
-    file: "steps/step-05-checkpoint-aprovar-identidade-visual.md"
+    file: "steps/step-05-criar-identidade-visual.md"
   - step: 6
-    file: "steps/step-06-criar-design-system.md"
+    file: "steps/step-06-checkpoint-aprovar-identidade-visual.md"
   - step: 7
-    file: "steps/step-07-checkpoint-aprovar-design-system.md"
+    file: "steps/step-07-criar-design-system.md"
   - step: 8
-    file: "steps/step-08-revisar-marca.md"
+    file: "steps/step-08-checkpoint-aprovar-design-system.md"
   - step: 9
-    file: "steps/step-09-checkpoint-aprovacao-final.md"
+    file: "steps/step-09-revisar-marca.md"
+  - step: 10
+    file: "steps/step-10-checkpoint-aprovar-projeto1.md"
+  - step: 11
+    file: "steps/step-11-criar-manual-identidade.md"
+  - step: 12
+    file: "steps/step-12-checkpoint-aprovacao-final.md"
 
 checkpoints:
   - 1
-  - 3
-  - 5
-  - 7
-  - 9
+  - 4
+  - 6
+  - 8
+  - 10
+  - 12
 
 on_reject:
-  8: 6
+  9: 7

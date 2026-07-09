@@ -1,0 +1,40 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]: Direção 2
+  - heading "Acolhimento Logo Final" [level=1] [ref=f1e3]:
+    - text: Acolhimento
+    - generic [ref=f1e4]: Logo Final
+  - generic [ref=f1e5]: Logo definitiva fornecida pelo usuário — símbolo + wordmark
+  - generic [ref=f1e6]: Símbolo de abrigo/acolhimento em formato de gota, com figura abraçada abstrata + wordmark "Amparo" em traço fino arredondado
+  - generic [ref=f1e7]:
+    - img "Logo Amparo" [ref=f1e9]
+    - generic [ref=f1e11]:
+      - heading "Paleta (revisada no checkpoint)" [level=3] [ref=f1e12]
+      - generic [ref=f1e13]:
+        - generic [ref=f1e16]:
+          - text: "#E8A8B4"
+          - text: Primária
+        - generic [ref=f1e19]:
+          - text: "#B7C4E0"
+          - text: Secundária
+        - generic [ref=f1e22]:
+          - text: "#8B7FB8"
+          - text: Acento
+        - generic [ref=f1e25]:
+          - text: "#3A3341"
+          - text: Neutro escuro
+        - generic [ref=f1e28]:
+          - text: "#FBF4F6"
+          - text: Neutro claro
+      - heading "Tipografia" [level=3] [ref=f1e29]
+      - generic [ref=f1e30]: Amparo
+      - generic [ref=f1e31]: Quicksand — geométrica, arredondada, combina com o traço da logo
+      - heading "Contraste verificado (WCAG)" [level=3] [ref=f1e32]
+      - generic [ref=f1e33]:
+        - text: "11.2:1 — #3A3341 sobre #FBF4F6 (texto normal, AAA)"
+        - text: "6.2:1 — #3A3341 sobre #E8A8B4 primária (texto normal, AA)"
+        - text: "6.9:1 — #3A3341 sobre #B7C4E0 secundária (texto normal, AA)"
+        - generic [ref=f1e34]: "3.4:1 — #3A3341 ou branco sobre #8B7FB8 acento (só texto grande/UI ≥18pt)"
+  - paragraph [ref=f1e35]:
+    - text: "Logo final (fornecida pelo usuário): após 3 rodadas de ajuste no monograma \"A\" gerado inline (checkpoint Step 10), o usuário forneceu a arte final do logo, criada externamente com apoio do prompt de geração de IA compartilhado nesta squad (`prompt-logo-geracao-ia.md`). O símbolo é um formato de gota/abrigo em rosa-300, contendo uma figura abstrata acolhida em seu interior — sem mão ou silhueta humana literal — combinado ao wordmark \"Amparo\" em traço fino arredondado, na tipografia Quicksand. Arquivos publicados em `identity/assets/logo.svg` e `logo.png`."
+    - text: "Ajuste solicitado no checkpoint (Step 6): o usuário aprovou esta direção, mas pediu paleta mais pastel, puxada para rosa e tons frios — tom mais próximo de \"healthy\"/bem-estar e mais feminino do que a versão original em terracota quente. Substituídos: #C97B5B → #E8A8B4 (rosa pastel), #E8C9B0 → #B7C4E0 (azul-lilás pastel, mantendo a base fria trauma-informada do brief), #5B6B8C → #8B7FB8 (lilás mais profundo como acento de uso restrito). Nenhuma das cores é vermelho/laranja saturado — a restrição do brief continua respeitada."
+    - text: "Regra de uso (documentada para Tomás): texto de corpo e UI padrão sempre em neutro escuro (#3A3341), sobre neutro claro, primária ou secundária — todos os três pares atingem AA em texto normal (6.2:1 a 13.4:1). O acento lilás profundo (#8B7FB8) é reservado a títulos grandes, chips e estados de destaque — nunca texto de corpo (3.4:1)."

@@ -3,7 +3,7 @@ type: checkpoint
 outputFile: squads/marca-design-amparo/output/referencias-visuais.md
 ---
 
-# Step 3: Checkpoint — Referências Visuais
+# Step 4: Checkpoint — Referências Visuais
 
 ## Contexto
 
@@ -28,10 +28,10 @@ mais estruturadas do Step 1.
    este checkpoint.
 3. Se o usuário fornecer URLs, registrá-las no documento de saída
    exatamente como enviadas (este runner não precisa visitar os links
-   nesta etapa — isso é trabalho de Flávia no Step 4, se ela julgar
+   nesta etapa — isso é trabalho de Flávia no Step 5, se ela julgar
    necessário usar `web_fetch`).
 4. Compilar a resposta em `squads/marca-design-amparo/output/referencias-visuais.md`
-   antes de prosseguir para o Step 4. Se o usuário não tiver nenhuma
+   antes de prosseguir para o Step 5. Se o usuário não tiver nenhuma
    referência, registrar isso explicitamente — não é uma falha do
    checkpoint, é uma resposta válida.
 
@@ -82,7 +82,7 @@ pesquisa calibrada de Renata para guiar as direções de identidade.
 ## Notas de Interpretação
 Sem restrição externa de referência — Flávia tem liberdade total dentro
 dos limites já estabelecidos pelo brief (Step 1) e pela pesquisa de
-Renata (Step 2).
+Renata (Step 3).
 ```
 
 ## Veto Conditions

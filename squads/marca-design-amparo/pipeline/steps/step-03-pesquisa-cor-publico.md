@@ -6,7 +6,7 @@ inputFile: squads/marca-design-amparo/output/brief-design.md
 outputFile: squads/marca-design-amparo/output/pesquisa-cor-publico.md
 ---
 
-# Step 2: Pesquisa de Cor e Público
+# Step 3: Pesquisa de Cor e Público
 
 ## Context Loading
 
@@ -49,7 +49,7 @@ Load these files before executing:
 5. Compilar tudo em `output/pesquisa-cor-publico.md`, separando claramente
    achados de confiança ALTA, MÉDIA e BAIXA, e nunca incluindo uma decisão
    de identidade fechada — apenas recomendações para Flávia decidir no
-   Step 4.
+   Step 5.
 
 ## Output Format
 
@@ -72,8 +72,8 @@ Perfil demográfico de referência: [perfil exato, com fonte]
 racial/cultural explícitas]
 
 ## Próximo Passo
-Aguardando checkpoint de referências visuais do usuário (Step 3) antes de
-Flávia iniciar a criação da identidade visual (Step 4).
+Aguardando checkpoint de referências visuais do usuário (Step 4) antes de
+Flávia iniciar a criação da identidade visual (Step 5).
 ```
 
 ## Output Example
@@ -123,8 +123,8 @@ identidades de benchmarking, sem estudo controlado).
   com amostra de mulheres negras brasileiras em contexto de trauma.
 
 ## Próximo Passo
-Aguardando checkpoint de referências visuais do usuário (Step 3) antes de
-Flávia iniciar a criação da identidade visual (Step 4).
+Aguardando checkpoint de referências visuais do usuário (Step 4) antes de
+Flávia iniciar a criação da identidade visual (Step 5).
 ```
 
 ## Veto Conditions
