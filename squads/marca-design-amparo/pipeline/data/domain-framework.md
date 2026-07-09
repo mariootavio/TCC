@@ -1,120 +1,129 @@
-# Domain Framework — Marca & Design System Amparo
+# Domain Framework — Extensão de Marca & Design System Amparo
 
-> Compilação do `Operational Framework` de cada agente desta squad. Este
-> documento consolida a metodologia operacional completa: pesquisa de cor e
-> público → identidade de marca (brandkit + Claude Design) → design system
-> (tokens + componentes, Claude Design) → revisão de marca. Cada agente
-> também mantém sua própria cópia detalhada do framework no respectivo
-> arquivo `.agent.md`.
+> Compilação do `Operational Framework` de cada agente desta squad
+> reformulada. A squad não cria mais identidade de marca do zero — ela
+> estende, sob demanda, o design system e o manual JÁ FINALIZADOS do
+> Amparo, e implementa (quando pedido) diretamente no Figma via MCP.
+
+## AVISO CRÍTICO — Identidade e Design System JÁ FINALIZADOS
+
+A identidade visual e o design system completo do Amparo **já foram
+criados, aprovados e publicados** fora desta squad. A fonte única da
+verdade está em três arquivos, na raiz do projeto:
+
+- `brand/design-system.md` — especificação completa (paleta hex, tipografia,
+  espaçamento, radius, componentes, ícones, linguagem fotográfica,
+  princípios inegociáveis de segurança).
+- `brand/LogoAmparo.svg` (+ `.png`/`.jpg`) — logotipo vetorial oficial.
+- `brand/manual-amparo.pdf` — manual de identidade visual completo e
+  publicado.
+
+Esses três arquivos estão **travados (locked)**. Nenhum agente desta squad
+gera, propõe ou sugere uma cor, fonte, logotipo, espaçamento, ícone ou tom
+de voz diferente do documentado ali. O trabalho de cada agente é sempre
+**extensão** (criar algo novo que ainda não existe, derivado fielmente do
+que já existe) ou **documentação/prompt** (texto), nunca **alteração** do
+que já foi fechado.
 
 ## Visão Geral do Fluxo Metodológico
 
 ```
-Brief de Design (checkpoint)
+Checkpoint — Captura do Pedido (o que precisa, para onde, prompt ou Figma)
         ↓
-Renata Referência → Pesquisa de Cor e Público (calibrada à demografia
-                     real do Amparo, benchmarking de marcas de causas
-                     sensíveis)
-        ↓ (checkpoint de referências visuais do usuário)
-Flávia Fonte      → Identidade Visual (brandkit como framework estratégico
-                     + métodos de concepção de logo) — publicada no Claude
-                     Design via DesignSync
-        ↓ (checkpoint de aprovação)
-Tomás Tokens      → Design System (tokens primitivos/semânticos,
-                     componentes em hierarquia atômica) — publicado no
-                     MESMO projeto Claude Design via DesignSync
-        ↓ (checkpoint de aprovação)
-Marina Marca      → Revisão estruturada (conformidade trauma-informada,
-                     WCAG AA recalculado, consistência de tokens, coerência
-                     com o brief)
-        ↓ (on_reject volta para Tomás Tokens, Step 7)
+Flávia Fonte      → carrega brand/ por completo, verifica duplicidade,
+                     especifica (prompt de imagem OU componente/tela novo),
+                     decide o roteamento do output
+        ↓ (checkpoint de aprovação da especificação/prompt)
+Tomás Tokens      → SE o roteamento pedir implementação: constrói no
+                     Figma via MCP, exclusivamente com tokens/logo já
+                     existentes. Se não pedir, registra "não aplicável"
+        ↓
+Marina Marca      → audita fidelidade ao brand/ travado + integridade
+                     (nada pré-existente foi alterado) + conformidade
+                     trauma-informada
+        ↓ (on_reject volta para Flávia Fonte, Step 2)
+Helena Manual     → documenta a extensão aprovada como apêndice cronológico
+                     em output/manual-extensoes.md (nunca edita o manual
+                     original)
+        ↓
 Checkpoint de Aprovação Final do Usuário
-        ↓
-Insumo da squad fluxos-uxui-amparo (reconstrução fiel no Figma)
 ```
 
-A regra estrutural do domínio é a mesma de qualquer design system maduro:
-**fundação antes de construção** — pesquisa calibrada antes de identidade,
-identidade aprovada antes de tokens, tokens antes de componentes. A
-diferença desta squad para a squad-irmã `design-ux-ui-amparo` é o canal de
-publicação: aqui tudo é documentado e publicado no Claude Design via
-`DesignSync`, nunca no Figma.
+A squad é pensada para rodar **um ciclo por pedido** — o usuário pode
+rodá-la de novo a qualquer momento para um novo componente, tela, página
+ou prompt, sempre partindo do mesmo `brand/` travado.
 
-## 1. Framework de Renata Referência (Pesquisadora de Cor e Público)
+## 1. Framework de Flávia Fonte (Especificadora de Conceito & Prompts)
 
-1. Carregar o brief de design aprovado e o perfil demográfico exato do
-   público do Amparo (mulheres negras, 18-44 anos, agressão majoritariamente
-   doméstica) — nunca tratar o público como "mulheres" de forma genérica.
-2. Pesquisar psicologia de cor e simbolismo calibrada a esse público
-   específico via `web_search`/`web_fetch`, buscando ativamente fontes que
-   considerem raça/etnia/contexto socioeconômico — não psicologia das
-   cores genérica.
-3. Fazer benchmarking de identidades visuais REAIS de marcas de causas
-   sensíveis (ONGs, apps de proteção), nunca inventar exemplos.
-4. Marcar explicitamente todo gap de aplicabilidade da literatura
-   internacional ao contexto racial/socioeconômico brasileiro — mesmo gap
-   já identificado pela squad tcc-documentacao.
-5. Entregar recomendações com fonte e nível de confiança (ALTA/MÉDIA/BAIXA)
-   — nunca decidir a identidade final, isso é exclusivo de Flávia.
+1. Carregar o pedido do checkpoint (Step 1) e `brand/design-system.md`,
+   `brand/LogoAmparo.svg`, `brand/manual-amparo.pdf` por completo — nunca
+   especificar sem ter carregado a fonte travada primeiro.
+2. Verificar duplicidade: o pedido já está coberto por algo existente? Se
+   sim, apontar isso em vez de recriar.
+3. Classificar o pedido: prompt de imagem, especificação de componente
+   novo, ou especificação de tela/página (app ou landing).
+4. Especificar usando exclusivamente tokens/valores já existentes — toda
+   cor/fonte/espaçamento citado precisa ser rastreável a uma seção
+   específica de `brand/design-system.md`. Prompts de imagem seguem
+   `pipeline/data/direcao-imagens-ia.md` à risca.
+5. Decidir e registrar o roteamento do output (só prompt/especificação, ou
+   segue para implementação no Figma) com base na resposta do usuário no
+   Step 1.
 
-## 2. Framework de Flávia Fonte (Designer de Identidade Visual)
+## 2. Framework de Tomás Tokens (Implementador em Figma — MCP)
 
-1. Carregar o brief, a pesquisa de Renata e as referências visuais do
-   usuário (checkpoint dedicado) — nunca iniciar sem esses três insumos.
-2. Invocar o skill `brandkit` e aplicar seu framework estratégico
-   (categoria/audiência/função/promessa emocional/posição cultural/nível
-   de confiança/mundo visual/metáfora/o que evitar) ao Amparo
-   especificamente — nenhum visual mode pré-definido do brandkit cobre
-   proteção trauma-informada sem adaptação.
-3. Escolher 1-2 métodos de concepção de logo (Monograma+Significado, Ação
-   do Produto, Fusão de Metáfora, Espaço Negativo, Geometria de
-   Construção) e gerar 2-3 direções de identidade com paleta, tipografia e
-   justificativa ligada ao brief E à pesquisa de Renata.
-4. Verificar contraste WCAG AA antes de finalizar qualquer paleta.
-5. Publicar via `DesignSync`: `list_projects` → `create_project` (se
-   necessário) → `finalize_plan` → `write_files`, com cada HTML carregando
-   `<!-- @dsCard group="Identidade Visual" -->`.
-6. Tentar gerar a imagem-conceito de brand-kit board do brandkit como apoio
-   visual opcional, sem nunca bloquear a entrega por isso.
+1. Verificar o roteamento da especificação aprovada de Flávia — se não
+   pedir implementação, registrar "não aplicável" e parar, sem forçar
+   trabalho de Figma.
+2. Se pedir implementação: carregar a skill `figma-use` (pré-requisito
+   obrigatório antes de `use_figma`) e, conforme o caso,
+   `figma-generate-library` ou `figma-generate-design`.
+3. Localizar/confirmar o arquivo Figma correto do Amparo (o mesmo
+   construído pela squad `fluxos-uxui-amparo`) — nunca criar um arquivo
+   novo sem confirmação explícita do usuário.
+4. Implementar exclusivamente com tokens/variáveis/estilos já existentes
+   no Figma ou valores literais de `brand/design-system.md` — nunca criar
+   um token novo.
+5. Adicionar como elemento novo, com nomenclatura atômica consistente —
+   nunca editar, mover ou apagar algo que já existia.
 
-## 3. Framework de Tomás Tokens (Especialista em Design System)
+## 3. Framework de Marina Marca (Auditora de Fidelidade)
 
-1. Carregar a identidade visual JÁ APROVADA de Flávia — nunca reinterpretar
-   ou alterar decisões de marca já fechadas.
-2. Localizar o projeto Claude Design existente via `list_projects`/
-   `get_project` — nunca criar um segundo projeto.
-3. Definir tokens primitivos (escalas de cor, tipografia, espaçamento)
-   ANTES de qualquer componente, depois tokens semânticos referenciando
-   exclusivamente os primitivos.
-4. Verificar contraste WCAG AA em cada par semântico relevante antes de
-   fixar o token.
-5. Construir componentes em hierarquia atômica (átomos → moléculas →
-   organismos) com nomenclatura consistente, nunca um valor hardcoded.
-6. Publicar via `DesignSync` no projeto já existente, com cada HTML
-   carregando `<!-- @dsCard group="Design System" -->` (ou subgrupo).
+1. Carregar a especificação de Flávia e a implementação (ou "não
+   aplicável") de Tomás — entender o ciclo completo antes de pontuar.
+2. Percorrer 100% do material, nunca por amostragem.
+3. Auditar fidelidade de token/cor/fonte/logo de forma independente contra
+   `brand/design-system.md`/`brand/LogoAmparo.svg`.
+4. Auditar integridade: nada pré-existente (componente, token, página do
+   manual, frame do Figma) pode ter sido alterado — gatilho de rejeição
+   automática se violado, no mesmo nível de severidade de uma violação de
+   discrição/trauma-informado.
+5. Verificar duplicidade de forma independente e conformidade
+   trauma-informada.
+6. Pontuar cada critério com justificativa, calcular o veredito conforme a
+   tabela de decisão, sempre incluindo ao menos um "Ponto forte:".
 
-## 4. Framework de Marina Marca (Revisora de Marca e Acessibilidade)
+## 4. Framework de Helena Manual (Documentadora de Extensões)
 
-1. Carregar identidade visual, design system, brief e pesquisa de Renata —
-   entender o que foi prometido antes de avaliar o que foi entregue.
-2. Percorrer 100% das direções de identidade e 100% dos
-   tokens/componentes — nunca avaliar por amostragem.
-3. Recalcular o contraste WCAG AA de forma independente, nunca aceitar o
-   valor de Tomás sem verificação própria.
-4. Auditar consistência de tokens e verificar conformidade
-   trauma-informada — qualquer violação de discrição/trauma-informado é
-   gatilho de rejeição automática, independente da média geral.
-5. Pontuar cada critério com justificativa, calcular o veredito conforme a
-   tabela de decisão, sempre incluindo ao menos um "Ponto forte:" mesmo em
-   rejeição, e apontando localização exata em toda correção obrigatória.
+1. Confirmar que o veredito de Marina foi APROVAR (ou APROVAR COM
+   RESSALVAS já corrigido) — nunca documentar algo pendente como
+   definitivo.
+2. Redigir uma entrada nova, datada, citando o pedido original, os
+   tokens/valores usados com origem exata, a localização final, e o
+   veredito de Marina.
+3. Escrever sem nenhuma frase genérica, seguindo a régua anti-genérico do
+   skill `manual-identidade-visual-premium`.
+4. Anexar ao final de `output/manual-extensoes.md` — nunca editar
+   `brand/manual-amparo.pdf` ou `brand/design-system.md`, nunca reescrever
+   entradas anteriores do apêndice.
 
-## Princípio Transversal: Ferramentas Nativas do Ambiente como Pré-requisito
+## Princípio Transversal — Extensão, Nunca Alteração
 
-Diferente de squads de conteúdo, esta squad depende de ferramentas/skills
-nativas do ambiente Claude Code (`DesignSync`, skill `brandkit`) em vez de
-skills do catálogo Opensquad. Toda publicação no Claude Design exige
-`list_projects` antes de `create_project` (para nunca duplicar o projeto da
-squad) e `finalize_plan` antes de `write_files`. Toda criação de identidade
-exige a aplicação do framework estratégico do `brandkit`, nunca o uso
-direto de um visual mode pré-definido sem adaptação ao contexto trauma-
--informado do Amparo.
+Toda squad reformulada gira em torno de uma regra única: **`brand/` é
+fundação fechada**. Cada agente só tem permissão de ADICIONAR algo novo e
+coerente — nunca de mudar, reinterpretar ou "melhorar" o que já foi
+aprovado. Isso vale para cor, fonte, espaçamento, logotipo, componente já
+existente no Figma, e para o próprio `brand/manual-amparo.pdf`. Quando um
+pedido do usuário parecer pedir uma mudança em algo já existente (ex.:
+"muda a cor do botão primário"), isso está fora do escopo desta squad —
+sinalizar isso explicitamente ao usuário em vez de executar.

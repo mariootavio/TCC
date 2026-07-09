@@ -1,309 +1,208 @@
-# Output Examples — Marca & Design System Amparo
+# Output Examples — Extensão de Marca & Design System Amparo
 
-> Compilação dos `Output Examples` de cada agente desta squad. Servem como
-> referência de qualidade e profundidade esperada — não como template
-> rígido. Reproduzidos integralmente a partir dos arquivos `.agent.md`
-> correspondentes.
+> Compilação dos `Output Examples` de cada agente desta squad reformulada.
+> Servem como referência de qualidade e profundidade esperada — não como
+> template rígido. Todos os valores (hex, fontes, nomes de seção) usados
+> nos exemplos abaixo são os valores REAIS de `brand/design-system.md`,
+> não hipóteses — podem ser reaproveitados diretamente como referência.
 
-## Renata Referência — Pesquisa de Cor e Público
+## Flávia Fonte — Especificação de Conceito & Prompts
 
-### Exemplo 1: Brief de recomendação de cor calibrada ao público
+### Exemplo 1: Especificação de componente novo
 
 ```markdown
-# Pesquisa de Cor e Público — Amparo
+# Especificação — Componente "Card de Check-in Seguro"
 
-Brief de origem: acolhedor, seguro, discreto (brief-design.md)
-Perfil demográfico de referência: mulheres negras (63,6%-64% das vítimas de
-feminicídio), 70,5%-71% entre 18-44 anos, 64,3% das agressões dentro da
-própria residência (fonte: squads/tcc-documentacao/pipeline/data/research-brief.md,
-achado 3, FBSP 2026 — Confiança: ALTA).
+Pedido original: "preciso de um card para o histórico de check-ins do app"
+Verificação de duplicidade: não existe componente equivalente em
+brand/design-system.md nem brand/manual-amparo.pdf (mais próximo é o card
+genérico da seção 8, mas sem os campos de check-in) — lacuna real.
+Roteamento: segue para Tomás Tokens (Step 4) — usuário pediu implementação
+no Figma.
 
-## 1. Psicologia de Cor Aplicada a Marcas de Proteção
+## Anatomia
+- Radius: `radius-md` (12px, seção 7) — mesmo padrão dos cards existentes.
+- Fundo: Branco Base #FFFFFF sobre tela Areia Acolhedora #F2EAE4 (seção 5,
+  regra de card já documentada na seção 8).
+- Ícone: "Check-in Seguro" (galeria da seção 9), traço 1.5pt, cor Grafite
+  Leitura #333333.
+- Texto de data/hora: Nunito Sans Regular 12px (Legenda, seção 6), cor
+  Cinza Silêncio #8E8984.
+- Texto de status: Nunito Sans SemiBold 16px (Corpo, seção 6), cor
+  Confirmação Guardião #2E7D6B quando concluído (uso restrito e correto
+  conforme seção 5 — não decorativo).
 
-1.1. Tons frios (azul, verde, lilás) associados a redução de ansiedade
-visual em contextos de trauma — confirma o framework já levantado no
-research-brief desta squad. Confiança: ALTA (múltiplas fontes
-convergentes: ThinkDesigns LLC, UX Magazine).
+## Estados
+Padrão, Concluído (borda esquerda 3px #2E7D6B), Pendente (sem borda
+colorida — nunca usar Alerta SOS #C62828 aqui, é uso restrito a
+emergência).
 
-1.2. GAP DE APLICABILIDADE RACIAL: a maior parte dos estudos de percepção
-de cor em contexto de trauma localizados nesta busca usa amostras
-predominantemente brancas e de países do hemisfério norte — nenhuma fonte
-encontrada testa especificamente a percepção dessas paletas com mulheres
-negras brasileiras. Confiança da ressalva: ALTA. Recomendação: tratar a
-paleta fria como ponto de partida razoável, mas não como verdade testada
-para o público majoritário real do Amparo.
-
-1.3. Tons terrosos e quentes não-saturados (terracota, ocre suave, marrom
-quente) aparecem com frequência em identidades de marcas afrocentradas e de
-acolhimento voltadas a público negro, associados a calor humano sem o
-alarme do vermelho/laranja saturado. Confiança: MÉDIA (observação
-consistente em 4 identidades de benchmarking, mas sem estudo controlado de
-percepção).
-
-## 2. Benchmarking de Identidades Reais
-
-| Organização | Paleta observada | Simbolismo | Observação |
-|---|---|---|---|
-| Instituto AzMina / PenhaS | Roxo + branco + detalhes em rosa-magenta | Megafone estilizado, sem imagética de violência | Roxo é cor-símbolo histórica do combate à violência contra a mulher no Brasil — força de reconhecimento alta, mas também risco de "parecer mais uma" |
-
-## 3. Recomendação Consolidada para Flávia
-
-- Considerar tom frio (base) + um acento terroso/quente não-saturado como
-  hipótese de calibração ao público específico.
-- Evitar roxo como cor dominante única: risco de diluir identidade própria
-  do Amparo por associação genérica.
-- Gap explícito a registrar na monografia: ausência de estudo de percepção
-  de cor com amostra de mulheres negras brasileiras em contexto de trauma.
+## Nomenclatura atômica
+`Molecules/Card/Check-in-Historico`
 
 ## Próximo Passo
-Aguardando checkpoint de referências visuais do usuário (Step 4) antes de
-Flávia iniciar a criação da identidade visual (Step 5).
+Aguardando checkpoint Step 3 (aprovação da especificação) antes de Tomás
+implementar no Figma.
 ```
 
-### Exemplo 2: Achado com confiança baixa e necessidade de ressalva explícita
+### Exemplo 2: Prompt de imagem
 
 ```markdown
-## 4. Achado Adicional — Simbolismo de Mãos e Acolhimento
+# Prompt de Imagem — Hero da Landing Page
 
-4.1. Uma fonte (blog de design institucional, não revisado por pares)
-sugere que símbolos de "mãos que seguram" são percebidos como mais
-acolhedores que símbolos abstratos geométricos em campanhas de saúde
-mental. Confiança: BAIXA (fonte única, não acadêmica, sem teste de
-percepção com público real, e sem nenhuma menção a contexto de violência
-doméstica especificamente).
+Pedido original: "imagem para o hero da landing page, mulher usando o app"
+Roteamento: entrega final deste ciclo — usuário pediu só o prompt.
 
-Ressalva explícita: este achado NÃO deve ser tratado como recomendação
-pronta. Incluído aqui apenas como hipótese para Flávia avaliar.
+## Prompt
 
-Recomendação: se Flávia optar por explorar a metáfora de "mãos", buscar
-validação adicional antes de fixar como elemento central do logo.
+Editorial photograph of a confident Black woman in her early 30s, smiling
+softly while looking at her smartphone on a sunlit urban street, natural
+window/daylight, warm neutral background in dusty wine and sandy beige
+tones (matching Amparo's palette: #954B6E, #F2EAE4), modern minimal
+composition, contemporary lifestyle photography, hyper realistic, 4K
+quality, clean composition, no visible text or UI content on the phone
+screen, --ar 16:9 --style raw
+
+## Justificativa
+Segue a diretriz "sempre o depois, nunca o durante" (seção 10 do design
+system) e o sujeito preferencial de direcao-imagens-ia.md: mulher real,
+segura e no controle. Paleta calibrada com Vinho Amparo/Areia Acolhedora.
+Nenhum texto ou UI visível no celular — preserva a discrição do app mesmo
+numa imagem promocional pública.
 ```
 
-## Flávia Fonte — Identidade Visual
+## Tomás Tokens — Implementação em Figma (MCP)
 
-### Exemplo 1: Apresentação de identidade visual com 3 direções
+### Exemplo 1: Implementação de componente novo
 
 ```markdown
-# Identidade Visual — Amparo
+# Implementação Figma — Componente "Card de Check-in Seguro"
 
-Brief de origem: acolhedor, seguro, discreto (brief-design.md)
-Pesquisa de base: pesquisa-cor-publico.md (Renata) — tons frios calibrados
-com ressalva de gap racial; tom terroso/quente não-saturado como hipótese
-de calibração ao público específico.
-Framework brandkit aplicado: categoria = proteção pessoal trauma-informada;
-audiência = mulheres em situação de risco, majoritariamente negras,
-18-44 anos; promessa emocional = "você não está sozinha, e isso não vai
-te expor"; o que evitar = alarme, clichê de ONG, imagética de violência.
-Projeto Claude Design: "Amparo — Marca & Design System"
+Especificação de origem: especificacao.md (Flávia, aprovada Step 3)
+Arquivo Figma: "Amparo — App" (localizado via figma-use, já existente,
+construído por Caio Componentes na squad fluxos-uxui-amparo)
+Página: "Design System / Componentes / Molecules"
 
-## Direção 1 — "Porto Seguro" (recomendada)
-Método de concepção: Espaço Negativo + Monograma.
-Logo: monograma circular com a letra "A" estilizada formando duas curvas
-abstratas que se encontram no espaço negativo central — sem dedos, sem
-realismo, apenas geometria suave.
-Paleta: Primária #5B6B8C (azul-ardósia), Secundária #8B7FB8 (lilás suave),
-Acento #B97A56 (terracota suave), Neutro escuro #2B2D3A, Neutro claro
-#F4F2F7.
-Tipografia: 'Source Sans 3' (humanista, alta legibilidade, sem serifa
-decorativa).
-Contraste verificado: #2B2D3A sobre #F4F2F7 = 12.6:1 (AA); #FFFFFF sobre
-#5B6B8C = 4.6:1 (AA texto normal).
-Justificativa: tons frios seguem trauma-informed design; o acento
-terracota responde à hipótese de Renata sobre calibração ao público
-majoritário do Amparo; o monograma não contém símbolo óbvio de violência
-ou socorro.
+## Tokens/variáveis usados (todos já existentes no arquivo)
+- radius/md (12px)
+- color/bg/surface (Branco Base #FFFFFF)
+- color/text/muted (Cinza Silêncio #8E8984)
+- color/action/confirm (Confirmação Guardião #2E7D6B)
+- Ícone "Check-in Seguro" (componente de ícone já existente na biblioteca)
 
-## Direção 2 — "Abrigo"
-Método de concepção: Fusão de Metáfora (folha + mão aberta). Paleta em
-tons terrosos + verde-oliva. Mais "natural/orgânico", porém risco de
-parecer app de bem-estar genérico e diluir identidade própria.
-
-## Direção 3 — "Constância"
-Método de concepção: Geometria de Construção (ondas modulares). Paleta
-azul-petróleo + terracota discreto. Transmite estabilidade, porém a
-metáfora de ondas é menos distintiva que o monograma da Direção 1.
-
-## Recomendação
-Direção 1 ("Porto Seguro"), por atender aos 3 adjetivos do brief, à
-calibração de Renata e ao requisito de discrição.
-
-## Publicação no Claude Design
-Projeto: "Amparo — Marca & Design System"
-Arquivos publicados: identity/logo-direcao-1.html, identity/logo-direcao-2.html,
-identity/logo-direcao-3.html, identity/paleta-tipografia.html (grupo
-"Identidade Visual")
+## Componente criado
+Molecules/Card/Check-in-Historico — 3 variantes (Padrão, Concluído,
+Pendente), adicionado como frame novo na página de Componentes, ao lado
+dos cards já existentes — nenhum componente pré-existente foi alterado.
 
 ## Próximo Passo
-Aguardando aprovação no checkpoint antes do design system completo.
+Aguardando auditoria de fidelidade de Marina Marca (Step 5).
 ```
 
-### Exemplo 2: Registro de aplicação do framework estratégico do brandkit
+### Exemplo 2: Step não aplicável
 
 ```markdown
-## Aplicação do Framework Estratégico (brandkit) ao Amparo
+# Implementação Figma — Não Aplicável
 
-- Categoria: proteção pessoal trauma-informada (não "segurança" genérica).
-- Audiência: mulheres em situação de risco, majoritariamente negras
-  (63,6%-64%), 18-44 anos (70,5%-71%), agressão majoritariamente doméstica.
-- Função do produto: emergência, documentação segura, rede de apoio, acesso
-  a profissionais.
-- Promessa emocional: "Você não está sozinha" — acolhimento sem
-  infantilização, segurança sem alarme.
-- Posição cultural: nacional, brasileira, sem importar simbolismo
-  estrangeiro sem verificação.
-- Mundo visual: nenhum visual mode pré-definido do brandkit serve sem
-  adaptação. "Dark Security" tem cues de vigilância/ameaça incompatíveis
-  com acolhimento; "Light Editorial/Compliance" tem cues institucionais
-  burocráticos demais. Optei por construir um mundo visual próprio: tons
-  frios + acento terroso, luz suave, geometria orgânica sem dureza.
-- Metáfora simbólica candidata: encontro/abrigo (duas formas que se
-  encontram), não vigilância (olho, escudo) nem alarme (sirene, raio).
-- O que a marca deve evitar: vermelho/laranja saturado dominante, qualquer
-  imagética literal de violência, clichê de "cor de ONG", simbolismo de
-  vigilância tipo olho/escudo.
+Especificação de origem: especificacao.md (prompt de imagem, Flávia, Step 2)
+Roteamento definido por Flávia: "entrega final deste ciclo — usuário pediu
+só o prompt de imagem, não implementação no Figma".
+
+Nenhuma ação de implementação foi executada neste ciclo. Seguindo para o
+Step 5 (auditoria de Marina Marca sobre o prompt gerado).
 ```
 
-## Tomás Tokens — Design System
+## Marina Marca — Auditoria de Fidelidade
 
-### Exemplo 1: Tabela de tokens primitivos e semânticos
-
-```markdown
-# Design System — Amparo
-
-Base: Identidade Visual "Porto Seguro" (aprovada em checkpoint Step 6)
-Projeto Claude Design: "Amparo — Marca & Design System" (localizado via
-`list_projects`, já existente — criado por Flávia)
-Metodologia: Atomic Design (Brad Frost) + tokens primitivos/semânticos
-
-## Tokens Primitivos
-
-| Token | Valor | Origem |
-|---|---|---|
-| slate-50 | #F4F2F7 | Neutro claro da identidade aprovada |
-| slate-600 | #5B6B8C | Azul-ardósia primário da identidade aprovada |
-| slate-900 | #2B2D3A | Neutro escuro da identidade aprovada |
-| lilac-400 | #8B7FB8 | Secundária da identidade aprovada |
-| terracotta-500 | #B97A56 | Acento da identidade aprovada |
-
-## Tokens Semânticos
-
-| Token | Referencia | Uso |
-|---|---|---|
-| color-bg-default | slate-50 | Fundo padrão de tela |
-| color-action-primary | slate-600 | Botões e links de ação primária |
-| color-action-emergency | terracotta-500 | Ação de emergência (nunca vermelho) |
-| color-text-primary | slate-900 | Texto principal |
-
-## Contraste Verificado
-
-| Par | Razão | Mínimo aplicável | Resultado |
-|---|---|---|---|
-| color-text-primary sobre color-bg-default | 12.6:1 | 4.5:1 | Aprovado |
-| Branco sobre color-action-primary | 4.6:1 | 4.5:1 | Aprovado |
-| Branco sobre color-action-emergency | 3.9:1 | 4.5:1 (texto normal) | REPROVADO para texto normal — usar apenas com texto grande/ícone (3:1) ou escurecer o token para terracotta-600 |
-
-## Próximo Passo
-Aguardando aprovação no checkpoint Step 8 antes da revisão de Marina Marca.
-```
-
-### Exemplo 2: Hierarquia atômica de componentes publicada no Claude Design
-
-```markdown
-## Componentes — Hierarquia Atômica
-
-### Átomos
-- `Atoms/Button/Primary`, `Atoms/Button/Emergency`, `Atoms/Input/Text`,
-  `Atoms/Icon` (24x24), `Atoms/Tag`.
-
-### Moléculas
-- `Molecules/Form-Field`, `Molecules/List-Item`, `Molecules/Alert-Banner`
-  (variantes info/sucesso/atenção, todas usando tokens semânticos, nunca
-  vermelho saturado).
-
-### Organismos
-- `Organisms/App-Header`, `Organisms/Bottom-Nav`, `Organisms/Card`.
-
-Publicado no Claude Design: design-system/atomos-button-input-icon.html,
-design-system/moleculas-form-list-alert.html,
-design-system/organismos-header-nav-card.html (grupo "Design System /
-Componentes").
-```
-
-## Marina Marca — Revisão Estruturada
-
-### Exemplo 1: Revisão com veredito APROVAR COM RESSALVAS
+### Exemplo 1: Veredito APROVAR
 
 ```
 ==============================
- VEREDITO DA REVISÃO: APROVAR COM RESSALVAS
+ VEREDITO DA AUDITORIA: APROVAR
 ==============================
-Data: 2026-06-27
-Material revisado: identidade-visual.md (Direção 1 "Porto Seguro") +
-design-system.md, publicados no projeto Claude Design "Amparo — Marca &
-Design System".
+Material auditado: especificacao.md (Flávia) + implementacao-figma.md (Tomás).
 
 | Critério | Nota | Resumo |
 |---|---|---|
-| Conformidade trauma-informada | 9/10 | Nenhuma imagética literal de violência; nenhuma cor de alarme dominante |
-| Contraste WCAG AA (recalculado) | 5/10 | Branco sobre color-action-emergency (terracotta-500) = 3.9:1, abaixo de 4.5:1 para texto normal |
-| Consistência de tokens | 8/10 | 1 componente (Atoms/Tag) usa opacidade direta em vez de token de opacidade nomeado |
-| Coerência com o brief de marca | 9/10 | Os 3 adjetivos do brief estão claramente refletidos |
-| Qualidade de apresentação no Claude Design | 8/10 | Falta 1 preview HTML do componente Alert-Banner |
-MÉDIA GERAL: 7.8/10
+| Fidelidade de tokens/logo | 10/10 | Todos os valores rastreáveis a brand/design-system.md, seções 5-7 |
+| Integridade do que já existia | 10/10 | Nenhum componente/token pré-existente foi alterado |
+| Não-duplicação | 9/10 | Componente preenche lacuna real |
+| Conformidade trauma-informada | 9/10 | Nenhuma cor funcional usada fora do contexto restrito |
+| Qualidade da documentação | 8/10 | Clara, falta só o link direto do frame no Figma |
+MÉDIA GERAL: 9.2/10
 
 Nenhum gatilho de rejeição automática violado.
 
-FEEDBACK DETALHADO:
+Ponto forte: o componente reaproveita exatamente os tokens de card já
+documentados na seção 8, mantendo consistência visual perfeita.
 
-Ponto forte: a Direção 1 ("Porto Seguro") resolve simultaneamente o
-requisito de discrição e os 3 adjetivos do brief.
-
-Correção obrigatória: ajustar color-action-emergency para terracotta-600
-— no estado atual o par branco/terracotta-500 reprova WCAG AA para texto
-normal. Localização: design-system.md, seção "Tokens Semânticos", e
-arquivo design-system/tokens-cor.html no Claude Design.
-
-Sugestão (não-bloqueante): publicar o preview HTML do componente
-Molecules/Alert-Banner.
-
-VEREDITO: APROVAR COM RESSALVAS — média 7.8/10, nenhum gatilho de
-segurança/discrição violado, mas a correção de contraste é obrigatória.
+VEREDITO: APROVAR.
 ```
 
-### Exemplo 2: Revisão com veredito REJEITAR (gatilho de discrição violado)
+### Exemplo 2: Veredito REJEITAR (gatilho de integridade violado)
 
 ```
 ==============================
- VEREDITO DA REVISÃO: REJEITAR
+ VEREDITO DA AUDITORIA: REJEITAR
 ==============================
-Data: 2026-06-27
-Material revisado: identidade-visual.md (Direção 2 "Vigília") +
-design-system.md.
+Material auditado: implementacao-figma.md (Tomás).
 
 | Critério | Nota | Resumo |
 |---|---|---|
-| Conformidade trauma-informada | 2/10 | Símbolo principal é um escudo com fenda vertical lembrando alvo/mira |
-| Contraste WCAG AA (recalculado) | 8/10 | Todos os pares verificados atingem o mínimo aplicável |
-| Consistência de tokens | 9/10 | Nenhum valor hardcoded detectado |
-| Coerência com o brief de marca | 6/10 | Adjetivo "discreto" do brief não é atendido pelo símbolo escolhido |
-| Qualidade de apresentação no Claude Design | 8/10 | Bem estruturado e categorizado |
+| Fidelidade de tokens/logo | 8/10 | Valores corretos |
+| Integridade do que já existia | 1/10 | Atoms/Button/Primary foi movido e teve o padding alterado |
+| Não-duplicação | 9/10 | Hero banner é novo |
+| Conformidade trauma-informada | 8/10 | Sem violação |
+| Qualidade da documentação | 7/10 | Clara |
 MÉDIA GERAL: 6.6/10
 
-GATILHO DE REJEIÇÃO AUTOMÁTICA: Conformidade trauma-informada pontuou
-2/10 — o símbolo de escudo com fenda vertical lembra mira/alvo de forma
-direta, leitura próxima de imagética de violência/vigilância. Rejeição
-obrigatória, independente da média geral.
+GATILHO DE REJEIÇÃO AUTOMÁTICA: Integridade pontuou 1/10 — o componente
+Atoms/Button/Primary, usado em outras telas, foi alterado para servir ao
+novo hero. Rejeição obrigatória, independente da média.
 
-FEEDBACK DETALHADO:
+Ponto forte: os novos elementos do hero usam corretamente os tokens de
+cor e tipografia da marca.
 
-Ponto forte: a paleta de cor da Direção 2 mantém os tons frios calibrados
-pela pesquisa de Renata e atinge contraste WCAG AA em todos os pares
-verificados.
+Correção obrigatória: reverter Atoms/Button/Primary ao estado original e
+criar uma NOVA variante (ex. Atoms/Button/Primary-Hero) em vez de alterar
+a existente. Localização: arquivo Figma "Amparo — App".
 
-Correção obrigatória: substituir o símbolo de escudo com fenda por um dos
-métodos de concepção já usados na Direção 1 (Espaço Negativo ou
-Monograma+Significado), evitando qualquer leitura de mira/alvo/arma.
-Localização: identity/logo-direcao-2.html no projeto Claude Design.
+VEREDITO: REJEITAR — gatilho de integridade violado. Pipeline retorna ao
+Step 2 (Flávia Fonte reespecifica preservando o componente original).
+```
 
-VEREDITO: REJEITAR — gatilho de conformidade trauma-informada violado.
+## Helena Manual — Documentação de Extensões
+
+### Exemplo 1: Entrada de apêndice — componente aprovado
+
+```markdown
+## [2026-07-09] Componente novo: Card de Check-in Seguro
+
+Pedido original: "preciso de um card para o histórico de check-ins do app"
+Criado por: Flávia Fonte (especificação) + Tomás Tokens (implementação Figma)
+Veredito: APROVAR (Marina Marca, 9.2/10)
+
+Tokens usados (origem: brand/design-system.md): radius-md (12px, seção 7),
+Branco Base #FFFFFF (seção 5), Cinza Silêncio #8E8984 (seção 5),
+Confirmação Guardião #2E7D6B — uso restrito conforme seção 5.
+
+Localização: arquivo Figma "Amparo — App", página Design System /
+Componentes / Molecules, componente Molecules/Card/Check-in-Historico.
+
+Nenhum componente pré-existente foi alterado.
+```
+
+### Exemplo 2: Entrada de apêndice — prompt de imagem aprovado
+
+```markdown
+## [2026-07-09] Prompt de imagem: Hero da Landing Page
+
+Pedido original: "imagem para o hero da landing page, mulher usando o app"
+Criado por: Flávia Fonte
+Veredito: APROVAR (Marina Marca, 9/10)
+
+Prompt final: ver output/especificacao.md deste ciclo (prompt completo,
+--ar 16:9). Paleta calibrada com Vinho Amparo #954B6E e Areia Acolhedora
+#F2EAE4 (brand/design-system.md, seção 5). Sem imagem gerada neste ciclo
+— entrega foi o prompt em texto.
 ```

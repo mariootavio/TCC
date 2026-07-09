@@ -1,40 +1,30 @@
 code: "marca-design-amparo"
 name: "Marca & Design System — Amparo"
-description: "Squad especializada em criar a identidade visual de marca (logo), o design system completo e uma apresentação premium do projeto do Amparo — pesquisa de cor e público dedicada, criação de identidade, criação de design system, revisão de marca e consolidação editorial em manual + pitch — documentado e publicado em DOIS projetos Claude Design distintos (claude.ai/design), sem uso de Figma. A squad fluxos-uxui-amparo lê e reconstrói o projeto técnico (Projeto 1) dentro do Figma."
+description: "Squad especialista no design system e manual de marca JÁ FINALIZADOS do Amparo (ver brand/ na raiz do projeto). Sob demanda, cria coisas NOVAS que fazem sentido para a marca — nunca altera o que já existe: novos componentes, telas do app, páginas da landing page, prompts de imagem, ou extensões de documentação do manual — sempre 100% derivadas dos tokens/paleta/tipografia/logo já travados. Quando o pedido exigir implementação visual real (não só um prompt/especificação em texto), constrói diretamente no Figma via MCP."
 language: "Português (Brasil)"
 
-# NOTA IMPORTANTE sobre ferramentas Claude Design e os skills `brandkit` /
-# `manual-identidade-visual-premium` (não confundir com `skills:` abaixo):
-# A ferramenta `DesignSync` (sincroniza uma biblioteca de componentes HTML com um projeto
-# claude.ai/design), o skill `brandkit` (geração de brand-kit/identidade visual) e o skill
-# `manual-identidade-visual-premium` (geração de manuais de identidade visual premium) são
-# NATIVOS deste ambiente Claude Code — equivalentes a "file read/write" ou a uma skill
-# instalada via skills.sh — e NÃO são skills do catálogo Opensquad. Por isso a lista `skills:`
-# abaixo NÃO inclui nenhuma entrada de design/Claude Design/brandkit/manual.
+# NOTA IMPORTANTE — Fonte única da verdade e ferramentas nativas:
+# A identidade visual e o design system do Amparo estão FINALIZADOS e
+# TRAVADOS em brand/design-system.md, brand/LogoAmparo.svg e
+# brand/manual-amparo.pdf (ver brand/README.md). Nenhum agente desta squad
+# cria uma nova identidade, cor, fonte ou logo — o trabalho é sempre
+# EXTENSÃO (adicionar algo novo e coerente) ou DOCUMENTAÇÃO/PROMPT (texto),
+# nunca alteração do que já existe.
 #
-# Esta squad publica em DOIS projetos Claude Design SEPARADOS (propostas diferentes,
-# organização deliberada — não são grupos dentro de um único projeto):
-#   1. "Amparo — Marca & Design System" — projeto técnico. Criado por Flávia Fonte
-#      (step 5): card de abertura + direções de identidade (grupos "Abertura",
-#      "Identidade"). Continuado por Tomás Tokens (step 7): mockups de aplicação +
-#      design system completo (grupos "Aplicações", "Design System").
-#   2. "Amparo — Apresentação do Projeto" — projeto de pitch, criado do zero por Helena
-#      Manual (step 10): 8-12 slides curados para banca do TCC / investidores, reaproveitando
-#      (recompondo, não copiando) o melhor do Projeto 1, editável livremente depois pelo
-#      usuário no Claude Design.
-#
-# Em vez disso, os agentes desta squad dependem dessas ferramentas/skills nativas (carregadas
-# pelo próprio agente em tempo de execução, fora do catálogo Opensquad):
-#   - DesignSync — usada por Flávia Fonte (step 5) e Tomás Tokens (step 7) no Projeto 1
-#     ("Amparo — Marca & Design System"); usada por Helena Manual (step 10) em LEITURA do
-#     Projeto 1 e em ESCRITA no Projeto 2 ("Amparo — Apresentação do Projeto", que ela cria).
-#   - brandkit (Skill tool) — usada por Flávia Fonte (step 5) como framework estratégico de
-#     concepção de logo/identidade.
-#   - manual-identidade-visual-premium (Skill tool) — usada por Helena Manual (step 10) como
-#     framework editorial: gera o manual técnico completo em
-#     `output/manual-identidade-visual.md` (todas as informações, para consulta/anexo da
-#     monografia) E, a partir dele, cura a apresentação premium do Projeto 2 (não é um dump
-#     1:1 do manual — é uma seleção editada e elevada para pitch).
+# Esta squad usa DUAS ferramentas/skills nativas do ambiente Claude Code,
+# equivalentes a "file read/write" — NÃO são skills do catálogo Opensquad,
+# por isso não aparecem em `skills:` abaixo:
+#   - Ferramentas MCP do Figma (`use_figma` e as skills `figma-use`,
+#     `figma-generate-library`, `figma-generate-design`) — usadas por Tomás
+#     Tokens (Step 4) para implementar componentes/telas/páginas
+#     diretamente no arquivo Figma do Amparo, SOMENTE quando o pedido do
+#     usuário pedir implementação (não apenas o prompt/especificação).
+#   - `manual-identidade-visual-premium` (Skill tool) — usada por Flávia
+#     Fonte (Step 2, como referência de qualidade/anatomia de componentes e
+#     linguagem fotográfica) e por Helena Manual (Step 6, como referência
+#     de estrutura/vocabulário para o apêndice do manual), sem precisar
+#     invocar a skill inteira toda vez — arquivos de `references/`/`assets/`
+#     lidos diretamente quando fizer sentido.
 
 skills:
   - web_search
@@ -42,7 +32,6 @@ skills:
   - image-ai-generator
 
 data:
-  - pipeline/data/research-brief.md
   - pipeline/data/domain-framework.md
   - pipeline/data/quality-criteria.md
   - pipeline/data/output-examples.md

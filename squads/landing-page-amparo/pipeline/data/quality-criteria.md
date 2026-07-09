@@ -12,8 +12,8 @@
 
 ## Visual (Vitória)
 
-- [ ] Design system documentado antes de qualquer seção (cores, tipografia, grid, espaçamento)
-- [ ] Paleta/tipografia vem fielmente do design system de `marca-design-amparo` OU está marcada como "PENDENTE" se a marca ainda não existir
+- [ ] Design system documentado antes de qualquer seção (cores, tipografia, grid, espaçamento), traduzido a partir de `brand/design-system.md`
+- [ ] Paleta/tipografia vem fielmente e exatamente de `brand/design-system.md` (fonte travada, sempre disponível) — zero cor, fonte ou espaçamento inventado
 - [ ] Contraste de texto ≥4.5:1 (normal) / ≥3:1 (grande/ícones) em toda combinação cor/fundo
 - [ ] Breakpoints responsivos definidos por conteúdo (não só por dispositivo)
 - [ ] Nenhum elemento de imagem realista de violência/vítima — apenas simbólico/abstrato

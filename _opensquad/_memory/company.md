@@ -25,6 +25,25 @@ O Amparo é uma plataforma mobile completa que combina proteção imediata (emer
 
 Acolhedor, empático, seguro e claro — linguagem sensível ao tema, sem jargão técnico para o público final.
 
+## Identidade Visual e Design System (FINALIZADO — NÃO ALTERAR)
+
+A identidade visual e o design system do Amparo já foram criados, aprovados
+e publicados. Estão em `brand/` (raiz do projeto):
+
+- `brand/design-system.md` — especificação completa (cores hex, tipografia,
+  espaçamento, componentes, ícones, linguagem fotográfica, princípios de
+  segurança).
+- `brand/LogoAmparo.svg` (+ `.png`/`.jpg`) — logotipo vetorial oficial.
+- `brand/manual-amparo.pdf` — manual de identidade visual completo.
+
+**Regra vinculante para toda squad e todo agente deste projeto:** estes
+arquivos são a fonte única da verdade e estão travados (locked). Nunca
+gerar, propor ou sugerir uma cor, fonte, logotipo, espaçamento, ícone ou
+tom de voz diferente do documentado em `brand/`. Qualquer tela, componente,
+peça gráfica, landing page ou texto de marca produzido por qualquer squad
+deve carregar `brand/design-system.md` (e usar `brand/LogoAmparo.svg` como
+logo) antes de gerar output visual — nunca reinventar a partir do zero.
+
 ## Uso pretendido do Opensquad
 
 - Documentação do TCC (monografia, relatórios)

@@ -1,12 +1,20 @@
 # Direção de Imagens Geradas por IA — Amparo
 
-> Usado por Flávia Fonte (Step 5, card de abertura), Tomás Tokens (Step 7,
-> fotos de contexto de mockup) e Helena Manual (Step 11, apresentação
-> premium) sempre que avaliarem gerar uma imagem via `image-ai-generator`.
-> Objetivo: toda imagem gerada fala diretamente com o público-alvo real do
+> Usado por Flávia Fonte (Step 2, especificação de prompts de imagem)
+> sempre que o pedido do usuário for um prompt de imagem, e opcionalmente
+> para gerar de fato a imagem via `image-ai-generator` se o usuário pedir
+> isso explicitamente (o entregável padrão desta squad é o prompt em
+> texto, não a imagem gerada). Objetivo: toda imagem/prompt fala diretamente
+> com o público-alvo real do
 > Amparo — mulheres, majoritariamente negras, 18-44 anos — com design
 > bonito, moderno e que chama atenção, sem nunca comprometer a segurança
 > trauma-informada do projeto.
+>
+> **Paleta real e travada (ver `brand/design-system.md`):** Vinho Amparo
+> `#954B6E` (primária), Vinho Profundo `#4B2A3F`, Malva Suave `#C58DA8`,
+> Areia Acolhedora `#F2EAE4` — nunca "slate"/azul-ardósia ou terracota
+> (paleta hipotética antiga, descontinuada). Toda imagem gerada deve
+> compor com esses tons, nunca introduzir uma paleta cromática dissonante.
 
 ## Sujeito preferencial
 
@@ -14,8 +22,9 @@
   confiança e tranquilidade — é a imagem-âncora do Amparo. Ex.: mulher
   sorrindo discretamente enquanto olha o celular num ambiente cotidiano
   (casa, rua, transporte, trabalho), luz natural, composição editorial.
-- **Representação**: refletir o público real trazido pela pesquisa de
-  Renata (majoritariamente mulheres negras, 18-44 anos) — nunca um
+- **Representação**: refletir o público real do Amparo, já documentado em
+  `_opensquad/_memory/company.md` e `brand/design-system.md` (seção 4,
+  Personas — majoritariamente mulheres negras, 18-44 anos) — nunca um
   elenco genérico/branco por padrão.
 - Quando a cena não pede pessoa (ex.: still life de um mockup de cartão
   sobre mesa), usar mood abstrato/textura como alternativa — mas sempre
@@ -26,8 +35,9 @@
 
 - **Bonito, moderno, atrativo** — fotografia editorial contemporânea,
   nunca stock genérico de banco de imagens datado.
-  Bonito = luz natural suave, paleta calibrada com a marca (tons frios +
-  acento terracota), composição limpa, respiro.
+  Bonito = luz natural suave, paleta calibrada com a marca (Vinho Amparo
+  `#954B6E` e Areia Acolhedora `#F2EAE4`, nunca tons frios/azulados),
+  composição limpa, respiro.
 - **Chama atenção sem alarme**: composição forte (enquadramento,
   contraste tonal) pode e deve chamar atenção — a régua trauma-informada
   proíbe cor/tema de alarme, não impacto visual ou beleza.
@@ -63,8 +73,9 @@
 ```
 Editorial photograph of a confident Black woman in her late 20s,
 smiling softly while looking at her smartphone, natural window light,
-warm neutral background in slate and terracotta tones, modern minimal
-composition, contemporary lifestyle photography, hyper realistic, 4K
-quality, clean composition, no visible text or UI on the phone screen,
+warm neutral background in dusty wine and sandy beige tones (matching
+Amparo's palette: #954B6E, #F2EAE4), modern minimal composition,
+contemporary lifestyle photography, hyper realistic, 4K quality, clean
+composition, no visible text or UI on the phone screen,
 --ar 4:5 --style raw
 ```

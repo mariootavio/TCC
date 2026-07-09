@@ -2,6 +2,8 @@
 
 Framework operacional consolidado para os 5 agentes da squad. A squad transforma em código real (Next.js) o que as squads `brainstorm-amparo` (backlog priorizado) e `marca-design-amparo` (identidade visual) já produziram — nenhum agente desta squad inventa funcionalidade do app ou tokens visuais que não estejam ancorados em uma fonte real.
 
+**Design system travado:** a identidade visual do Amparo já está finalizada e aprovada em `brand/design-system.md` (paleta hex, tipografia, espaçamento, componentes) e `brand/LogoAmparo.svg` (logo vetorial oficial) — ver `brand/README.md`. Esses arquivos SEMPRE existem e são a fonte primária; a lógica antiga de "paleta provisória PENDENTE" não se aplica mais. Todo agente que definir ou implementar visual (cor, fonte, espaçamento, logo) usa exatamente os valores de `brand/design-system.md`, nunca um valor novo ou aproximado.
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## Visão Geral do Fluxo
@@ -31,7 +33,7 @@ Lê o backlog mais recente de `brainstorm-amparo` e o company.md para nunca inve
 
 ## 2. Vitória Visual — Especificação Visual
 
-Traduz a estrutura de Camila em um sistema de design completo: paleta de cores, tipografia, grid, espaçamento, imagery, breakpoints responsivos. Lê o design system publicado pela `marca-design-amparo`; se existir, usa fielmente os tokens de lá (nunca reinterpreta). Se não existir ainda, define uma paleta/tipografia provisória claramente marcada como "PENDENTE — substituir quando marca-design-amparo publicar". Usa as skills `design-taste-frontend` e `high-end-visual-design` para garantir um resultado moderno e premium, não genérico.
+Traduz a estrutura de Camila em um sistema de design completo: paleta de cores, tipografia, grid, espaçamento, imagery, breakpoints responsivos. Lê `brand/design-system.md` e `brand/LogoAmparo.svg` (identidade JÁ FINALIZADA e travada) e usa fielmente os valores de lá — nunca reinterpreta, ajusta ou propõe alternativa. A especificação visual desta squad é 100% derivada de `brand/design-system.md`, nunca inventada. Usa as skills `design-taste-frontend` e `high-end-visual-design` apenas para composição/layout/hierarquia visual (grid, ritmo, breakpoints), nunca para escolher cor ou tipografia fora da marca.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

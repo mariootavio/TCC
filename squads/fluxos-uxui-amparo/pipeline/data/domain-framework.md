@@ -6,6 +6,16 @@ transforma em Figma (telas reais + protótipo navegável) o que as squads
 system, via Claude Design) já produziram — nenhum agente desta squad
 repesquisa ou inventa conteúdo que já existe nessas fontes.
 
+**Design system travado:** a identidade visual e o design system do Amparo
+já estão finalizados e aprovados em `brand/design-system.md` (especificação
+completa: paleta hex, tipografia, espaçamento, componentes) e
+`brand/LogoAmparo.svg` (logo vetorial oficial) — ver `brand/README.md`.
+Esses arquivos são a fonte primária e mais confiável (sempre disponíveis,
+independente do estado do projeto Claude Design). Todo agente desta squad
+que reconstruir tokens/componentes/logo no Figma deve usar exatamente os
+valores de `brand/design-system.md`/`brand/LogoAmparo.svg` — nunca um valor
+novo, ajustado ou "melhorado".
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## Visão Geral do Fluxo
@@ -31,11 +41,16 @@ seleção de inputs; Step 6, aprovação de fluxos) e um checkpoint final
 
 ## 1. Caio Componentes — Fundação do Design System
 
-Lê o projeto Claude Design publicado pela squad `marca-design-amparo` (via
-`DesignSync`, métodos de leitura) e reconstrói fielmente tokens (Figma
-Variables) e componentes (hierarquia atômica, Variant Properties) no Figma.
-Princípio central: tradução fiel, nunca reinterpretação. Ausência de
-informação na fonte = pendência explícita, nunca valor inventado.
+Lê `brand/design-system.md` e `brand/LogoAmparo.svg` (fonte primária e
+travada) e reconstrói fielmente tokens (Figma Variables) e componentes
+(hierarquia atômica, Variant Properties) no Figma. A squad `marca-design-
+amparo` foi reformulada e agora estende esse mesmo design system sob
+demanda (novos componentes/telas, implementados diretamente no Figma via
+MCP) — se ela já tiver adicionado algo relevante ao arquivo Figma, usar
+como complemento/cross-check (`output/manual-extensoes.md` da squad lista
+o que foi adicionado e onde). Princípio central: tradução fiel, nunca
+reinterpretação. Ausência de informação na
+fonte = pendência explícita, nunca valor inventado.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -101,7 +116,7 @@ RESSALVAS.
 
 | Agente | Entrada principal | Saída | Ferramenta/skill nativa principal |
 |---|---|---|---|
-| Caio Componentes | Claude Design (marca-design-amparo) | `design-system-figma.md` + arquivo Figma | DesignSync, figma-use, figma-generate-library, figma-create-design-system-rules |
+| Caio Componentes | `brand/design-system.md` + `brand/LogoAmparo.svg` | `design-system-figma.md` + arquivo Figma | figma-use, figma-generate-library, figma-create-design-system-rules |
 | Iara Informação | Backlog brainstorm-amparo + design-system-figma.md | `arquitetura-informacao.md` | — (texto/diagrama) |
 | Daniela Discrição | arquitetura-informacao.md + RF-CORE-02 | `padroes-seguranca-discricao.md` | — (texto) |
 | Joana Jornada | arquitetura + padrões de segurança + backlog | `fluxos-ux.md` | figma-use-figjam (opcional) |

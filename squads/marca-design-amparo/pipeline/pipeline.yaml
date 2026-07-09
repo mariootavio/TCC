@@ -1,39 +1,26 @@
 squad: "marca-design-amparo"
-name: "Pipeline — Marca & Design System Amparo"
+name: "Pipeline — Extensão de Marca & Design System Amparo"
 
 steps:
   - step: 1
-    file: "steps/step-01-checkpoint-brief-design.md"
+    file: "steps/step-01-checkpoint-pedido.md"
   - step: 2
-    file: "steps/step-02-pesquisa-marcas-concorrentes.md"
+    file: "steps/step-02-especificar-prompt.md"
   - step: 3
-    file: "steps/step-03-pesquisa-cor-publico.md"
+    file: "steps/step-03-checkpoint-aprovar-prompt.md"
   - step: 4
-    file: "steps/step-04-checkpoint-referencias-visuais.md"
+    file: "steps/step-04-implementar-figma.md"
   - step: 5
-    file: "steps/step-05-criar-identidade-visual.md"
+    file: "steps/step-05-auditar-fidelidade.md"
   - step: 6
-    file: "steps/step-06-checkpoint-aprovar-identidade-visual.md"
+    file: "steps/step-06-documentar-extensao.md"
   - step: 7
-    file: "steps/step-07-criar-design-system.md"
-  - step: 8
-    file: "steps/step-08-checkpoint-aprovar-design-system.md"
-  - step: 9
-    file: "steps/step-09-revisar-marca.md"
-  - step: 10
-    file: "steps/step-10-checkpoint-aprovar-projeto1.md"
-  - step: 11
-    file: "steps/step-11-criar-manual-identidade.md"
-  - step: 12
-    file: "steps/step-12-checkpoint-aprovacao-final.md"
+    file: "steps/step-07-checkpoint-aprovacao-final.md"
 
 checkpoints:
   - 1
-  - 4
-  - 6
-  - 8
-  - 10
-  - 12
+  - 3
+  - 7
 
 on_reject:
-  9: 7
+  5: 2

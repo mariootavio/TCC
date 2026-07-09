@@ -25,14 +25,14 @@ Anti-padrões consolidados dos 5 agentes da squad. Cada agente tem sua seção.
 
 ### Never Do
 
-1. **Inventar um valor de token (cor, espaçamento) quando o design system da marca-design-amparo já existe**: viola o princípio de tradução fiel — usar o que já foi decidido, não reinterpretar.
+1. **Inventar, ajustar ou propor qualquer valor de token (cor, fonte, espaçamento) fora de `brand/design-system.md`**: a marca está finalizada e travada — viola o princípio de tradução fiel usar qualquer valor que não venha exatamente desse arquivo.
 2. **Usar foto realista de violência doméstica ou vítima como imagem de seção**: sensacionaliza a causa e pode retraumatizar quem visita a página em risco.
 3. **Aplicar uma estética fria/industrial (brutalist) a um produto de tom acolhedor/empático**: contraria diretamente o tom de voz definido em `company.md`.
-4. **Esconder a marcação "PENDENTE" quando o design system da marca ainda não existe**: mascarar a ausência de fonte real impede a correção posterior quando a marca publicar.
+4. **Recriar ou redesenhar o logotipo em vez de referenciar `brand/LogoAmparo.svg`**: o asset vetorial oficial é a única fonte de logo — nunca reconstruir o símbolo do zero.
 
 ### Always Do
 
-1. **Carregar as skills `design-taste-frontend` e `high-end-visual-design` antes de definir o design system**: garante um resultado moderno e premium, não genérico.
+1. **Carregar `brand/design-system.md` e `brand/LogoAmparo.svg` antes de qualquer outra coisa, e as skills `design-taste-frontend` e `high-end-visual-design` para traduzir esse sistema em especificação web**: garante um resultado moderno e premium, fiel à marca, nunca genérico ou inventado.
 2. **Verificar contraste WCAG AA de cada par texto/fundo antes de considerar a especificação concluída**: única validação de qualidade que Vitória aplica antes da revisão completa de Rafael.
 3. **Documentar a especificação visual seção por seção**, incluindo breakpoints responsivos explícitos.
 
@@ -92,4 +92,4 @@ Anti-padrões consolidados dos 5 agentes da squad. Cada agente tem sua seção.
 
 ## Anti-Padrão Transversal Geral da Squad
 
-Nenhum agente desta squad deve inventar conteúdo (funcionalidade do app, token visual, estatística) que não esteja ancorado em uma fonte real (`brainstorm-amparo`, `marca-design-amparo`, `company.md`) ou em pesquisa documentada em `research-brief.md`. Toda ausência de informação deve ser registrada como pendência explícita, nunca resolvida por invenção. E, transversalmente acima de tudo: **a Saída Rápida é um requisito de primeira classe em toda etapa — nunca um extra de acessibilidade.**
+Nenhum agente desta squad deve inventar conteúdo (funcionalidade do app, token visual, estatística) que não esteja ancorado em uma fonte real (`brainstorm-amparo`, `brand/design-system.md` e `brand/LogoAmparo.svg` para todo token visual, `company.md`) ou em pesquisa documentada em `research-brief.md`. Toda ausência de informação deve ser registrada como pendência explícita, nunca resolvida por invenção. E, transversalmente acima de tudo: **a Saída Rápida é um requisito de primeira classe em toda etapa — nunca um extra de acessibilidade.**
