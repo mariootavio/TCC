@@ -2,46 +2,37 @@
 
 ## Conversão / UX de Conteúdo (Camila)
 
-- [ ] CTA primário visível sem scroll (above the fold) a partir de 375px de largura
+- [ ] CTA primário visível sem scroll (above the fold) no frame desktop e mobile
 - [ ] Proposta de valor compreensível em ≤5 segundos de leitura do hero
 - [ ] Máximo 1 CTA primário visualmente dominante por seção; CTAs secundários com hierarquia visual inferior
 - [ ] Toda funcionalidade do app citada no copy está ancorada no backlog real de `brainstorm-amparo` (nunca inventada)
 - [ ] Os 3 públicos (vítima/rede de apoio, ONGs/parceiros, banca) têm pelo menos uma seção ou CTA endereçado a eles
 - [ ] Zero depoimento nominal/identificável de vítima real; prova social usa apenas dados agregados/institucionais
-- [ ] Especificação da Saída Rápida presente e completa (posição, rótulo, comportamento, atalho de teclado)
 
 ## Visual (Vitória)
 
 - [ ] Design system documentado antes de qualquer seção (cores, tipografia, grid, espaçamento), traduzido a partir de `brand/design-system.md`
 - [ ] Paleta/tipografia vem fielmente e exatamente de `brand/design-system.md` (fonte travada, sempre disponível) — zero cor, fonte ou espaçamento inventado
 - [ ] Contraste de texto ≥4.5:1 (normal) / ≥3:1 (grande/ícones) em toda combinação cor/fundo
-- [ ] Breakpoints responsivos definidos por conteúdo (não só por dispositivo)
-- [ ] Nenhum elemento de imagem realista de violência/vítima — apenas simbólico/abstrato
+- [ ] Frames responsivos definidos por conteúdo (não só por dispositivo)
+- [ ] Nenhum elemento de imagem realista de violência/vítima — apenas simbólico/abstrato ou fotografia editorial aprovada
+- [ ] Toda direção de motion tem propósito declarado (guiar atenção ou dar feedback)
 
-## Código (Fábio)
+## Implementação Figma & Assets (Diego)
 
-- [ ] Projeto Next.js + TypeScript + Tailwind criado no diretório externo confirmado pelo usuário no Step 1 (fora do repositório do TCC)
-- [ ] Zero erros de console / zero warnings de hydration mismatch
-- [ ] Componente de Saída Rápida: fixo, global (layout raiz), `window.location.replace()`, atalho Esc-Esc, SEM nenhuma transição/animação
-- [ ] `<title>`, meta description e Open Graph neutros (sem termos explícitos de violência doméstica)
-- [ ] Zero autoplay de áudio/vídeo com som
-- [ ] 100% dos elementos interativos navegáveis por teclado com foco visível
-- [ ] Imagens via `next/image`, sem CLS perceptível
+- [ ] Arquivo Figma criado (ou atualizado, se já existente e registrado em `_memory/memories.md`)
+- [ ] Cores/tipografia aplicadas via variáveis Figma espelhando `brand/design-system.md`, nunca valores soltos
+- [ ] 100% das seções especificadas por Camila/Vitória construídas, nenhuma pulada silenciosamente
+- [ ] Toda imagem gerada cita o prompt exato e segue `direcao-imagens-ia.md`
+- [ ] Motion aplicado via `figma-use-motion` apenas onde especificado, com propósito declarado
+- [ ] Frames responsivos (desktop 1440px / tablet 768px / mobile 375px) presentes para cada seção
+- [ ] Nomenclatura atômica consistente em todo o arquivo
 
-## Animação (Mariana)
+## Revisão Final (Rafael)
 
-- [ ] Toda animação usa exclusivamente `transform`/`opacity` — nenhuma propriedade de layout animada
-- [ ] 100% das animações respeitam `prefers-reduced-motion`
-- [ ] `viewport={{ once: true }}` em todo scroll-reveal (sem reanimação ao subir/descer)
-- [ ] Saída Rápida explicitamente excluída de qualquer animação/transição
-- [ ] Sem excesso de animação simultânea — uso intencional, não decorativo
-
-## Revisão Final (Rafael) — Core Web Vitals (p75, mobile, 4G simulado)
-
-- [ ] LCP < 2.5s
-- [ ] CLS < 0.1
-- [ ] INP < 200ms
-- [ ] Lighthouse Accessibility score ≥ 95
-- [ ] Lighthouse Performance score ≥ 90 (mobile)
-- [ ] Touch targets ≥ 44×44px em CTAs principais e no botão de Saída Rápida
-- [ ] **Gatilho de rejeição automática**: qualquer falha na Saída Rápida (ausente, animada, com confirmação, ou histórico não tratado via `replace()`) — independente da média geral de score
+- [ ] Fidelidade de copy: 100% do texto construído corresponde a `estrutura-conteudo.md`
+- [ ] Fidelidade visual: 100% das seções correspondem a `especificacao-visual.md`
+- [ ] WCAG AA aplicado a design: contraste, hierarquia, tamanho de alvo de toque ≥44×44px
+- [ ] Consistência responsiva: mesma hierarquia de informação entre frames desktop/tablet/mobile
+- [ ] Assets (imagens e motion) avaliados quanto a propósito e conformidade com `direcao-imagens-ia.md`
+- [ ] Nenhuma nota atribuída sem justificativa escrita citando a página/frame exata

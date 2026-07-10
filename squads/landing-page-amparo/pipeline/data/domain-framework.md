@@ -1,57 +1,95 @@
 # Domain Framework — Landing Page Amparo
 
-Framework operacional consolidado para os 5 agentes da squad. A squad transforma em código real (Next.js) o que as squads `brainstorm-amparo` (backlog priorizado) e `marca-design-amparo` (identidade visual) já produziram — nenhum agente desta squad inventa funcionalidade do app ou tokens visuais que não estejam ancorados em uma fonte real.
+Framework operacional consolidado para os 4 agentes da squad. A squad
+transforma em uma landing page real no Figma o que as squads
+`brainstorm-amparo` (backlog priorizado) já produziu e a identidade visual
+já finalizada em `brand/` — nenhum agente desta squad inventa
+funcionalidade do app ou tokens visuais que não estejam ancorados em uma
+fonte real.
 
-**Design system travado:** a identidade visual do Amparo já está finalizada e aprovada em `brand/design-system.md` (paleta hex, tipografia, espaçamento, componentes) e `brand/LogoAmparo.svg` (logo vetorial oficial) — ver `brand/README.md`. Esses arquivos SEMPRE existem e são a fonte primária; a lógica antiga de "paleta provisória PENDENTE" não se aplica mais. Todo agente que definir ou implementar visual (cor, fonte, espaçamento, logo) usa exatamente os valores de `brand/design-system.md`, nunca um valor novo ou aproximado.
+**Design system travado:** a identidade visual do Amparo já está
+finalizada e aprovada em `brand/design-system.md` (paleta hex, tipografia,
+espaçamento, componentes) e `brand/LogoAmparo.svg` (logo vetorial oficial)
+— ver `brand/README.md`. Esses arquivos SEMPRE existem e são a fonte
+primária; não existe cenário de "paleta provisória PENDENTE" nesta squad.
+Todo agente que definir ou implementar visual (cor, fonte, espaçamento,
+logo) usa exatamente os valores de `brand/design-system.md`, nunca um
+valor novo ou aproximado.
+
+**Entregável 100% Figma:** esta squad não produz código. O produto final é
+um arquivo Figma completo e navegável — copy, visual, imagens e motion —
+pronto para ser apresentado, compartilhado ou usado como especificação de
+origem para uma eventual implementação em código futura (fora do escopo
+desta squad).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## Visão Geral do Fluxo
 
-```
-[Checkpoint: referências + inputs]
-   → Camila Conteúdo (estrutura + copy + spec da Saída Rápida)
+```text
+[Checkpoint: referências + inputs — novo build ou ajuste]
+   → Camila Conteúdo (estrutura + copy)
    → [checkpoint: aprovar estrutura]
-   → Vitória Visual (especificação visual completa, baseada na marca)
+   → Vitória Visual (especificação visual + imagery + motion, baseada na marca)
    → [checkpoint: aprovar especificação visual]
-   → Fábio Front-end (implementação real no diretório externo confirmado no Step 1)
-   → Mariana Movimento (animações: Framer Motion + GSAP + View Transitions)
-   → [checkpoint: aprovar implementação]
-   → Rafael Rigor (revisão: marca, código, WCAG AA, Core Web Vitals, Saída Rápida)
+   → Diego Assets (construção no Figma + geração de imagens + motion no protótipo)
+   → [checkpoint: aprovar landing page no Figma]
+   → Rafael Rigor (revisão: copy, marca, assets, WCAG AA, consistência responsiva)
    → [checkpoint: aprovação final]
 ```
 
-Cada etapa depende estritamente da anterior. A squad tem quatro checkpoints intermediários (steps 1, 3, 5, 8) e um checkpoint final (step 10). Rejeição de Rafael (step 9) volta ao step 6 (Fábio), que coordena correções de código/animação/visual conforme a causa do problema.
+Cada etapa depende estritamente da anterior. A squad tem quatro
+checkpoints intermediários (steps 1, 3, 5, 7) e um checkpoint final
+(step 9). Rejeição de Rafael (step 8) volta ao step 6 (Diego), que
+coordena correções de visual/copy/assets conforme a causa do problema.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-## 1. Camila Conteúdo — Estrutura, Copy e Spec da Saída Rápida
+## 1. Camila Conteúdo — Estrutura e Copy
 
-Lê o backlog mais recente de `brainstorm-amparo` e o company.md para nunca inventar funcionalidade. Define a arquitetura de seções (Hero, Problema/Solução, Funcionalidades, Como Funciona, Prova Social institucional, Sobre o Projeto/TCC, Contato/Download), o copy de cada seção usando o framework AIDA/PAS adaptado de `copywriting.md`, a mensagem específica para os 3 públicos simultâneos, e a especificação funcional (não visual) do botão de Saída Rápida: posição, rótulo, comportamento de redirecionamento, atalho de teclado. Esse requisito nasce aqui, antes de qualquer decisão visual ou de código — nunca como adendo posterior.
+Lê o backlog mais recente de `brainstorm-amparo` e o company.md para nunca
+inventar funcionalidade. Define a arquitetura de seções (Hero,
+Problema/Solução, Funcionalidades, Como Funciona, Prova Social
+institucional, Sobre o Projeto/TCC, Contato/Download) e o copy de cada
+seção usando o framework AIDA/PAS adaptado de `copywriting.md`, endereçando
+a mensagem específica para os 3 públicos simultâneos.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## 2. Vitória Visual — Especificação Visual
 
-Traduz a estrutura de Camila em um sistema de design completo: paleta de cores, tipografia, grid, espaçamento, imagery, breakpoints responsivos. Lê `brand/design-system.md` e `brand/LogoAmparo.svg` (identidade JÁ FINALIZADA e travada) e usa fielmente os valores de lá — nunca reinterpreta, ajusta ou propõe alternativa. A especificação visual desta squad é 100% derivada de `brand/design-system.md`, nunca inventada. Usa as skills `design-taste-frontend` e `high-end-visual-design` apenas para composição/layout/hierarquia visual (grid, ritmo, breakpoints), nunca para escolher cor ou tipografia fora da marca.
+Traduz a estrutura de Camila em um sistema de design completo: paleta de
+cores, tipografia, grid, espaçamento, imagery, direção de motion e frames
+responsivos. Lê `brand/design-system.md` e `brand/LogoAmparo.svg`
+(identidade JÁ FINALIZADA e travada) e usa fielmente os valores de lá —
+nunca reinterpreta, ajusta ou propõe alternativa. A especificação visual
+desta squad é 100% derivada de `brand/design-system.md`, nunca inventada.
+Usa as skills `design-taste-frontend` e `high-end-visual-design` apenas
+para composição/layout/hierarquia/motion, nunca para escolher cor ou
+tipografia fora da marca.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-## 3. Fábio Front-end — Implementação Real
+## 3. Diego Assets — Implementação no Figma & Produção de Assets
 
-Constrói o projeto Next.js + TypeScript + Tailwind + shadcn/ui no diretório externo confirmado pelo usuário no Step 1 (fora deste repositório — caminho registrado em `output/inputs-e-referencias.md`), nunca em squads/output/. Implementa cada seção como componente, aplica a especificação visual de Vitória, garante responsividade e acessibilidade (navegação por teclado, ARIA, contraste), e implementa o componente de Saída Rápida — fixo, global, no layout raiz, SEM nenhuma animação ou transição (ação instantânea via `window.location.replace()`, atalho Esc-Esc global).
+Constrói a landing page inteira no arquivo Figma do Amparo (via MCP),
+seção por seção, aplicando fielmente o copy de Camila e a especificação de
+Vitória. Configura variáveis de design system (via `figma-generate-library`),
+monta a página com `figma-generate-design`, gera imagens via
+`image-ai-generator` seguindo `direcao-imagens-ia.md`, e aplica motion no
+protótipo via `figma-use-motion`. Se já existe um arquivo Figma desta
+landing page (registrado em `_memory/memories.md`), atualiza esse arquivo
+em vez de criar um novo — suporta ajustes incrementais entre execuções.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-## 4. Mariana Movimento — Animações
+## 4. Rafael Rigor — Revisão Final
 
-Adiciona a camada de animação sobre o código de Fábio: scroll reveals com `viewport={{ once: true }}`, stagger em listas/cards, micro-interações em botões, parallax sutil em elementos decorativos, e — via skill `gpt-taste` — ScrollTrigger avançado (pinning/stacking/scrubbing) onde fizer sentido. Toda animação usa exclusivamente `transform`/`opacity`, respeita `prefers-reduced-motion`, e exclui explicitamente o componente de Saída Rápida de qualquer animação.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 5. Rafael Rigor — Revisão Final
-
-Avalia 100% do site: fidelidade à especificação visual e à marca, qualidade do código (best practices React/Next.js), WCAG AA completo (skill `wcag-audit-patterns`), Web Interface Guidelines (skill `web-design-guidelines`), e Core Web Vitals (LCP/CLS/INP). Qualquer falha na Saída Rápida (ausente, animada, ou com confirmação antes de redirecionar) é gatilho de rejeição automática, independente da média geral — mesmo princípio do Wagner WCAG em `fluxos-uxui-amparo`.
+Avalia 100% da landing page construída no Figma: fidelidade de copy,
+fidelidade à especificação visual e à marca, qualidade e propósito dos
+assets (imagens e motion), WCAG AA aplicado a design (skill
+`wcag-audit-patterns`), Web Interface Guidelines (skill
+`web-design-guidelines`), e consistência entre frames responsivos.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -60,7 +98,6 @@ Avalia 100% do site: fidelidade à especificação visual e à marca, qualidade 
 | Agente | Entrada principal | Saída | Skill nativa principal |
 |---|---|---|---|
 | Camila Conteúdo | backlog brainstorm-amparo + company.md + referências | `estrutura-conteudo.md` | — (texto) |
-| Vitória Visual | estrutura-conteudo.md + design system marca-design-amparo | `especificacao-visual.md` | design-taste-frontend, high-end-visual-design, frontend-design |
-| Fábio Front-end | especificacao-visual.md | `implementacao-frontend.md` + código no diretório externo confirmado no Step 1 | shadcn, vercel-react-best-practices, vercel-composition-patterns, full-output-enforcement |
-| Mariana Movimento | implementacao-frontend.md | `animacoes.md` + código atualizado | gpt-taste, vercel-react-view-transitions, full-output-enforcement |
+| Vitória Visual | estrutura-conteudo.md + brand/design-system.md | `especificacao-visual.md` | design-taste-frontend, high-end-visual-design, frontend-design |
+| Diego Assets | especificacao-visual.md | `implementacao-figma.md` + arquivo Figma real | figma-use, figma-generate-design, figma-generate-library, figma-use-motion, image-ai-generator |
 | Rafael Rigor | todos os outputs anteriores | `revisao-final.md` | web-design-guidelines, wcag-audit-patterns |

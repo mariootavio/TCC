@@ -10,8 +10,8 @@ outputFile: squads/landing-page-amparo/output/estrutura-conteudo.md
 ## Context Loading
 
 Load these files before executing:
-- `squads/landing-page-amparo/output/inputs-e-referencias.md` — caminho do
-  projeto, rodada do backlog confirmada, fonte de identidade visual e
+- `squads/landing-page-amparo/output/inputs-e-referencias.md` — modo de
+  execução (nova construção ou ajuste), rodada do backlog confirmada e
   referências opcionais (Step 1).
 - Backlog confirmado de `squads/brainstorm-amparo/output/.../ideias-brainstorm.md`
   (ou revisão mais recente) — ancoragem obrigatória de toda funcionalidade
@@ -19,8 +19,8 @@ Load these files before executing:
 - `_opensquad/_memory/company.md` — tom de voz, público, produto.
 - `pipeline/data/research-brief.md` (seção 1) — framework de estrutura e
   anti-padrões de landing page de causa social.
-- `pipeline/data/output-examples.md` (Exemplos 1-4) — referência de qualidade
-  para hero, funcionalidades, prova social e especificação da Saída Rápida.
+- `pipeline/data/output-examples.md` (Exemplos 1-3) — referência de
+  qualidade para hero, funcionalidades e prova social.
 
 ## Instructions
 
@@ -39,17 +39,16 @@ Load these files before executing:
    endereçando explicitamente os 3 públicos (vítima/rede de apoio,
    ONGs/parceiros, banca acadêmica) em seções ou CTAs distintos, sem diluir
    o CTA primário.
-5. Especificar a Saída Rápida por completo: posição, rótulo, comportamento
-   de redirecionamento, atalho de teclado, e texto de apoio transparente
-   sobre a limitação de não apagar histórico.
+5. Se o modo de execução (Step 1) for "ajuste em Figma existente", focar a
+   revisão apenas no escopo indicado pelo usuário, mantendo o restante da
+   estrutura/copy já aprovada em execuções anteriores.
 6. Compilar `estrutura-conteudo.md` com a arquitetura completa, o copy de
-   cada seção, a especificação da Saída Rápida, e uma lista explícita de
-   pendências (funcionalidades sem backlog confirmado, design system ainda
-   não publicado, etc.).
+   cada seção, e uma lista explícita de pendências (funcionalidades sem
+   backlog confirmado, referências ainda não fornecidas, etc.).
 
 ## Output Format
 
-```
+```text
 ARQUITETURA DE SEÇÕES
 1. {nome da seção}
 ...
@@ -62,35 +61,26 @@ Copy final:
   CTA: {texto, primário ou secundário}
 Ancoragem ao backlog: {RF-CORE-XX / ideia, ou "institucional, sem ancoragem necessária"}
 
-COMPONENTE: Saída Rápida
-Posição: ...
-Rótulo: ...
-Comportamento: ...
-Atalho de teclado: ...
-Texto de apoio: ...
-
 PENDÊNCIAS
 - {item pendente e por quê}
 ```
 
 ## Output Example
 
-Ver `pipeline/data/output-examples.md`, Exemplos 1, 2, 3 e 4 — hero completo,
-bloco de funcionalidade ancorado, prova social institucional, e especificação
-da Saída Rápida, respectivamente. O output real desta etapa segue o mesmo
-nível de detalhe e especificidade desses exemplos, cobrindo as 7 seções da
-arquitetura.
+Ver `pipeline/data/output-examples.md`, Exemplos 1, 2 e 3 — hero completo,
+bloco de funcionalidade ancorado, e prova social institucional. O output
+real desta etapa segue o mesmo nível de detalhe e especificidade desses
+exemplos, cobrindo as 7 seções da arquitetura.
 
 ## Veto Conditions
 
 Reject and redo if ANY of these are true:
 1. Alguma funcionalidade aparece no copy sem ancoragem ao backlog real de `brainstorm-amparo`.
-2. A especificação da Saída Rápida está incompleta (falta posição, comportamento ou atalho de teclado).
-3. Há mais de um CTA primário concorrendo na mesma seção.
+2. Há mais de um CTA primário concorrendo na mesma seção.
 
 ## Quality Criteria
 
 - [ ] Todo CTA primário aparece sozinho por seção
 - [ ] Os 3 públicos têm seção ou CTA dedicado, sem diluir o CTA primário
 - [ ] Zero depoimento nominal de vítima real
-- [ ] Pendências (backlog ausente, marca ausente) registradas explicitamente, nunca preenchidas por invenção
+- [ ] Pendências (backlog ausente, referências não fornecidas) registradas explicitamente, nunca preenchidas por invenção

@@ -1,42 +1,53 @@
 code: "landing-page-amparo"
 name: "Landing Page — Amparo"
-description: "Squad de design, UX/UI e front-end que constrói o código real (React/Next.js) da landing page do projeto Amparo: estrutura e copy multi-público, especificação visual baseada na identidade da marca-design-amparo, implementação front-end com shadcn/ui, animações modernas (Framer Motion + GSAP + View Transitions), e revisão final de qualidade/acessibilidade. Inclui o padrão obrigatório de Saída Rápida para sites de apoio a vítimas de violência doméstica."
+description: "Squad de copywriting, design e prototipagem que constrói a landing page premium do projeto Amparo inteiramente no Figma: estrutura e copy multi-público, especificação visual 100% derivada de brand/design-system.md, implementação real no Figma via MCP (seções, imagens geradas por IA, elementos de motion/dinamismo no protótipo) e revisão final de fidelidade à marca e qualidade. Suporta ajustes incrementais no mesmo arquivo Figma em execuções futuras."
 language: "Português (Brasil)"
 
-# NOTA IMPORTANTE sobre o código real do site (não confundir com squads/{code}/output/):
-# Esta squad produz, além dos artefatos de processo abaixo, um projeto Next.js REAL e
-# persistente em um diretório FORA deste repositório (decisão do usuário, para não
-# sobrecarregar o projeto acadêmico do TCC com node_modules/build de um app Next.js).
-# O caminho absoluto exato é perguntado ao usuário no checkpoint do Step 1 e registrado
-# em squads/landing-page-amparo/output/inputs-e-referencias.md — não é fixo neste arquivo
-# porque pode mudar a cada ambiente/máquina. Esse projeto NÃO vive em
-# squads/landing-page-amparo/output/ porque não é um artefato de conteúdo escopado por
-# run_id — é um código-fonte que evolui entre execuções da squad. Fábio Front-end (step 6)
-# e Mariana Movimento (step 7) escrevem/editam arquivos ali diretamente, lendo o caminho
-# confirmado em inputs-e-referencias.md.
+# NOTA IMPORTANTE — Fonte única da verdade e escopo do entregável:
+# A identidade visual e o design system do Amparo estão FINALIZADOS e
+# TRAVADOS em brand/design-system.md e brand/LogoAmparo.svg (ver
+# brand/README.md). Todo agente que definir ou implementar visual usa
+# exatamente esses valores — não existe mais cenário de "paleta
+# provisória"/"pendente" (essa lógica antiga foi removida desta squad).
 #
-# NOTA sobre skills externas (não confundir com `skills:` abaixo, que é o catálogo Opensquad):
-# As skills a seguir foram instaladas via `npx skills add` (skills.sh) em `.claude/skills/`
-# e são carregadas em tempo de execução via a ferramenta Skill nativa do Claude Code —
-# não são integrações MCP/API do catálogo Opensquad:
-#   - design-taste-frontend, high-end-visual-design, frontend-design — usadas por Vitória
-#     Visual (step 4) e como referência por Fábio Front-end (step 6).
-#   - shadcn, vercel-react-best-practices, vercel-composition-patterns,
-#     full-output-enforcement — usadas por Fábio Front-end (step 6).
-#   - gpt-taste, vercel-react-view-transitions, full-output-enforcement — usadas por
-#     Mariana Movimento (step 7).
-#   - web-design-guidelines, wcag-audit-patterns — usadas por Rafael Rigor (step 9).
-#     wcag-audit-patterns já estava instalada no projeto (reaproveitada de fluxos-uxui-amparo).
+# O entregável final desta squad é 100% um arquivo Figma navegável — não
+# há mais implementação em código (Next.js/React). Se um dia for necessário
+# transformar esta landing page em código real, isso é tratado como uma
+# etapa/squad futura separada, usando o arquivo Figma aprovado aqui como
+# especificação de origem — nunca faz parte do pipeline desta squad, para
+# que o Figma continue sendo o entregável principal e completo por si só.
+#
+# O componente de "Saída Rápida" (botão de saída de emergência) NÃO faz
+# parte do escopo desta squad: ele exige comportamento funcional real
+# (JS, listener de teclado) que um mockup Figma não pode implementar de
+# verdade. Ficou fora do pipeline por decisão explícita do usuário — se a
+# landing page virar código no futuro, esse requisito de segurança precisa
+# ser reintroduzido na etapa de implementação.
+#
+# Esta squad usa ferramentas/skills nativas do ambiente Claude Code
+# (equivalentes a "file read/write"), por isso não aparecem em `skills:`
+# abaixo:
+#   - Ferramentas MCP do Figma (`use_figma` e as skills `figma-use`,
+#     `figma-generate-design`, `figma-generate-library`, `figma-use-motion`)
+#     — usadas por Diego Assets (Step 6) para construir a landing page
+#     completa no Figma, seção por seção, com variáveis/tokens espelhando
+#     brand/design-system.md.
+#   - `design-taste-frontend`, `high-end-visual-design`, `frontend-design`
+#     — usadas por Vitória Visual (Step 4) para traduzir o design system da
+#     marca em composição/hierarquia/ritmo de alto padrão, nunca para
+#     inventar cor/fonte fora da marca.
 
 skills:
   - web_search
   - web_fetch
+  - image-ai-generator
 
 data:
   - pipeline/data/research-brief.md
-  - pipeline/data/domain-framework.md
   - pipeline/data/quality-criteria.md
   - pipeline/data/output-examples.md
   - pipeline/data/anti-patterns.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/direcao-imagens-ia.md
 
 pipeline: "pipeline/pipeline.yaml"
