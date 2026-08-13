@@ -17,10 +17,11 @@ sua própria seção.
 
 ## Iara Informação — Arquitetura de Informação
 
-- [ ] Toda funcionalidade do backlog do brainstorm (RF-CORE + ideias priorizadas) aparece classificada em exatamente uma categoria estrutural.
+- [ ] Toda funcionalidade do backlog do brainstorm (RF-CORE + ideias priorizadas) aparece classificada em exatamente uma categoria estrutural (Navegação Principal, Ação Global, Ação Secundária/Contextual ou Camada Transversal).
 - [ ] Nenhuma funcionalidade mapeada está ausente do backlog real da squad `brainstorm-amparo`.
 - [ ] A navegação principal (bottom nav) não excede 5 itens, com agrupamentos justificados quando necessário.
 - [ ] Toda lacuna identificada está documentada em seção separada, sem preenchimento por funcionalidade inventada.
+- [ ] RF-CORE-06 (classificação de risco) está documentada como Camada Transversal — nunca como item de bottom nav, ação global ou ação secundária isolada — com a lista explícita de telas/fluxos afetados e as 3 ações de sistema (BAIXO/MÉDIO/ALTO) citadas exatamente como em `company.md`.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -39,6 +40,7 @@ sua própria seção.
 - [ ] Todo fluxo crítico (emergência, documentação, modo disfarçado, rede de apoio) tem ao menos um caminho de erro/interrupção mapeado com destino definido.
 - [ ] Toda decisão de design de fluxo cita a heurística de Nielsen aplicada.
 - [ ] Nenhum fluxo contradiz um padrão de segurança/discrição já definido por Daniela Discrição.
+- [ ] Todo fluxo/tela sinalizado por Iara como afetado por RF-CORE-06 tem as três variações (BAIXO/MÉDIO/ALTO) desenhadas, citando a ação de sistema exata de `company.md`, sem que o nível de risco bloqueie, atrase ou condicione o acionamento manual de emergência (RF-CORE-01).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

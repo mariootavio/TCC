@@ -16,6 +16,21 @@ que reconstruir tokens/componentes/logo no Figma deve usar exatamente os
 valores de `brand/design-system.md`/`brand/LogoAmparo.svg` — nunca um valor
 novo, ajustado ou "melhorado".
 
+**RF-CORE-06 confirmado (Apresentação Final da Banca, TCC II, 2026-08-13):**
+além das RF-CORE-01 a 05 (SOS, Modo Disfarçado, Chat, Registro de
+Evidências, Rede de Guardiões), o projeto tem um 6º requisito central
+confirmado: classificação de risco por IA/ML (Decision Tree/Scikit-learn),
+com saída BAIXO/MÉDIO/ALTO e ações de sistema específicas por nível —
+detalhado em `_opensquad/_memory/company.md`, seção "Classificação de Risco
+(IA/ML) — RF-CORE-06". Diferente das demais RF-CORE, este requisito não é
+uma tela ou um destino de navegação: é uma camada transversal que modula o
+comportamento de outras funcionalidades. Iara Informação (Step 3) mapeia
+ONDE essa camada entra na arquitetura; Joana Jornada (Step 5) desenha COMO
+cada fluxo afetado se comporta em cada nível. Nenhum agente desta squad deve
+inventar um limiar, gatilho ou comportamento de risco fora do que está
+documentado em company.md, e nenhum fluxo pode permitir que o nível de
+risco bloqueie ou atrase o acionamento manual de emergência (RF-CORE-01).
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## Visão Geral do Fluxo
@@ -57,9 +72,12 @@ fonte = pendência explícita, nunca valor inventado.
 ## 2. Iara Informação — Arquitetura de Informação
 
 Mapeia todas as funcionalidades do backlog real do brainstorm (RF-CORE +
-ideias priorizadas por RICE) em Navegação Principal, Ação Global ou Ação
-Secundária/Contextual. Nunca mapeia uma funcionalidade fora do backlog real —
-lacunas são sinalizadas, nunca preenchidas com invenção.
+ideias priorizadas por RICE) em Navegação Principal, Ação Global, Ação
+Secundária/Contextual, ou Camada Transversal (RF-CORE-06 — classificação de
+risco, que modula outras funcionalidades em vez de ser um destino próprio).
+Para RF-CORE-06, lista explicitamente cada tela/fluxo já classificado que
+precisa refletir o nível de risco. Nunca mapeia uma funcionalidade fora do
+backlog real — lacunas são sinalizadas, nunca preenchidas com invenção.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -79,7 +97,11 @@ Desenha as jornadas críticas ponta a ponta, aplicando simultaneamente a
 arquitetura de Iara e os padrões de Daniela. Toda jornada cita
 explicitamente o RF-CORE/ideia do backlog que implementa. Mapeia caminho
 feliz E caminho de erro em todo fluxo crítico, nomeando a heurística de
-Nielsen aplicada em cada decisão.
+Nielsen aplicada em cada decisão. Para todo fluxo que Iara sinalizou como
+afetado pela camada transversal RF-CORE-06, desenha as três variações
+BAIXO/MÉDIO/ALTO como subseção do próprio fluxo, citando a ação de sistema
+exata de company.md — nunca deixando o nível de risco bloquear ou atrasar
+o acionamento manual de emergência.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -117,9 +139,9 @@ RESSALVAS.
 | Agente | Entrada principal | Saída | Ferramenta/skill nativa principal |
 |---|---|---|---|
 | Caio Componentes | `brand/design-system.md` + `brand/LogoAmparo.svg` | `design-system-figma.md` + arquivo Figma | figma-use, figma-generate-library, figma-create-design-system-rules |
-| Iara Informação | Backlog brainstorm-amparo + design-system-figma.md | `arquitetura-informacao.md` | — (texto/diagrama) |
+| Iara Informação | Backlog brainstorm-amparo + design-system-figma.md + company.md (RF-CORE-06) | `arquitetura-informacao.md` | — (texto/diagrama) |
 | Daniela Discrição | arquitetura-informacao.md + RF-CORE-02 | `padroes-seguranca-discricao.md` | — (texto) |
-| Joana Jornada | arquitetura + padrões de segurança + backlog | `fluxos-ux.md` | figma-use-figjam (opcional) |
+| Joana Jornada | arquitetura + padrões de segurança + backlog + company.md (RF-CORE-06) | `fluxos-ux.md` | figma-use-figjam (opcional) |
 | Telma Tela | fluxos-ux.md (aprovado) + design-system-figma.md | `telas-alta-fidelidade.md` + telas Figma | figma-use, figma-generate-design |
 | Pietro Prototipagem | telas-alta-fidelidade.md + fluxos-ux.md + padrões | `prototipo-navegavel.md` + protótipo Figma | figma-use |
 | Wagner WCAG | todos os outputs anteriores | `revisao-design.md` | wcag-audit-patterns |

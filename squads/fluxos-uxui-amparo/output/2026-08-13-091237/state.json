@@ -1,0 +1,23 @@
+{
+  "squad": "fluxos-uxui-amparo",
+  "status": "completed",
+  "step": { "current": 10, "total": 10, "label": "step-10-checkpoint-aprovacao-final" },
+  "agents": [
+    { "id": "caio-componentes", "name": "Caio Componentes", "icon": "🏗️", "status": "done", "desk": { "col": 1, "row": 1 } },
+    { "id": "iara-informacao", "name": "Iara Informação", "icon": "🗺️", "status": "done", "desk": { "col": 2, "row": 1 } },
+    { "id": "daniela-discricao", "name": "Daniela Discrição", "icon": "🔒", "status": "done", "desk": { "col": 3, "row": 1 } },
+    { "id": "joana-jornada", "name": "Joana Jornada", "icon": "🧭", "status": "done", "desk": { "col": 1, "row": 2 } },
+    { "id": "telma-tela", "name": "Telma Tela", "icon": "🖼️", "status": "done", "desk": { "col": 2, "row": 2 } },
+    { "id": "pietro-prototipagem", "name": "Pietro Prototipagem", "icon": "🔗", "status": "done", "desk": { "col": 3, "row": 2 } },
+    { "id": "wagner-wcag", "name": "Wagner WCAG", "icon": "✅", "status": "done", "desk": { "col": 1, "row": 3 } }
+  ],
+  "handoff": {
+    "from": "checkpoint-10",
+    "to": null,
+    "message": "Ciclo aprovado pelo usuário. App completo: design system, 8 páginas de fluxo, navegação inferior, onboarding, protótipo navegável e mapa geral.",
+    "completedAt": "2026-08-13T13:35:00-03:00"
+  },
+  "startedAt": "2026-08-13T09:12:37-03:00",
+  "updatedAt": "2026-08-13T13:35:00-03:00",
+  "completedAt": "2026-08-13T13:35:00-03:00"
+}

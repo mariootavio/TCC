@@ -16,6 +16,9 @@ Load these files before executing:
   backlog real de ideias priorizadas por RICE da squad `brainstorm-amparo`.
 - `squads/brainstorm-amparo/pipeline/data/research-brief.md` — RF-CORE-01 a
   RF-CORE-05, requisitos centrais definidos pelo product owner.
+- `_opensquad/_memory/company.md` — RF-CORE-06 (classificação de risco por
+  IA/ML), seções "Funcionalidades Core (RF-CORE) — Confirmadas" e
+  "Classificação de Risco (IA/ML)".
 - `squads/fluxos-uxui-amparo/pipeline/data/domain-framework.md` — papel de
   Iara na cadeia de agentes e critérios de classificação estrutural.
 
@@ -28,9 +31,12 @@ Load these files before executing:
    squad `brainstorm-amparo` — esta é a fonte real e única do backlog a
    mapear, nunca uma lista inventada.
 2. Classificar cada funcionalidade (RF-CORE + ideias priorizadas) em
-   exatamente uma categoria: Navegação Principal, Ação Global, ou Ação
-   Secundária/Contextual, com justificativa explícita para cada
-   classificação.
+   exatamente uma categoria: Navegação Principal, Ação Global, Ação
+   Secundária/Contextual, ou Camada Transversal (RF-CORE-06 — classificação
+   de risco, que modula outras funcionalidades sem ser um destino de
+   navegação próprio; listar explicitamente cada tela/fluxo já classificado
+   que precisa refletir o nível de risco), com justificativa explícita para
+   cada classificação.
 3. Agrupar funcionalidades relacionadas em até 5 itens de navegação
    principal, evitando uma bottom nav sobrecarregada — consolidar
    funcionalidades de baixo RICE/uso pouco frequente sob agrupamentos como
@@ -60,6 +66,11 @@ NAVEGAÇÃO PRINCIPAL (bottom nav)
 AÇÕES SECUNDÁRIAS/CONTEXTUAIS
 {N}. {Nome} — {fonte}. Contexto: {fluxo em que vive}.
 
+CAMADA TRANSVERSAL — CLASSIFICAÇÃO DE RISCO (RF-CORE-06)
+{Fonte: company.md. Lista de telas/fluxos já mapeados acima que precisam
+refletir o nível de risco BAIXO/MÉDIO/ALTO, citando a ação de sistema exata
+de company.md em cada caso.}
+
 LACUNAS IDENTIFICADAS (sem funcionalidade correspondente no backlog)
 {N}. {Descrição da lacuna} — sinalizado para decisão do usuário, não preenchido nesta arquitetura.
 ```
@@ -85,13 +96,20 @@ NAVEGAÇÃO PRINCIPAL (bottom nav)
 2. Documentação — RF-CORE-04.
 3. Rede de Apoio — RF-CORE-05 + Ideia 6 (perfis de dependentes).
 4. Chat de Apoio — RF-CORE-03.
-5. Mais — agrupa Ideia 11 (biblioteca de direitos) e Ideia 10 (avaliação
-   de risco), evitando exceder 5 itens.
+5. Mais — agrupa Ideia 11 (biblioteca de direitos), evitando exceder 5
+   itens. Nota: Ideia 10 (avaliação de risco) foi substituída por
+   RF-CORE-06, ver camada transversal abaixo.
 
 AÇÕES SECUNDÁRIAS/CONTEXTUAIS
 1. Anexar evidência — contextual dentro de Documentação (RF-CORE-04).
 2. Confirmar recebimento de alerta — contextual dentro de Rede de Apoio
    (RF-CORE-05).
+
+CAMADA TRANSVERSAL — CLASSIFICAÇÃO DE RISCO (RF-CORE-06)
+1. Início: BAIXO = monitoramento discreto + info educativa; MÉDIO = alerta
+   discreto pré-configurado + recursos de apoio; ALTO = prioriza mecanismos
+   de emergência.
+2. Documentação (RF-CORE-04): ALTO aciona proteção reforçada de evidências.
 
 LACUNAS IDENTIFICADAS (sem funcionalidade correspondente no backlog)
 1. Onboarding padrão (sem QR code): o backlog cobre apenas onboarding via
@@ -103,8 +121,11 @@ LACUNAS IDENTIFICADAS (sem funcionalidade correspondente no backlog)
 
 Reject and redo if ANY of these are true:
 1. Alguma funcionalidade mapeada não existe no backlog real de
-   `brainstorm-amparo` (RF-CORE ou ideia priorizada).
+   `brainstorm-amparo` (RF-CORE ou ideia priorizada) nem em company.md
+   (RF-CORE-06).
 2. A bottom nav excede 5 itens sem agrupamento/justificativa explícita.
+3. RF-CORE-06 foi classificada como item de bottom nav/ação global/ação
+   secundária isolada em vez de Camada Transversal.
 
 ## Quality Criteria
 
@@ -114,3 +135,5 @@ Reject and redo if ANY of these are true:
 - [ ] Navegação principal não excede 5 itens sem agrupamento justificado.
 - [ ] Lacunas identificadas estão em seção separada, sem preenchimento por
       funcionalidade inventada.
+- [ ] RF-CORE-06 documentada como Camada Transversal, com a lista explícita
+      de telas/fluxos afetados e as ações de sistema de company.md.

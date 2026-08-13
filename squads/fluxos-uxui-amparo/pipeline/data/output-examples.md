@@ -61,7 +61,8 @@ PENDÊNCIAS (informação ausente na fonte — decisão do usuário necessária)
 ```
 ARQUITETURA DE INFORMAÇÃO — AMPARO
 Fonte: backlog ideias-brainstorm.md (run 2026-06-27-145210, v1) +
-research-brief.md (RF-CORE-01 a RF-CORE-05), squad brainstorm-amparo.
+research-brief.md (RF-CORE-01 a RF-CORE-05), squad brainstorm-amparo +
+company.md (RF-CORE-06, classificação de risco).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -86,9 +87,11 @@ NAVEGAÇÃO PRINCIPAL (bottom nav)
    ranking RICE).
 4. Chat de Apoio — RF-CORE-03 (chat com profissional de apoio).
 5. Mais — agrupa Ideia 11 "Biblioteca de direitos e legislação
-   simplificada" e Ideia 10 "Avaliação de risco estruturada adaptada ao
-   Brasil" (ambas do backlog priorizado), evitando exceder 5 itens na
-   bottom nav.
+   simplificada" (backlog priorizado), evitando exceder 5 itens na bottom
+   nav. Nota: a antiga Ideia 10 ("Avaliação de risco estruturada adaptada
+   ao Brasil") foi substituída pela implementação confirmada de RF-CORE-06
+   (camada transversal, ver seção abaixo) — não é mais mapeada como item
+   de navegação.
 
 AÇÕES SECUNDÁRIAS/CONTEXTUAIS
 
@@ -96,6 +99,23 @@ AÇÕES SECUNDÁRIAS/CONTEXTUAIS
    Documentação (RF-CORE-04), nunca um destino de navegação independente.
 2. Confirmar recebimento de alerta — contextual dentro do fluxo de Rede de
    Apoio, acionado a partir de uma notificação (RF-CORE-05).
+
+CAMADA TRANSVERSAL — CLASSIFICAÇÃO DE RISCO (RF-CORE-06)
+
+Fonte: company.md, seção "Classificação de Risco (IA/ML) — RF-CORE-06".
+Não é um destino de navegação — modula funcionalidades já mapeadas acima,
+conforme o nível de risco (BAIXO/MÉDIO/ALTO).
+
+1. Início (item 1 da navegação principal): BAIXO exibe monitoramento
+   discreto e conteúdo educativo; MÉDIO adiciona alerta discreto
+   pré-configurado e recursos de apoio; ALTO prioriza os mecanismos de
+   emergência (Ação Global 1) na hierarquia visual da tela.
+2. Documentação (RF-CORE-04): ALTO aciona proteção reforçada das
+   evidências.
+
+Desenho detalhado de cada variação por nível de risco é responsabilidade
+de Joana Jornada (Step 5) — esta seção apenas mapeia onde a camada
+transversal entra.
 
 LACUNAS IDENTIFICADAS (sem funcionalidade correspondente no backlog)
 
@@ -187,6 +207,16 @@ CAMINHO DE ERRO: SEM CONEXÃO DE DADOS NO MOMENTO DO ACIONAMENTO
 3. Ponto de verificação de segurança: a saída rápida (padrão 1 de
    Daniela) permanece acessível durante toda a tentativa de envio, caso
    a usuária precise interromper a ação abruptamente.
+
+VARIAÇÃO POR NÍVEL DE RISCO (RF-CORE-06, sinalizada por Iara na tela
+"Início")
+
+- BAIXO/MÉDIO: nenhuma alteração no acionamento em si — o SOS manual
+  funciona de forma idêntica em qualquer nível de risco.
+- ALTO: passo 2 prioriza o envio à rede de guardiões (menor timeout de
+  retry) — conforme a ação de sistema "mecanismos de emergência
+  priorizados" de company.md. O acionamento nunca é bloqueado ou atrasado
+  pelo nível de risco.
 ```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

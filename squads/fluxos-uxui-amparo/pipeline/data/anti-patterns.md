@@ -29,12 +29,14 @@ Anti-padrões consolidados dos 7 agentes da squad. Cada agente tem sua seção.
 2. **Deixar uma funcionalidade do backlog sem classificação estrutural**: gera ambiguidade que se propaga para os fluxos de Joana e as telas de Telma.
 3. **Preencher uma lacuna identificada com uma funcionalidade inventada**: a lacuna deve ser sinalizada para decisão humana, nunca resolvida unilateralmente por Iara.
 4. **Produzir uma bottom nav com mais de 5 itens sem agrupamento justificado**: contraria a boa prática de navegação mobile documentada no research brief da squad.
+5. **Classificar RF-CORE-06 (camada transversal de classificação de risco) como item de bottom nav, ação global ou ação secundária isolada**: ela modula o comportamento de outras funcionalidades já mapeadas, não é um destino de navegação por si só.
 
 ### Always Do
 
 1. **Citar o ID ou nome exato do item do backlog do brainstorm em toda funcionalidade mapeada**: garante rastreabilidade completa entre o backlog aprovado e a arquitetura de informação.
 2. **Separar visivelmente a seção de Lacunas Identificadas do restante da arquitetura**: evita que uma ausência detectada seja confundida com uma funcionalidade já confirmada.
 3. **Justificar toda classificação em ação global com a exigência de segurança/urgência correspondente**: mantém a arquitetura ancorada na pesquisa de UX de segurança, não em preferência estética.
+4. **Listar explicitamente, para RF-CORE-06, toda tela/fluxo já mapeado que precisa refletir o nível de risco**: sem essa lista, Joana Jornada não tem como saber onde desenhar as variações BAIXO/MÉDIO/ALTO.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

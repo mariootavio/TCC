@@ -94,9 +94,13 @@ automático em nuvem para evidências").
 ## Fontes Reutilizadas, Não Repesquisadas
 
 Esta squad reutiliza, sem repesquisar:
-- O backlog priorizado de ideias e as 5 RF-CORE da squad `brainstorm-amparo`
-  (`squads/brainstorm-amparo/output/.../ideias-brainstorm.md` e
-  `squads/brainstorm-amparo/pipeline/data/research-brief.md`).
+- O backlog priorizado de ideias e as RF-CORE-01 a 05 da squad
+  `brainstorm-amparo` (`squads/brainstorm-amparo/output/.../ideias-brainstorm.md`
+  e `squads/brainstorm-amparo/pipeline/data/research-brief.md`).
+- RF-CORE-06 (classificação de risco por IA/ML) e o restante das decisões
+  confirmadas na Apresentação Final da Banca (TCC II), documentadas em
+  `_opensquad/_memory/company.md`, seções "Funcionalidades Core (RF-CORE) —
+  Confirmadas" e "Classificação de Risco (IA/ML) — RF-CORE-06".
 - O design system e identidade visual publicados pela squad
   `marca-design-amparo` no Claude Design (lido via `DesignSync` por Caio
   Componentes).
