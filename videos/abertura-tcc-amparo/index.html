@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Amparo — Abertura TCC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=block" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --vinho-profundo: #4b2a3f;
+        --vinho-amparo: #954b6e;
+        --malva-suave: #c58da8;
+        --creme: #f2eae4;
+        --branco: #ffffff;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--vinho-profundo);
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-ec3z" id="stage" data-composition-id="main" data-start="0" data-duration="5" data-fps="30" data-width="1920" data-height="1080" style="position: relative; width: 1920px; height: 1080px; overflow: hidden">
+      <div data-hf-id="hf-ov1l" id="lockup-scene" class="clip" data-start="0" data-duration="5" data-track-index="1" style="position: absolute; inset: 0">
+        <!-- Breathing radial-gradient background (live CSS, not an image asset) -->
+        <div data-hf-id="hf-zb1e" class="bg-gradient"></div>
+
+        <!-- Soft localized scrim behind the lockup only — the sampled background's
+             central hotspot is too bright for the subtitle text to clear WCAG AA
+             contrast there; this fixes legibility without touching the exact
+             sampled gradient anywhere outside the lockup's own footprint. -->
+        <div data-hf-id="hf-scrim" class="text-scrim"></div>
+
+        <!-- Symbol / wordmark / subtitle — three independently-timed pieces, so the
+             entrance reveals "aos poucos" (symbol, then wordmark, then subtitle)
+             instead of one block. Symbol and wordmark are absolutely positioned
+             inside .lockup-mark-group using their TRUE relative offsets from the
+             source lockup (connected-component segmentation of
+             brand/LogoAmparo-SemFundo.png, not a guessed margin) — their
+             bounding boxes legitimately overlap in Y at different X ranges (the
+             wordmark's "A" apex starts before the symbol's lowest tail pixel),
+             which a simple stacked-margin layout cannot reproduce. Overall scale
+             and the gap to the subtitle come from brand/img-final.webp. -->
+        <div data-hf-id="hf-6jvi" class="lockup">
+          <div data-hf-id="hf-mark-group" class="lockup-mark-group">
+            <!-- Decorative concentric pulse rings — behind the mark, centered on
+                 the symbol's own visual center, never touching it -->
+            <svg data-hf-id="hf-nj2j" class="pulse-rings" viewBox="-320 -320 640 640" width="640" height="640" aria-hidden="true">
+              <circle data-hf-id="hf-mo8n" class="ring ring-1" cx="0" cy="0" r="140" />
+              <circle data-hf-id="hf-4dze" class="ring ring-2" cx="0" cy="0" r="220" />
+              <circle data-hf-id="hf-a20g" class="ring ring-3" cx="0" cy="0" r="300" />
+            </svg>
+
+            <!-- Symbol only (teardrop + inner figure), segmented from the official
+                 brand/LogoAmparo-SemFundo.png lockup, alpha-recoloured to white. -->
+            <img data-hf-id="hf-sym" class="symbol-mark" src=".media/images/symbol_white.png" alt="" />
+
+            <!-- Wordmark "Amparo" only, segmented from the same official lockup —
+                 same raster source as the symbol, never a Google-Fonts re-render. -->
+            <img data-hf-id="hf-word" class="wordmark-mark" src=".media/images/wordmark_white.png" alt="Amparo" />
+          </div>
+
+          <div data-hf-id="hf-der8" class="subtitle">Trabalho de Conclusão de Curso</div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      #lockup-scene {
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      /* ---- Background: live radial-gradient bloom, breathing ---- */
+      .bg-gradient {
+        position: absolute;
+        inset: -5%;
+        width: 110%;
+        height: 110%;
+        /* Exact radial profile sampled (Pillow) from brand/img-final.webp — the
+           user-supplied final-frame reference (supersedes the earlier Fundo.webp
+           sample: same idea, deeper/moodier tone, "mais profundidade"). Center +
+           5 concentric rings out to the farthest corner. */
+        background: radial-gradient(
+          circle at 50% 47%,
+          #d07b8e 0%,
+          #d07b8e 20%,
+          #bc667c 37%,
+          #8f4a61 46%,
+          #76374b 61%,
+          #401d2e 86%,
+          #37182a 100%
+        );
+        transform-origin: 50% 47%;
+        z-index: 0;
+      }
+
+      .text-scrim {
+        position: absolute;
+        left: 50%;
+        top: 66%;
+        width: 900px;
+        height: 460px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(
+          ellipse at center,
+          rgba(75, 42, 63, 0.4) 0%,
+          rgba(75, 42, 63, 0.22) 45%,
+          rgba(75, 42, 63, 0) 75%
+        );
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      /* ---- Vertical lockup: symbol above, wordmark below, subtitle below that ---- */
+      .lockup {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+
+      /* Group box + child offsets below are computed from connected-component
+         segmentation of brand/LogoAmparo-SemFundo.png (scipy.ndimage.label),
+         scaled 1.0669× to match the wordmark width measured in
+         brand/img-final.webp (702px). This reproduces the TRUE native spacing
+         between symbol and wordmark — not a guessed margin. */
+      .lockup-mark-group {
+        position: relative;
+        width: 702px;
+        height: 658px;
+        margin-bottom: 63px; /* measured gap: wordmark bottom -> subtitle top, from img-final.webp */
+      }
+
+      /* Rings sit behind the symbol, centered on the symbol's own box (not the
+         whole group — the wordmark below has no rings behind it). */
+      .pulse-rings {
+        position: absolute;
+        left: calc(159px + 373px / 2);
+        top: calc(490px / 2);
+        transform: translate(-50%, -50%);
+        overflow: visible;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .ring {
+        fill: none;
+        stroke: var(--malva-suave);
+        stroke-width: 2px;
+        transform-origin: center;
+        transform-box: fill-box;
+      }
+
+      .ring-1 {
+        opacity: 0;
+      }
+      .ring-2 {
+        opacity: 0;
+      }
+      .ring-3 {
+        opacity: 0;
+      }
+
+      .symbol-mark {
+        position: absolute;
+        left: 159px;
+        top: 0;
+        width: 373px;
+        height: 490px;
+        z-index: 2;
+        display: block;
+        opacity: 0;
+        transform-origin: center;
+      }
+
+      .wordmark-mark {
+        position: absolute;
+        left: 0;
+        top: 474px;
+        width: 702px;
+        height: 185px;
+        z-index: 2;
+        display: block;
+        opacity: 0;
+        transform-origin: center;
+      }
+
+      .subtitle {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1;
+        color: var(--creme);
+        letter-spacing: 0.01em;
+        opacity: 0;
+      }
+    </style>
+
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
+
+        // ---- Background: slow calm breathing pulse (hold_breath), finite repeats only ----
+        tl.to(
+          "#lockup-scene .bg-gradient",
+          { scale: 1.015, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 3 },
+          0,
+        );
+
+        // ---- Pulse rings: one-shot outward scale + fade, radar-sweep, timed with symbol entrance ----
+        tl.fromTo(
+          "#lockup-scene .ring-1",
+          { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 0.22, duration: 1.0, ease: "power2.out" },
+          0.6,
+        );
+        tl.fromTo(
+          "#lockup-scene .ring-2",
+          { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 0.15, duration: 1.1, ease: "power2.out" },
+          0.7,
+        );
+        tl.fromTo(
+          "#lockup-scene .ring-3",
+          { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 0.08, duration: 1.2, ease: "power2.out" },
+          0.8,
+        );
+
+        // ---- Legibility scrim: stays fully off at t=0, fades in with the symbol ----
+        tl.fromTo(
+          "#lockup-scene .text-scrim",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.9, ease: "power2.out" },
+          0.6,
+        );
+
+        // ---- 1) Symbol arrives first: calm scale_grow settle, no overshoot ----
+        tl.fromTo(
+          "#lockup-scene .symbol-mark",
+          { scale: 0.85, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.8, ease: "power2.out" },
+          0.6,
+        );
+
+        // ---- 2) Wordmark arrives after the symbol settles — "aos poucos": a
+        // distinct second beat, not simultaneous with the symbol ----
+        tl.fromTo(
+          "#lockup-scene .wordmark-mark",
+          { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+          1.7,
+        );
+
+        // ---- 3) Subtitle arrives last: quietest reveal, fade + gentle slide_bottom nudge ----
+        tl.fromTo(
+          "#lockup-scene .subtitle",
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+          2.6,
+        );
+
+        // Beats 3.8s -> 5.0s: no further tweens scheduled — full lockup holds on the
+        // completed frame (background breathing tapers off naturally by ~4.8s).
+        // No exit / no fade-out / no loop.
+
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

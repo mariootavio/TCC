@@ -1,0 +1,83 @@
+{
+  "category": "logo-reveal",
+  "duration_s": 5,
+  "fps": 30,
+  "canvas": { "w": 1920, "h": 1080, "aspect": "16:9" },
+  "style": "Calm, protective, dignified brand-lockup sting for a university (TCC) defense opener. Soft radial 'bloom' gradient breathing in from center (lighter warm rose/mauve glow at core fading to Vinho Profundo at the edges), reversed/white logo lockup building in center, faint concentric pulse rings emanating from behind the symbol as a subtle decorative glow (never touching the mark itself). No narration, no loop, no aggressive or flashy motion — settles into a clean held final frame ready to cut to the first slide.",
+  "palette": ["#954B6E", "#4B2A3F", "#C58DA8", "#F2EAE4", "#FFFFFF"],
+  "font": "Quicksand",
+  "beats": [0, 0.6, 1.8, 3.0, 3.8, 5.0],
+  "export": "mp4",
+
+  "asset_needs": [
+    {
+      "role": "logo",
+      "kind": "svg",
+      "source": "/Users/mariootavio/Desktop/TCC/brand/LogoAmparo.svg",
+      "treatment": "Isolate the mark only: drop the SVG's own background rect (fill #F6F2F0, the full 1024x1024 backing square) since the gradient bg is built live in CSS, not from this asset. Recolor the symbol's fill from its native #9F5773 to solid #FFFFFF (Branco Base) for a reversed lockup on the dark/saturated radial-gradient background — this is an in-palette neutral recolor of the mark to a single flat color, no gradient/shadow/glow/outline added onto the mark itself (any glow/pulse rings live behind it as separate decorative elements). Preserve exact geometry/proportions (no distortion) and keep the outer teardrop symbol and inner human-figure-holding-circle as one unseparated unit. Do not rotate off the vertical axis.",
+      "resolved": ".media/images/logo_001.svg"
+    }
+  ],
+
+  "block": "logo-outro",
+  "customize": {
+    "block_deviation_note": "Reusing logo-outro's piece-assembly + glow-bloom skeleton as-is (symbol → wordmark → tagline). The URL-pill element is dropped entirely (no url for this piece) and the tagline slot is repurposed to carry the subtitle line 'Trabalho de Conclusão de Curso' instead of a URL/CTA — no other deviation from the block.",
+    "logo_asset": ".media/images/logo_001.svg",
+    "logo_recolor": "#FFFFFF",
+    "background": {
+      "type": "CSS radial-gradient, built live — NOT an image asset. Do not source or reach for a stock/generated background image.",
+      "recipe": "radial-gradient(circle at 50% 43%, #C58DA8 0%, #954B6E 35%, #4B2A3F 80%)",
+      "notes": "Center stop uses Malva Suave warmth blending through Vinho Amparo to Vinho Profundo at the edges — all three locked palette hexes, no invented colors. Gradient center is placed at 50% 43% (~y=464px) to sit directly behind the symbol.",
+      "animation": "rules/hold_breath primitive (motion-vocabulary.md 'accent graphics'): to({ scale:1.015, ease:'sine.inOut' }) yoyo/repeat on the gradient layer, ~2.4s cycle, starting at beat 0 — a slow, calm breathing pulse, never a hard loop-reset."
+    },
+    "pulse_rings": {
+      "treatment": "2-3 concentric circle strokes (SVG or CSS radial outlines), color #C58DA8 at low opacity (~0.22 innermost, fading to ~0.08 outermost), centered behind the symbol at (960, 464), resting radii ~110/170/230px. One-shot outward scale+fade (radar-sweep, non-repeating) timed with the symbol's entrance — decorative background layer only, z-index below the mark, never touching or altering the mark geometry.",
+      "rule": "Hand-authored (no exact 'concentric pulse ring' catalog rule) using the `glow` emphasis primitive (motion-vocabulary.md) adapted to stroke-opacity/scale instead of textShadow, composited as a background accent per logo-outro's existing 'glow bloom' slot."
+    },
+    "symbol_motion": {
+      "primitive": "scale_grow (motion-vocabulary.md: from({ scale:0, opacity:0, duration:.6, ease:'power2.out' })) — calm, gentle, matches the 'never bouncy/flashy' brand tone.",
+      "rule_reference": "rules/scale-swap-transition (category module vocabulary) for the settle-into-place feel; rules/svg-path-draw available as an optional pre-pass (a very brief inner stroke-dashoffset draw before the scale-settle) but the primary reveal is scale+fade per the fixed 'scales/fades in' brief — do not default to a slow full draw-on, keep it quick and calm.",
+      "timing": "starts at beat 0.6s, settle complete by ~1.4s"
+    },
+    "wordmark": {
+      "text": "Amparo",
+      "font": "Quicksand SemiBold 600",
+      "color": "#FFFFFF",
+      "primitive": "fade_in (motion-vocabulary.md: from({ opacity:0, duration:.4 })) with a small slide_bottom nudge (y:+24) for a settled arrival, per category vocabulary primitive 'draw-on/mask-reveal' family kept subtle",
+      "timing": "starts at beat 1.8s"
+    },
+    "subtitle": {
+      "text": "Trabalho de Conclusão de Curso",
+      "font": "Nunito Sans Regular/SemiBold",
+      "color": "#F2EAE4",
+      "primitive": "fade_in (motion-vocabulary.md), no slide — smallest/quietest of the three reveals",
+      "timing": "starts at beat 3.0s"
+    },
+    "url_pill": null,
+    "hold": {
+      "primitive": "hold (category module vocabulary) — final full lockup + subtitle held static (only the background breathing loop continues faintly) from beat 3.8s through 5.0s",
+      "no_exit": "No fade-out / no loop-reset at the end — the composition cuts straight to the live presentation, per fixed constraint."
+    }
+  },
+
+  "content": {
+    "logo": ".media/images/logo_001.svg",
+    "tagline": "Trabalho de Conclusão de Curso",
+    "url": null,
+    "element_positions": {
+      "symbol": { "center": { "x": 960, "y": 464 }, "size_px": { "w": 200, "h": 200 }, "note": "teardrop symbol + inner figure, one unseparated unit, vertical axis only" },
+      "wordmark": { "center": { "x": 960, "y": 629 }, "font_size_px": 58, "note": "centered directly below symbol, standard vertical lockup" },
+      "subtitle": { "center": { "x": 960, "y": 699 }, "font_size_px": 26, "note": "centered below wordmark" },
+      "pulse_rings": { "center": { "x": 960, "y": 464 }, "radii_px": [110, 170, 230] },
+      "lockup_bounds": { "top": 364, "bottom": 716, "vertical_center_y": 540 }
+    }
+  },
+
+  "notes": {
+    "shot_brief": "The video opens on an empty, breathing radial gradient — a lighter warm rose/mauve glow at center softly pulsing outward against a Vinho Profundo (#4B2A3F) edge — establishing calm before any content appears. Around the 0.6s mark the reversed white Amparo symbol (teardrop mark with its inner human figure holding a circle, recolored solid #FFFFFF per the binding logo-usage rules, geometry and proportions untouched) scales and fades in dead-center, with faint concentric pulse rings quietly emanating outward from behind it like a slow radar sweep — a decorative glow effect, never touching or altering the mark. Once the symbol settles, the 'Amparo' wordmark reveals directly beneath it in Quicksand, honoring the standard vertical lockup (symbol above, wordmark below, centered, never repositioned). Last, the smaller Nunito Sans subtitle 'Trabalho de Conclusão de Curso' fades in beneath the wordmark. The whole sequence is a single dominant motion idea — a gentle center-out bloom/reveal — with no narration, no loop, and no aggressive motion; it settles into a calm, dignified held final frame (full lockup + subtitle, gradient still faintly pulsing) that reads as protective and serious-but-welcoming, ready to cut cleanly into the first presentation slide for the university evaluation committee.",
+    "lockup_layout": "Standard vertical lockup only: symbol centered above, wordmark 'Amparo' centered directly below it, subtitle centered below the wordmark. Symbol never separated from wordmark relative position; symbol never rotated off vertical axis.",
+    "background_construction": "CSS radial-gradient only (no image asset) — center stop near Malva Suave (#C58DA8) warmth blending through Vinho Amparo (#954B6E), outer stop Vinho Profundo (#4B2A3F). Subtle breathing/pulse animation on the gradient (hold_breath primitive), plus separate faint concentric ring lines behind the symbol as the decorative pulse effect. See customize.background for the exact recipe.",
+    "hold_behavior": "Ends held on the final full lockup frame (no fade-out, no loop) since this plays once before the presentation continues.",
+    "catalog_and_rules": "Block: logo-outro (piece-assembly + glow bloom; tagline slot repurposed for the subtitle, URL pill dropped). Rules/primitives referenced: rules/scale-swap-transition (symbol settle), rules/svg-path-draw (optional brief pre-pass draw accent, category vocabulary), motion-vocabulary.md primitives scale_grow (symbol), fade_in (wordmark + subtitle), hold_breath (background breathing), glow (adapted for pulse rings), hold (final frame)."
+  }
+}
